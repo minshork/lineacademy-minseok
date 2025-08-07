@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-29</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>🚻회원 정보 등록</h2>
+    이름 : <input type="text" id="name">
+    나이 : <input type="number" id="age">
+    <button id="btn">등록</button>
+    <div class="display"></div>
+    <script>
+        let btn = document.getElementById("btn");
+        let display = document.querySelector(".display");
+        let user = [];
+        btn.onclick = function(){
+            let name = document.getElementById("name").value.trim();
+            // trim() -> 공백 제거 함수
+            let age = document.getElementById("age").value.trim();
+
+            if(name && age){
+                user.push({name, age});
+                document.getElementById("name").value = "";
+                document.getElementById("age").value = "";
+
+                display.innerHTML = "";
+                user.forEach(function(item){
+                    display.innerHTML += `이름은 : ${item.name} 나이는 : ${item.age} <br>`
+
+                })
+            }
+        }
+    </script>
+</body>
+</html>

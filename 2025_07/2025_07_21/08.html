@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-21</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        #cat{
+            display: none;
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="imgOn()">보이기</button>
+    <button onclick="imgOff()">숨기기</button>
+    <img id="cat" src="./img/cat.jpg" alt="고양이" />
+    <script>
+        let img = document.getElementById("cat");
+        function imgOn(){
+            img.style.display = "block";
+        }
+        function imgOff(){
+            img.style.display = "none";
+        }
+    </script>
+</body>
+</html>

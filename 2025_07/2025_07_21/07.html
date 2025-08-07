@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-21</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <input id="name" type="text" placeholder="이름을 입력해주세요" />
+    <button id="hi" onclick="hiBtn()">안녕</button>
+    <button id="bye" onclick="byeBtn()">잘가</button>
+    <div id="dis"></div>
+    <script>
+        let dis = document.getElementById("dis");
+        function hiBtn(){
+            const name = document.getElementById("name").value;
+            dis.innerText = `${name}님 안녕하세요`;
+            dis.style.color = "red";
+        }
+        function byeBtn(){
+            const name = document.getElementById("name").value;
+            dis.innerText = `${name}님 안녕히 가세요`;
+            dis.style.color = "blue";
+        }
+    </script>
+</body>
+</html>

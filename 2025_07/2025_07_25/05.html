@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-25 오늘 할 일</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        h3{
+            text-align: center;
+            margin: 20px auto;
+        }
+        div{
+            text-align: center;
+            margin: 10px auto;
+        }
+        button{
+            display: block;
+            margin: 15px auto;
+            padding: 3px 5px;
+        }
+        .todo{
+            text-align: start;
+            background-color: lightgrey;
+            width: 200px;
+            padding: 5px 0px 5px 10px;
+        }
+        #dis{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h3>오늘 할 일</h3>
+    <div class="todo"><input class="tdInput" type="checkbox"> 이메일 확인</div>
+    <div class="todo"><input class="tdInput" type="checkbox"> 자료 정리</div>
+    <div class="todo"><input class="tdInput" type="checkbox"> 회의 참석</div>
+    <button id="btn">완료된 항목 수 확인</button>
+    <div id="dis">결과창</div>
+    <script>
+        //오늘 할 일
+        let tdInputs = document.querySelectorAll(".tdInput");
+        let btn = document.getElementById("btn");
+        let dis = document.getElementById("dis");
+
+        btn.onclick = function(){
+            let cnt = 0;
+            tdInputs.forEach(function(td){
+                if(td.checked == true){
+                    cnt++;
+                }
+            })
+            dis.innerText = `완료된 항목: ${cnt}개`;
+        }
+
+    </script>
+</body>
+</html>

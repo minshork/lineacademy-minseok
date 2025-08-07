@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-04</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: inside;
+        }
+        body{
+            width: 100vw;
+        }
+        header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            background-color: lightblue;
+        }
+        header > div:nth-child(1){
+            margin-top: 15px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        header > div:nth-child(2){
+            margin-bottom: 25px;
+            font-size: 13px;
+        }
+        nav{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            background-color: lightskyblue;
+        }
+        nav > div{
+            transition: all 0.3s linear;
+            font-size: 15px;
+            color: black;
+        }
+        nav > div:hover{
+            color: white;
+        }
+        section{
+            width: 100%;
+            height: 1100px;
+            background-color: azure;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        aside{
+            width: 200px;
+            height: 90%;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding: 25px 15px;
+            gap: 18px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        aside > div:nth-child(1){
+            font-weight: bold;
+            font-size: 14px;
+        }
+        aside > div:nth-child(2){
+            font-size: 14px;
+        }
+        aside > ul:nth-child(3){
+            font-size: 12px;
+        }
+        .bside{
+            width: 600px;
+            height: 89%;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            padding: 30px 15px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .title{
+            font-weight: bold;
+            color: #333;
+            font-size: 18px;
+        }
+        table, tr, td, th{
+            border: 1px solid gray;
+            border-collapse: collapse;
+            padding: 5px;
+            font-size: 13px;
+            text-align: start;
+        }
+        table{
+            margin: 15px 0px;
+        }
+        th{
+            background-color: beige;
+        }
+        .uli1{
+            margin: 10px 3px;
+        }
+        .li1{
+            font-size: 13px;
+        }
+        .uli2{
+            margin-bottom: 10px;
+            margin-left: 3px;
+        }
+        .li2{
+            list-style-type: decimal;
+            font-size: 13px;
+        }
+        .ifBox > :nth-child(2){
+            font-size: 12px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        iframe{
+            width: 100%;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        .lyBox{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #layout{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .videoBox{
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-right: 10px;
+        }
+        .vBtn{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20%;
+            height: 10%;
+            border: 1px solid rgba(22, 22, 22, 0.4);
+            background-color: rgba(240, 240, 240, 0.9);
+        }
+        video{
+            width: 100%;
+        }
+        
+        footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(0, 0, 144);
+            padding: 15px;
+            color: white;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>HTML 종합 실무 예제</div>
+        <div>HTML의 다양한 기능을 종합적으로 활용한 실무 예제</div>
+    </header>
+    <nav id="na">
+    </nav>
+    <section>
+        <aside>
+            <div>사이드바</div>
+            <div>HTML구성 요소:</div>
+            <ul>
+                <li><a href="#table">테이블</a></li>
+                <li><a href="#list">목록</a></li>
+                <li><a href="#iframe">iFrame</a></li>
+                <li><a href="#layout">레이아웃</a></li>
+            </ul>
+        </aside>
+        <div class="bside">
+            <div id="table" class="title">테이블</div>
+            <table>
+                <tr>
+                    <th>이름</th>
+                    <th>직업</th>
+                    <th>연락처</th>
+                </tr>
+                <tr>
+                    <td>홍길동</td>
+                    <td>개발자</td>
+                    <td>010-1234-5678</td>
+                </tr>
+                <tr>
+                    <td>김철수</td>
+                    <td>디자이너</td>
+                    <td>010-8765-4321</td>
+                </tr>
+                <tr>
+                    <td>이영희</td>
+                    <td>마케팅</td>
+                    <td>010-5555-6666</td>
+                </tr>
+            </table>
+            <div id="list" class="title">목록</div>
+            <ul class="uli1">
+                <li class="li1"> HTML 기초</li>
+                <li class="li1"> CSS 기초</li>
+                <li class="li1"> JavaScript 기초</li>
+            </ul>
+            <ul class="uli2">
+                <li class="li2">프로젝트 계획 수립</li>
+                <li class="li2">디자인 작업</li>
+                <li class="li2">개발 및 테스트</li>
+            </ul>
+            <div class="ifBox">
+                <div id="iframe" class="title">iFrame</div>
+                <p>다음은 Google 지도를 iFrame으로 삽입한 예제입니다.</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1828.5781165737917!2d126.834871454419!3d37.3179388282079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b6f1b4de62e49%3A0x5153c99c56766ccf!2z65287J247Lu07ZOo7YSw7JWE7Yq47ZWZ7JuQ!5e0!3m2!1sko!2skr!4v1754269611890!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
+            </div>
+            <div id="layout" class="title">레이아웃</div>
+            <div class="lyBox">
+                <div class="videoBox">
+                    <video class="video" muted>
+                        <source src="./1.mov/top7.mp4" type="video/mp4">;
+                    </video>
+                    <button class="vBtn">▶</button>
+                </div>
+                <div class="videoBox">
+                    <video class="video" muted>
+                        <source src="./1.mov/view.mp4" type="video/mp4">;
+                    </video>
+                    <button class="vBtn">▶</button>
+                </div>
+                <div class="videoBox">
+                    <video class="video" muted>
+                        <source src="./1.mov/nature.mp4" type="video/mp4">;
+                    </video>
+                    <button class="vBtn">▶</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>&copy;2024 HTML 실무 예제. All rights reserved.</footer>
+    <script>
+        let vBtn = document.querySelectorAll(".vBtn");
+        let vi = document.querySelectorAll(".video");
+        let na = document.getElementById("na");
+
+        let ly = ["테이블", "목록", "iFrame", "레이아웃"];
+        let id = ["table", "list", "iframe", "layout"];
+
+
+        vBtn.forEach(function(Bt, i){
+            Bt.onclick = function(){
+                vi.forEach(function(v, j){
+                    if(i == j){
+                        Bt.style.display = "none";
+                        v.play();
+                    }
+                })
+            }
+        })
+
+        vi.forEach(function(v, j){
+            v.onclick = function(){
+                vBtn.forEach(function(bt, i){
+                    if(i == j){
+                        bt.style.display = "block";
+                        v.pause();
+                    }
+                    
+                })
+            }
+        })
+
+        for(let i = 0; i < 4; i++){
+            let box = document.createElement("div");
+            box.innerText = `${ly[i]}`;
+            box.onclick = function(){
+                location.hash = `#${id[i]}`;
+            }
+            na.appendChild(box);
+        }
+    </script>
+</body>
+</html>

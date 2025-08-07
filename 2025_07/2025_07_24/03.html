@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-24</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        h3{
+            text-align: center;
+            margin: 10px 0px 20px 0px
+        }
+        .btn{
+            margin-right: 10px;
+            margin-bottom: 15px;
+        }
+        #outBox{
+            text-align: center;
+        }
+        #dis{
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>요일을 선택하세요</h3>
+    <div id="outBox">
+        <button class="btn">월요일</button>
+        <button class="btn">화요일</button>
+        <button class="btn">수요일</button>
+        <button class="btn">목요일</button>
+        <button class="btn">금요일</button>
+    </div>
+    <div id="dis">오늘의 일정 : </div>
+    <script>
+        // 화요일 업무보고
+        // 수요일 회의날
+        let btn = document.querySelectorAll(".btn");
+        let dis = document.getElementById("dis");
+        let todo = ["보고서 작성", "업무보고", "회의날", "아이디어 발표", "쉬는날"];
+        let text;
+        btn.forEach((day, i) => {
+            day.onclick = function(){
+                text = `${day.innerText}은 ${todo[i]}`;
+                dis.innerText = `오늘의 일정 : ${text}`;
+            }
+        })
+    </script>
+</body>
+</html>

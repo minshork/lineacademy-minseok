@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공 만들기</title>
+    <style>
+        .outBox{
+            width: 550px;
+            background-color: burlywood;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .ball{
+            background-color: wheat;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outBox" id="outBox">
+
+    </div>
+<script>
+    let outBox = document.getElementById("outBox");
+    let ball = "";
+    let ballCount = prompt("공의 갯수를 입력하세요");
+    for(let i = 1; i <= ballCount; i++){
+        ball += `<div class="ball"></div>`;
+    }
+
+    outBox.innerHTML = ball;
+</script>
+</body>
+</html>

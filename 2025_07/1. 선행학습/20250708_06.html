@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025_07_08</title>
+    <style>
+        #valueBox{
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">구구단 출력 버튼</button>
+    <button id="clear">지우기</button>
+    <div id="valueBox"></div>
+    <script>
+        let btn = document.getElementById("btn");
+        let clear = document.getElementById("clear");
+        let valueBox = document.getElementById("valueBox");
+
+
+        btn.onclick = () => {
+            valueBox.innerHTML = "";
+            let mul = 0;
+
+            for(let i = 1; i <= 9; i++){
+                for(let j = 1; j <= 9; j++){
+                    mul = i * j;
+                    valueBox.innerHTML += `${i} x ${j} = ${mul} <br>`
+                }
+                valueBox.innerHTML += `<hr>`
+            }
+        }
+        clear.onclick = () => {
+            valueBox.innerHTML = "";
+        }
+    </script>
+</body>
+</html>

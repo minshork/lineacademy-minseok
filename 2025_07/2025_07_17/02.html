@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-17</title>
+</head>
+<body>
+    <script>
+        // A103 ~ 106, B103 ~ 106등 배열 2개를 사용해서 아파트 호수 출력
+        let arr1 = ["A", "B", "C", "D"];
+        let arr2 = [103, 104, 105, 106];
+        let res = [];
+        for(let i = 0; i < arr1.length; i++){
+            for(let j = 0; j < arr2.length; j++){
+                if(j + 1 == arr2.length){
+                    document.write(`${arr1[i] + arr2[j]}`);
+                }
+                else{
+                    document.write(`${arr1[i] + arr2[j]}, `);
+                }
+            }
+            document.write(`<br>`);
+        }
+    </script>
+</body>
+</html>

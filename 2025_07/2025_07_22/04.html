@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-22</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        #outBox{
+            width: 350px;
+            height: 450px;
+            margin: auto;
+            text-align: center;
+            background-color: rgb(168, 168, 168);
+        }
+        button{
+            padding: 20px;
+            margin-top: 70px;
+            position: relative;
+            top: 50px;
+        }
+        #resBox{
+            width: 200px;
+            height: 100px;
+            background-color: black;
+            margin: auto;
+            position: relative;
+            top: 60px;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+        }
+        .oper{
+            position: relative;
+            top: 120px;
+            right: 110px;
+        }
+        .res{
+            position: relative;
+            top: 60px;
+            right: 106px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outBox">
+        <div id="resBox"></div>
+        <button class="num" id="btn1" value="1" onclick="one()">1</button>
+        <button class="num" id="btn2" value="2" onclick="two()">2</button>
+        <button class="oper" id="add" value="+" onclick="add()">+</button>
+        <button class="oper" id="sub" value="-" onclick="sub()">-</button>
+        <button class="oper" id="mul" value="*" onclick="mul()">*</button>
+        <button class="oper" id="dvi" value="/" onclick="dvi()">/</button>
+        <button class="res" id="reset" value="c" onclick="reset()">c</button>
+        <button class="res" id="res" value="=" onclick="res()">=</button>
+    </div>
+    <script>
+        const outBox = document.getElementById("outBox");
+        let resBox = document.getElementById("resBox");
+        let oneCnt = 0;
+        let twoCnt = 0;
+        let operToggle = false;
+        let oper = 0;
+        function one(){
+            let btn1 = document.getElementById("btn1").value
+            if(oneCnt == 0 && operToggle == false){
+                oneCnt = btn1;
+            }
+            else if(oneCnt != 0 && operToggle == false){
+                oneCnt += btn1;
+            }
+            else if(twoCnt == 0 && operToggle == true){
+                twoCnt = btn1;
+            }
+            else if(twoCnt != 0 && operToggle == true){
+                twoCnt += btn1;
+            }
+            resBox.innerText += btn1;
+        }
+
+        function two(){
+            let btn2 = document.getElementById("btn2").value
+            if(oneCnt == 0 && operToggle == false){
+            }
+            else if(oneCnt != 0 && operToggle == false){
+                oneCnt += btn2;
+            }
+            else if(twoCnt == 0 && operToggle == true){
+                twoCnt = btn2;
+            }
+            else if(twoCnt != 0 && operToggle == true){
+                twoCnt += btn2;
+            }
+            resBox.innerText += btn2;
+        }
+
+        function add(){
+            let add = document.getElementById("add").value
+            if(operToggle == true){
+                return;
+            }
+            else if(operToggle == false){
+                resBox.innerText += add;
+                oper = add;
+            }
+            operToggle = true;
+        }
+
+        function sub(){
+            let sub = document.getElementById("sub").value
+            if(operToggle == true){
+                return;
+            }
+            else if(operToggle == false){
+                resBox.innerText += sub;
+                oper = sub;
+            }
+            operToggle = true;
+        }
+
+        function mul(){
+            let mul = document.getElementById("mul").value
+            if(operToggle == true){
+                return;
+            }
+            else if(operToggle == false){
+                resBox.innerText += mul;
+                oper = mul;
+            }
+            operToggle = true;
+        }
+
+        function dvi(){
+            let dvi = document.getElementById("dvi").value
+            if(operToggle == true){
+                return;
+            }
+            else if(operToggle == false){
+                resBox.innerText += dvi;
+                oper = dvi;
+            }
+            operToggle = true;
+        }
+
+        function res(){
+            let btn1 = document.getElementById("btn1").value;
+            let btn2 = document.getElementById("btn2").value;
+            let add = document.getElementById("add").value;
+            let sub = document.getElementById("sub").value;
+            let mul = document.getElementById("mul").value;
+            let dvi = document.getElementById("dvi").value;
+            let res = document.getElementById("res").value;
+            let result = 0;
+            if(oper == "+" || oper == "-" || oper == "*" || oper == "/"){
+                result = eval(oneCnt + oper + twoCnt);
+                resBox.innerText = oneCnt + oper + twoCnt + "=" + result;
+            }
+            else{
+                resBox.innerText = "올바르지 않은 수식입니다."
+            }
+            console.log(result);
+        }
+        function reset(){
+            resBox.innerText = " ";
+            oneCnt = 0;
+            twoCnt = 0;
+            operToggle = false;
+        }
+    </script>
+</body>
+</html>

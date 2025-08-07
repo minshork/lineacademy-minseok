@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-06</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        body{
+            width: 100vw;
+        }
+        nav{
+            width: 70%;
+            height: 60px;
+            display: flex;
+            margin: 0px auto;
+            /* border: 1px solid black; */
+        }
+        nav .logo{
+            width: 10%;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+        nav .menu{
+            width: 50%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-left: 30px;
+            gap: 30px;
+            font-size: 13px;
+        }
+        nav .menu div{
+            border: 3px solid transparent;
+        }
+        nav .menu div:hover{
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        nav .local{
+            width: 35%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 20px;
+            font-size: 13px;
+            margin-right: 10px;
+        }
+        .submenu{
+            width: 100%;
+            height: 0;
+            background-color: white;
+            position: absolute;
+            z-index: 10;
+            margin-top: -10px;
+            transition: all 0.3s linear;
+            overflow: hidden;
+        }
+        .submenuBox{
+            width: 70%;
+            height: 150px;
+            margin: 30px auto;
+        }
+        .submenuBox  div{
+            margin-left: 20px;
+            margin-bottom: 25px;
+        }
+        .submenuBox div:nth-child(1){
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .submenuBox .secMove2, .secMove3{
+            font-size: 13px;
+        }
+        .secMove2:hover, .secMove3:hover{
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .prt{
+            width: 70%;
+            height: 600px;
+            background-size: cover;
+            background-position: center;
+            margin: 0px auto;
+            display: flex;
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        #section1{
+            background-image: url(https:/csr.samsung.com//renew/images/main/main_kv_story_01_pc_20250702.png);
+        }
+        #section2{
+            background-image: url(https:/csr.samsung.com//renew/images/main/main_kv_story_02_pc_20250702.png);
+        }
+        #section3{
+            background-image: url(https://csr.samsung.com/renew/images/main/main_kv_story_03_pc_20250702.png);
+        }
+        .leftBox{
+            width: 5%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: white;
+        }
+        .centerBox{
+            width: 90%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 20px;
+        }
+        .centerBox .cBox1{
+            padding-left: 7px;
+            border-left: 2px solid rgb(235, 235, 235);
+            color: rgb(235, 235, 235);
+            margin-bottom: 10px;
+        }
+        .centerBox div div:nth-child(1){
+            font-size: 10px;
+        }
+        .centerBox .cBox2{
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .centerBox .cBox3{
+            color: white;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+        .centerBox .cBox4{
+            width: 9%;
+            background-color: white;
+            text-align: center;
+            font-size: 10px;
+            padding: 7px 3px;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+        .rightBox{
+            width: 5%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: white; 
+        }
+        .leftBox div{
+            cursor: pointer;
+        }
+        .rightBox div{
+            cursor: pointer;
+        }
+        .on{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo btn">
+            <img width="100%" height="100%" src="https://csr.samsung.com/renew/images/common/logo.svg" alt="">
+        </div>
+        <div class="menu">
+            <div>Our Vision</div>
+            <div>Story</div>
+            <div>Program</div>
+            <div>Newsroom</div>
+        </div>
+        <div class="local">
+            <div><i class="bi bi-geo-alt"></i> Local</div>
+            <div><i class="bi bi-globe"></i> 한국어</div>
+        </div>
+    </nav>
+    <div class="submenu">
+        <div class="submenuBox">
+            <div>Our Vision</div>
+            <div class="secMove2 btn">Section 2번 이동</div>
+            <div class="secMove3 btn">Section 3번 이동</div>
+        </div>
+    </div>
+    <section id="section1" class="prt">
+        <div class="leftBox">
+            <div><i class="bi bi-arrow-left-circle"></i></div>
+        </div>
+        <div class="centerBox">
+            <div class="cBox1">
+                <div>Together for Tomorrow!</div>
+                <div>Enabling People</div>
+            </div>
+            <div class="cBox2">
+                필봇(PillBot): <br>
+                할머니를 위한 마음, <br>
+                수천명을 위한 혁신
+            </div>
+            <div class="cBox3">'할머니를 위해 시작한 일'이 전국적 혁신으로</div>
+            <div class="cBox4">Learn more</div>
+        </div>
+        <div class="rightBox">
+            <div><i class="bi bi-arrow-right-circle"></i></div>
+        </div>
+    </section>
+    <section id="section2" class="prt on">
+        <div class="leftBox">
+            <div><i class="bi bi-arrow-left-circle"></i></div>
+        </div>
+        <div class="centerBox">
+            <div class="cBox1">
+                <div>Together for Tomorrow!</div>
+                <div>Enabling People</div>
+            </div>
+            <div class="cBox2">
+                시작은 SFT, <br>
+                다음은 SIC, <br>
+                이제는 세상을 바꿔요
+            </div>
+            <div class="cBox3">삼성솔브포투모로우와 이노베이션캠퍼스를 모두 이수한 첫 학생, 라틴아메리카 희망의 등불이 되다</div>
+            <div class="cBox4">Learn more</div>
+        </div>
+        <div class="rightBox">
+            <div><i class="bi bi-arrow-right-circle"></i></div>
+        </div>
+    </section>
+    <section id="section3" class="prt on">
+        <div class="leftBox">
+            <div><i class="bi bi-arrow-left-circle"></i></div>
+        </div>
+        <div class="centerBox">
+            <div class="cBox1">
+                <div>Together for Tomorrow!</div>
+                <div>Enabling People</div>
+            </div>
+            <div class="cBox2">
+                학교로 돌아가는 길 <br>
+            </div>
+            <div class="cBox3">삼성전자와 발 락샤 바라트(Bal Raksha Bharat), 나눔키오스크 통해 아이들의 꿈을 응원하다</div>
+            <div class="cBox4">Learn more</div>
+        </div>
+        <div class="rightBox">
+            <div><i class="bi bi-arrow-right-circle"></i></div>
+        </div>
+    </section>
+    <script>
+        let menu = document.querySelector(".menu");
+        let submenu = document.querySelector(".submenu");
+        let btns = document.querySelectorAll(".btn");
+        let prts = document.querySelectorAll(".prt");
+
+        menu.addEventListener("mouseenter", function(){
+            submenu.addEventListener("mouseenter", function(){
+                submenu.style.height = "400px";
+            })
+            submenu.style.height = "400px";
+        });
+        menu.addEventListener("mouseleave", function(){
+            submenu.addEventListener("mouseleave", function(){
+                submenu.style.height = "0";
+            })
+            submenu.style.height = "0";
+        })
+
+        btns.forEach(function(btn, i){
+            btn.onclick = function(){
+                prts.forEach(function(prt, j){
+                    prt.classList.add("on");
+                    if(i === j){
+                        prt.classList.remove("on");
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-06</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+            color: #222;
+        }
+        body{
+            width: 100vw;
+        }
+        nav{
+            width: 100%;
+            height: 50px;
+            background-color: gold;
+            display: flex;
+            align-items: center;
+            transition: all 0.3 linear;
+        }
+        .logo{
+            width: 15%;
+            height: 40px;
+            /* background-color: pink; */
+            margin-left: 30px;
+        }
+        .menus{
+            width: 55%;
+            height: 40px;
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+        }
+        .menus button{
+            width: 40px;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .menus button:hover{
+            text-decoration: underline;
+        }
+        nav .login{
+            width: 20%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .container:hover .submenu{
+            height: 150px;
+        }
+        .submenu{
+            width: 100%;
+            background-color: skyblue;
+            height: 0;
+            overflow: hidden;
+            transition: all 0.3s linear;
+        }
+        .submenu .submenuIn{
+            width: 80%;
+            background-color: pink;
+            margin-left: 105px;
+            display: flex;
+            gap: 30px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .submenuIn div{
+            cursor: pointer;
+        }
+        .submenuIn div:hover{
+            font-weight: bold;
+        }
+        section{
+            width: 100%;
+        }
+        .contents {
+            height: 500px;
+            background-color: lightgreen;
+            display: none;
+        }
+        .contents.on{
+            display: block;
+        }
+        section h1{
+            margin-left: 100px;
+            padding-top: 10px;
+        }
+        section .outBox{
+            width: 80%;
+            height: 300px;
+            background-color: gray;
+            margin: 20px auto;
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+        }
+        .outBox .leftBox{
+            width: 35%;
+            height: 100%;
+            background-color: yellow;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .outBox .rightBox{
+            width: 65%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .rightBox img{
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+        <div class="logo">
+            <img width="100%" height="100%" src="https://naver.worksmobile.com/wp-content/uploads/2025/03/main_logo.svg" alt="logo">
+        </div>
+        <div class="menus">
+            <button onclick="show('section1')">메뉴1</button>
+            <button onclick="show('section2')">메뉴2</button>
+            <button onclick="show('section3')">메뉴3</button>
+        </div>
+        <div class="login">
+            <div>login</div>
+        </div>
+        </nav>
+        <div class="submenu">
+            <div class="submenuIn">
+                <div onclick="show('section1')">서브메뉴1</div>
+                <div onclick="show('section2')">서브메뉴2</div>
+                <div onclick="show('section3')">서브메뉴3</div>
+            </div>
+        </div>
+    </div>
+    
+    <section id="section1" class="contents">
+        <h1>여기는 메인 페이지</h1>
+        <div class="outBox">
+            <div class="leftBox">
+                <h2>안녕하세요</h2>
+                <h4>반갑습니다</h4>
+            </div>
+            <div class="rightBox">
+                <img width="100%" height="100%" src="./1.works.img/1.png" alt="one">
+            </div>
+        </div>
+    </section>
+    <section id="section2" class="contents">
+        <br><br><br>
+        <h1>여기는 메뉴2</h1>
+        <h4>여기는 진짜 2번째 메뉴입니다</h4>
+    </section>
+    <section id="section3" class="contents">
+        <br><br><br>
+        <h2>여기는 메뉴3번쨰 입니다</h2>
+        <p>동해물과 백두산이 마르고 닳도록 하나님이 보우하사 기리 보전하세 무궁화 삼천리 화려 강산 대한사람 대한으로 기리 보전하세</p>
+    </section>
+    <script>
+        function show(id) {
+            let contents = document.querySelectorAll(".contents");
+            contents.forEach((item) => {
+                item.classList.remove("on");
+            })
+            document.getElementById(id).classList.add("on");
+        }
+    </script>
+</body>
+</html>

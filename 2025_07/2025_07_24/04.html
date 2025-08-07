@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-24</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        button{
+            border: 0px;
+            width: 80px;
+            padding: 10px 0px;
+            background-color: lightgray;
+            border: 1px solid black;
+        }
+        .on{
+            background-color: gold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h3>하나의 버튼만 강조되도록</h3>
+    <button class="btn" id="HTML">HTML</button>
+    <button class="btn" id="CSS">CSS</button>
+    <button class="btn" id="javaScript">javaScript</button>
+    <script>
+        let btns = document.querySelectorAll(".btn"); 
+        btns.forEach(function(item){
+            item.onclick = function(){
+                btns.forEach(function(rm){
+                    rm.classList.remove("on");
+                })
+                item.classList.add("on");
+            }
+        })
+    </script>
+</body>
+</html>

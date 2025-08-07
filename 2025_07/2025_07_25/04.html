@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-25 성별 나이 선택</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        #out{
+            border: 1px solid black;
+            width: 500px;
+            margin: 50px  auto;
+        }
+        h3{
+            text-align: center;
+            margin: 10px 0px;
+        }
+        #ip{
+            width: 100px;
+        }
+        .gender{
+            margin: 0px 10px;
+        }
+        .outBox{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        button{
+            margin: 5px auto;
+        }
+        #dis{
+            text-align: center;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="out">
+        <h3>성별과 나이를 선택하세요</h3>
+        <div class="outBox">
+            <input class="gender" type="radio" name="gender" value="남자">남자
+            <input class="gender" type="radio" name="gender" value="여자">여자
+        </div>
+        <div class="outBox">
+            나이: <input id="ip" type="number">
+            <button id="btn" onclick="res()">확인</button>
+        </div>
+        <div id="dis"><mark>결과창</mark></div>
+    </div>
+    <script>
+        // 성별 나이 선택
+        let btn = document.getElementById("btn");
+        let genders = document.querySelectorAll(".gender");
+        let dis = document.getElementById("dis");
+        let gender = 0;
+        let age = 0;
+        let adult = 0;
+
+        function res(){
+            let input = document.getElementById("ip");
+            genders.forEach(function(gen){
+                if(gen.checked == true){
+                    gender = gen.value;
+                }
+            })
+            age = Number(input.value);
+            if(age >= 20){
+                adult = "성인";
+            }
+            else if(age < 20){
+                adult = "미성년자";
+            }
+            dis.innerHTML = `<mark>${adult} ${gender}</mark>입니다.`
+        }
+    </script>
+</body>
+</html>

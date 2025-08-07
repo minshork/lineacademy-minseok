@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-01</title>
+</head>
+<body>
+    <h2>출석 체크</h2>
+    이름:<input id="ip" type="text" />
+    <button id="btn" onclick="add()">출석</button>
+    <ul id="lists">
+
+    </ul>
+    <script>
+        names = [];
+
+        function add(){
+            let input = document.getElementById("ip").value;
+            let lists = document.getElementById("lists");
+            
+            for(let i = 0; i < names.length; i++){
+                if(names[i] === input){
+                    return;
+                }
+            }
+            names.push(input);
+
+            let li = document.createElement("li");
+            li.innerText = input;
+            lists.appendChild(li);
+        }
+    </script>
+</body>
+</html>

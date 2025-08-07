@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-29</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .container{
+            width: 600px;
+            height: 400px;
+            background-color: lightblue;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            border-radius: 50%;
+            font-size: 50px;
+            color: gray;
+            transition: all 0.5s linear;
+        }
+        button:nth-child(2){
+            flex-grow: 2;
+        }
+        button:nth-child(3){
+            flex-shrink: 0;
+        }
+        button:hover{
+            box-shadow: 3px 3px 20px #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+    <script>
+        let con = document.querySelector(".container");
+        for(let i = 0; i < 5; i++){
+            btn = document.createElement("button");
+            btn.innerText = i + 1;
+            con.appendChild(btn);
+        }
+    </script>
+</body>
+</html>

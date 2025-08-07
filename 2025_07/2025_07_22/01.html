@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-22</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        #outBox{
+            width: 800px;
+            height: 500px;
+            background-color: lightgreen;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outBox">
+
+    </div>
+    <script>
+        let outBox = document.getElementById("outBox");
+        let imgs = ["cloud.jpg", "beach.jpg", "valley02.jpg"];
+        for(let i = 0; i < imgs.length; i++){
+            let im = document.createElement("img");
+            im.src = "./1.img/" + imgs[i];
+            im.alt = "풍경 사진" + i;
+            outBox.appendChild(im);
+        }
+    </script>
+</body>
+</html>

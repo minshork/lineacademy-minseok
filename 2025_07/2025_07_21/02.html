@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-21</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        #hi{
+            font-size: 40px;
+            color: skyblue;
+        }
+        #btn{
+            padding: 5px;
+            background-color: lightgreen;
+            border: 0.5px solid darkgray;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p id="hi">안녕하세요</p>
+    <p>아래 버튼을 클릭해보세요</p>
+    <button id="btn" onclick="insa()">클릭하세요</button>
+    <div id="dis"></div>
+    <script>
+        function insa(){
+            document.getElementById("dis").innerText = "반갑습니다";
+            document.getElementById("hi").style.color = "pink";
+        }
+    </script>
+</body>
+</html>

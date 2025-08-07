@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-15</title>
+</head>
+<body>
+
+    <script>
+        // 블록문 {}묶은것은 블록
+        /* let x = 10;
+        {
+            let x = 20;
+            document.write(x);
+        }
+        document.write(x);*/
+
+        // if 조건문
+        let x = Number(prompt("점수를 입력하세요"));
+        if(x >= 80){
+            alert("합격!!!!!");
+        }
+        else{
+            alert("불합격");
+        }
+        x >= 80 ? alert("합격!!!!!") : alert("불합격");
+
+        if(x % 2 == 0){
+            alert("짝수");
+        }
+        else{
+            alert("홀수");
+        }
+        x % 2 == 0 ? alert("짝수") : alert("홀수")
+
+        // else if
+        if(x >= 90){
+            alert("매우잘함!!");
+        }
+        else if(x >= 80){
+            alert("잘함!!");
+        }
+        else if(x >= 70){ 
+            alert("보통");
+        }
+        else if(x >= 60){
+            alert("못함");
+        }
+        else{
+            alert("낙제");
+        }
+    </script>
+</body>
+</html>

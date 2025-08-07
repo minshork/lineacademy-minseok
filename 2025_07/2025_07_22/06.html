@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-22</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let num = Number(prompt("숫자를 입력하세요"));
+        function oneToten(n){
+            let sum = 0;
+            for(let i = 0; i < n; i++){
+                sum += (i + 1);
+            }
+            return sum;
+        }
+        let sumSum = oneToten(num);
+        document.write(sumSum);
+    </script>
+</body>
+</html>

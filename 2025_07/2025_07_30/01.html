@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-30</title>
+</head>
+<body>
+    <script>
+        // 객체 배열을 만들 경우
+        // user[1].name => 포이치에서는 item.name
+
+        let arr = [1, 2, 3, 4, 5];
+        let arr2 = [...arr]; // 틀린표현 arr2 = arr
+        arr2.forEach(function(item){
+            document.write(item + "<br>");
+        })
+
+        let obj = {
+            name : "hong",
+            age : 20
+        }
+
+        let obj2 = {...obj};
+        document.write(obj2.name + "<br>");
+        document.write(obj2.age);
+
+        let obj3 = Object.assign({}, obj);
+    </script>
+</body>
+</html>

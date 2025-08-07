@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-22</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let cm = prompt("키를 입력해주세요");
+        let kg = prompt("몸무게를 입력해주세요");
+        BMI(cm, kg);
+
+        function BMI(c, k){
+            let bmi = k / ((c / 100) * (c / 100));
+            document.write(`회원님의 BMI는 ${bmi}입니다. `);
+            if(bmi < 18.5){
+                document.write("저체중입니다");
+            }
+            else if(18.5 <= bmi < 23){
+                document.write("정상입니다");
+            }
+            else if(23 <= bmi < 25){
+                document.write("과체중입니다");
+            }
+            else if(bmi >= 25){
+                document.write("비만입니다");
+            }
+        }
+    </script>
+</body>
+</html>

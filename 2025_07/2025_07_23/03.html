@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-23</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        #dis{
+            width: 400px;
+            height: 100px;
+            background-color: black;
+            margin: 20px auto;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+        }
+        #dis2{
+            margin: auto;
+            text-align: center;
+        }
+        #dis:hover{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="dis">defalut</div>
+    <div id="dis2"></div>
+    <script>
+        let colors = ['red', 'green', 'blue', 'gold', 'purple'];
+        colors.forEach((color) => {
+            let colorButton = document.createElement("button");
+            let dis = document.getElementById("dis");
+            let dis2 = document.getElementById("dis2");
+
+            colorButton.style.background = color;
+            colorButton.className = "btn";
+            colorButton.style.width = "50px";
+            colorButton.style.height = "50px";
+            colorButton.style.marginRight = "5px";
+            colorButton.onclick = function(){
+                dis.style.background = color;
+                dis.innerText = color;
+            }
+
+            dis2.appendChild(colorButton);
+        });
+    </script>
+</body>
+</html>

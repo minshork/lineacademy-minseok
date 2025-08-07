@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-21</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="name" placeholder="이름을 입력하세요"/>
+    <button id="btn" onclick="hello()">인사</button>
+    <div id="dis"></div>
+    <script>
+        function hello(){
+            const name = document.getElementById("name");
+            document.getElementById("dis").innerText = `${name.value}님 환영합니다`
+        }
+    </script>
+</body>
+</html>

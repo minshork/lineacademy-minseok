@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-29</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .outBox{
+            width: 300px;
+            height: 50px;
+            margin: auto;
+            /* background-color: skyblue; */
+        }
+        button{
+            width: 80px;
+            height: 50px;
+            background-color: lightblue;
+            border: none;
+            margin: 5px;
+        }
+        #result{
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>상품선택</h1>
+    <div class="outBox">
+
+    </div>
+    <div id="result"></div>
+    <script>
+        let outBox = document.querySelector(".outBox");
+        let result = document.getElementById("result");
+
+        const products = [
+            { name: "연필", price: 500 },
+            { name: "지우개", price: 300 },
+            { name: "공책", price: 1000 }
+        ];
+
+        products.forEach(function(item){
+            let btns = document.createElement("button");
+            btns.innerText = item.name;
+            outBox.appendChild(btns);
+            btns.onclick = function(){
+                result.innerText = "선택한 상품 : " + item.name + " / 가격 :" + item.price + "원";
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-24</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        p{
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        div{
+            margin: 5px auto;
+            text-align: center;
+        }
+        button{
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <p>좋아하는 계절을 모두 고르세요</p>
+    <div>
+        봄
+        <input class="season" type="checkbox">
+    </div>
+    <div>
+        여름
+        <input class="season" type="checkbox">
+    </div>
+    <div>
+        가을
+        <input class="season" type="checkbox">
+    </div>
+    <div>
+        겨울
+        <input class="season" type="checkbox">
+    </div>
+    <button id="btn" onclick="ssPrint()">결과 보기</button>
+    <div id="dis"></div>
+    <script>
+        let season = document.querySelectorAll(".season");
+        let btn = document.getElementById("btn");
+        let dis = document.getElementById("dis");
+        
+        function ssPrint(){
+            dis.innerText += "선택한 계절은 : ";
+            season.forEach(ss => {
+                if(ss.checked == true){
+                    dis.innerText += ` ${ss.parentElement.innerText}`;
+                }
+            })
+        }
+
+        season.forEach(function(ss){
+
+        })
+    </script>
+</body>
+</html>

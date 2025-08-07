@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-18</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .Box{
+            width: 150px;
+            height: 50px;
+            background-color: rgb(252, 229, 101);
+            text-align: start;
+            line-height: 50px;
+            border-radius: 10px;
+            padding: 0px 13px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, 50%);
+        }
+        .triangle{
+            width: 0px;
+            height: 0px;
+            border-top: 8px solid transparent;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid red;
+            position: absolute;
+            bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="Box">안녕하세요!
+        <div class="triangle"></div>
+    </div>
+</body>
+</html>

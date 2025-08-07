@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-23</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .display{
+            width: 300px;
+            height: 80px;
+            background-color: lightgray;
+            margin: 40px auto;
+            text-align: right;
+            line-height: 80px;
+            padding-right: 10px;
+        }
+
+        .btnOutBox{
+            width: 290px;
+            height: 100px;
+            /* background-color: gray; */
+            margin: auto;
+        }
+        
+        .btnOutBox button{
+            width: 60px;
+            height: 60px;
+            background-color: skyblue;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="display" id="display"></div>
+    <div class="btnOutBox" id="btns">
+
+    </div>
+    <script>
+        // <button value="1" id="btn1" onclick="btn('btn1')">1</button>
+        let btns = document.getElementById("btns");
+        let display = document.getElementById("display");
+
+        let keys = ['7', '8', '9', '+',
+                    '4', '5', '6', '-',
+                    '1', '2', '3', '*',
+                    '0', 'clr', '=', '/'];
+
+        for(let i = 0; i < keys.length; i++){
+            let btn = document.createElement("button");
+            btn.innerText = keys[i];
+            btn.value = keys[i];
+            btn.id = "btn" + keys[i];
+            btn.setAttribute("onclick", "btn('btn" + keys[i] + "')");
+            btns.appendChild(btn);
+        }
+        function btn(id) {
+            let idValue = document.getElementById(id).value;
+
+            if(idValue == "="){
+                display.innerText = eval(display.innerText);
+            }
+            else if(idValue == "clr"){
+                display.innerText = " ";
+            }
+            else{
+                display.innerText += idValue;
+            }
+        }
+    </script>
+</body>
+</html>

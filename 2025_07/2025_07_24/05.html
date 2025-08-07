@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-24</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .tab{
+            border-collapse: collapse;
+            margin: 30px auto;
+        }
+        .tab tr, td, div{
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-align: center;
+        }
+        .tab tr, td{
+            padding: 30px;
+        }
+        .active{
+            font-weight: bold;
+            background-color: rgb(171, 218, 248);
+        }
+    </style>
+</head>
+<body>
+    <table class="tab">
+        <tr>
+            <td>이름</td>
+            <td>내용</td>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td><div class="active">출석</div></td>
+        </tr>
+        <tr>
+            <td>이순신</td>
+            <td><div class="active">출석</div></td>
+        </tr>
+        <tr>
+            <td>이민석</td>
+            <td><div class="active">출석</div></td>
+        </tr>
+    </table>
+    <script>
+        let actives = document.querySelectorAll(".active");
+        actives.forEach(function(item){
+            item.onclick = function(){
+                item.classList.remove("active");
+                item.innerText = "출석 완료";
+                item.style.border = "0px";
+            }
+        })
+    </script>
+</body>
+</html>

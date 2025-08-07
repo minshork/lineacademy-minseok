@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-18</title>
+</head>
+<body>
+    <script>
+        function me(){
+            document.write("이름 : 이민석 <br>");
+            document.write("나이 : 25살 <br>");
+            document.write("사는 곳 : 안산");
+        }
+        let minseok = prompt(`저의 프로필을 보시겠습니까? "예" 또는 "아니오"라고 대답해주세요.`);
+        if(minseok == "예"){
+            me();
+        }
+        else if(minseok == "아니오"){
+            document.write("네 프로필을 보여주지 않겠습니다.");
+        }
+        else{
+            document.write("잘못 입력하셨습니다. 다시 입력해주세요");
+        }
+    </script>
+</body>
+</html>

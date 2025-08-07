@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        #outBox{
+            width: 550px;
+            background-color: wheat;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        #inBox{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border-radius: 50px;
+        }
+        #click{
+            width: 100px;
+            height: 30px;
+            background-color: skyblue;
+        }
+        #clear{
+            width: 100px;
+            height: 30px;
+            background-color: lightseagreen;
+        }
+        #error{
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>경고문 출력</h1>
+    <input type="number" placeholder="몇개의 메세지를 만들까요?" id="howBox">
+    <button id="click">클릭하기</button>
+    <button id="clear">지우기</button>
+
+    <div id="outBox">
+    </div>
+<script>
+    let outBox = document.getElementById("outBox");
+    let click = document.getElementById("click");
+    let howBox = document.getElementById("howBox");
+    
+    click.onclick = () => {
+        let message = "";
+        let num = Number(howBox.value);
+
+        for(let i = 1; i <= num; i++){
+            message += `<h1 id="error">경고입니다!!!</h1>`;
+        }
+        outBox.innerHTML = message;
+    }
+
+    clear.onclick = () => {
+        outBox.innerHTML = " ";
+    }
+</script>
+</body>
+</html>

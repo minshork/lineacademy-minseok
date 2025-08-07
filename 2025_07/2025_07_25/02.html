@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-25 요금 계산기</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        h3{
+            margin: 20px 0px 10px 0px;
+            text-align: center;
+        }
+        table, tr, td, th{
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            margin: auto;
+            padding: 10px 10px;
+        }
+        button{
+            display: block;
+            margin: 10px auto;
+            width: 100px;
+            padding: 5px 0px;
+        }
+        #dis{
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h3>요금 계산기</h3>
+    <table>
+        <tr>
+            <th>서비스</th>
+            <th>선택</th>
+            <th>요금</th>
+        </tr>
+        <tr>
+            <td>세탁</td>
+            <td><input class="check" type="checkbox"></td>
+            <td class="price">3000</td>
+        </tr>
+        <tr>
+            <td>다림질</td>
+            <td><input class="check" type="checkbox"></td>
+            <td class="price">2000</td>
+        </tr>
+        <tr>
+            <td>배송</td>
+            <td><input class="check" type="checkbox"></td>
+            <td class="price">1500</td>
+        </tr>
+    </table>
+    <button id="btn" onclick="res()">총 요금 계산</button>
+    <div id="dis"></div>
+    <script>
+        // 요금 계산기
+        let prices = document.querySelectorAll(".price");
+        let checks = document.querySelectorAll(".check");
+        let dis = document.getElementById("dis");
+
+        function res(){
+            let sum = 0;
+            checks.forEach(function(ch, i){
+                if(ch.checked == true){
+                    sum += Number(prices[i].innerHTML);
+                }
+            })
+            dis.innerText = `총 요금은 ${sum}원 입니다.`;
+        }
+    </script>
+</body>
+</html>

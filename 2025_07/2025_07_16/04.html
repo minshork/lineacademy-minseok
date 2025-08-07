@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-16</title>
+</head>
+<body>
+    <script>
+        // 0 ~ num까지 홀수의 합, 평균 구하기
+        let num = Number(prompt("숫자를 입력하세요."));
+        let avg = 0;
+        let sum = 0;
+        let cnt = 0;
+        for(let i = 1; i <= num; i++){
+            if(i % 2 == 1){
+                sum += i;
+                cnt++;
+            }
+        }
+        avg = sum / cnt;
+        document.write(`0 ~ ${num}까지의 홀수의 합은 ${sum}입니다. <br>`);
+        document.write(`0 ~ ${num}까지의 홀수의 합의 평균값은 ${avg}입니다.`);
+    </script>
+</body>
+</html>

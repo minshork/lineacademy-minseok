@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-22</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .arr{
+            width: 0;
+            display: flex;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h3>주어진 배열 : [2, 4, 6, 8, 10]</h3>
+    <hr>
+    <h3>원래 배열</h3>
+    <div>
+        <div class="arr">2</div>
+        <div class="arr">4</div>
+        <div class="arr">6</divc>
+        <div class="arr">8</div>
+        <div class="arr">10</div>
+    </div>
+    <h3>모든 값을 더한 배열</h3>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+
+    <script>
+        let arr = [2, 4, 6, 8, 10];
+        let sum = 0;
+        for(let i = 0; i < arr.length; i++){
+            sum += arr[i];
+            document.write(`${arr[i]} `);
+        }
+        arr.push(sum);
+        document.write(arr[5]);
+    </script>
+</body>
+</html>

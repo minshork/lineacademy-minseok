@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-21</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        #outBox{
+            width: 900px;
+            height: 400px;
+            background-color: wheat;
+        }
+        .box1{
+            background-color: aquamarine;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            line-height: 100px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 50%;
+        }
+        .box2{
+            background-color: coral;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            line-height: 100px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 50%;
+        }
+        .box3{
+            background-color: blueviolet;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            line-height: 100px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 50%;
+        }
+        .box4{
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            line-height: 100px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 50%;
+        }
+        .box5{
+            background-color: crimson;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            line-height: 100px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="outBox">
+
+    </div>
+    <script>
+        const outBox = document.getElementById("outBox");
+        num = 5;
+        for(let i = 0; i < num; i++){
+            let divs = document.createElement("div");
+            divs.className = `box${i + 1}`;
+            divs.innerText = `box${i + 1}`;
+            outBox.appendChild(divs);
+        }
+    </script>
+</body>
+</html>

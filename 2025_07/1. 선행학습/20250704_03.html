@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 즐겨찾는 사이트</title>
+    <style>
+        h3{
+            text-align: center;
+            color: #333;
+        }
+        .internet{
+            color: #ffbe0d;
+        }
+        ul{
+            height: 100px;
+            border: 1px solid #333;
+            line-height: 2;
+        }
+        a{
+            color: black;
+            text-decoration-line: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>나의 즐겨찾는 사이트</h3>
+    <ul>
+        <li><a class="google" target="_blank" href="https://google.com">구글</a></li>
+        <li><a class="naver" target="_blank" href="https://naver.com">네이버</a></li>
+        <li><a class="github" target="_blank" href="https://github.com">깃허브</a></li>
+    </ul>
+    <hr />
+    <p class="internet"><strong>인터넷은 세상과 연결되는 창입니다.</strong><p>
+    <script>
+        let day = prompt("요일을 입력하세요");
+        if(day == "금요일"){
+            document.write("오늘은 " + day + "이네요 공부하기 좋은 날이네요!");
+        }
+        else{
+            document.write("오늘은 " + day + "이네요 공부하기 그럭저럭한 날이네요..");        }
+    </script>
+</body>
+</html>

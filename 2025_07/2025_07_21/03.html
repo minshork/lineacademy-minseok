@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-21</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        div{
+            width: fit-content;
+            border: 1px solid darkgray;
+            text-align: center;
+        }
+        #num{
+            width: 100px;
+            height: 100px;
+            padding: 5px;
+            border: 1px solid darkgray;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 50%;
+            background-color: darkgrey;
+            margin: 10px 0px;
+        }
+        .btn{
+            padding: 5px;
+        }
+        #add{
+            background-color: lightgreen;
+        }
+        #sub{
+            background-color: aqua;
+        }
+        #clear{
+            background-color: lightseagreen;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="num">숫자 0</p>
+        <button class="btn" id="add" onclick="add()">+</button>
+        <button class="btn" id="sub" onclick="sub()">-</button>
+        <button class="btn" id="clear" onclick="clearNum()">Clear</button>
+    </div>
+    
+    <script>
+        let numAdd = 0;
+
+        function add(){
+            numAdd++;
+            document.getElementById("num").innerText = `숫자 ${numAdd}`;
+        }
+        function sub(){
+            if(numAdd <= 0){
+                return;
+            }
+            numAdd--;
+            document.getElementById("num").innerText = `숫자 ${numAdd}`;
+        }
+        function clearNum(){
+            numAdd = 0;
+            document.getElementById("num").innerText = `숫자 ${numAdd}`;
+        }
+    </script>
+</body>
+</html>

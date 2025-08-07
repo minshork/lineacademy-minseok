@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-04</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        body{
+            width: 100vw;
+        }
+        nav{
+            width: 100%;
+            height: 60px;
+            background-color: darkblue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        #one{
+            width: 100%;
+            height: 800px;
+            background-color: skyblue;
+        }
+        #two{
+            width: 100%;
+            height: 800px;
+            background-color: pink;
+        }
+        #videoBox{
+            width: 360px;
+            height: 640px;
+            position: relative;
+        }
+        #video{
+            height: 100%;
+            width: 100%;
+        }
+        #btn{
+            width: 15%;
+            height: 5%;
+            background-color: gray;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#one"><div>첫번째 메뉴</div></a><div></div>
+        <a href="#two"><div>두번째 메뉴</div></a><div></div>
+    </nav>
+    <div id="one">
+        <h1>여기는 첫번째</h1>
+    </div>
+    <div id="two">
+        <h1>여기는 두번째</h1>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1828.5781165737917!2d126.834871454419!3d37.3179388282079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b6f1b4de62e49%3A0x5153c99c56766ccf!2z65287J247Lu07ZOo7YSw7JWE7Yq47ZWZ7JuQ!5e0!3m2!1sko!2skr!4v1754269611890!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div id="videoBox">
+        <video id="video" muted>
+            <source src="./1.mov/top7.mp4" type="video/mp4">;
+        </video>
+        <button id="btn">▶</button>
+    </div>
+
+    <script>
+        let vide = document.getElementById("video");
+        let btn = document.getElementById("btn");
+
+        btn.onclick = function(){
+            vide.play();
+            btn.style.display = "none";
+        }
+
+        vide.onclick = function(){
+            vide.pause();
+            btn.style.display = "block";
+        }
+    </script>
+</body>
+</html>

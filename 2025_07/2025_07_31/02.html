@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-31</title>
+</head>
+<body>
+    <script>
+        let passM = (function(){
+            let passWord = "";
+            return {
+                passSet : function(p){
+                    passWord = p;
+                    document.write("비밀번호 설정이 완료되었습니다." + "<br>");
+                },
+                passLogin : function(a){
+                    document.write(passWord == a ? "로그인 성공!!" : "로그인 실패");
+                }
+            };
+        })();
+
+        passM.passSet("1234");
+        passM.passLogin("1234");
+        document.write("<br>");
+        passM.passLogin("2314");
+    </script>
+</body>
+</html>

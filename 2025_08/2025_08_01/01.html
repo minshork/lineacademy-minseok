@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-01</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="ad1">
+
+    </div>
+    <button id="btn" onclick="add.addItem('hello')">btn</button>
+    <script>
+        let add = (function(){
+            let ad1 = document.getElementById("ad1");
+            let ul = document.createElement("ul");
+            ul.id = "lists";
+            ad1.appendChild(ul);
+            return {
+                addItem : function(tx){
+                    let li = document.createElement("li");
+                    li.innerText = tx;
+                    ul.appendChild(li);
+                }
+            }
+        })();
+
+
+        let test = (function(){
+            document.write("test");
+        })();
+
+        (function(){
+            document.write("test2");
+        })();
+
+
+        let say = function(){
+            document.write("hi~");
+        }
+
+        function say2() {
+            document.write("hi~22");
+        }
+
+        // add
+    </script>
+</body>
+</html>

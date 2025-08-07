@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-24</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        h3{
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        table{
+            margin: auto;
+            border-collapse: collapse;
+        }
+        table tr, td, th{
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px 20px;
+        }
+        button{
+            width: 30px;
+            height: 30px;
+            background-color: rgb(181, 248, 252);
+            border: 0px;
+        }
+        button:hover{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <h3>상품 재고 현황</h3>
+    <table>
+        <tr>
+            <th>상품명</th>
+            <th>수량</th>
+            <th colspan="2">조절</th>
+        </tr>
+        <tr>
+            <td>사과</td>
+            <td class="cnt">0</td>
+            <td><button class="btnPlus" value="+">+</button></td>
+            <td><button class="btnMinus" value="-" onclick="minus()">-</button></td>
+        </tr>
+        <tr>
+            <td>바나나</td>
+            <td class="cnt">0</td>
+            <td><button class="btnPlus" value="+">+</button></td>
+            <td><button class="btnMinus" value="-" onclick="minus()">-</button></td>
+        </tr>
+        <tr>
+            <td>딸기</td>
+            <td class="cnt">0</td>
+            <td><button class="btnPlus" value="+">+</button></td>
+            <td><button class="btnMinus" value="-" onclick="minus()">-</button></td>
+        </tr>
+    </table>
+    <script>
+        let cnts = document.querySelectorAll(".cnt");
+        let btnPlus = document.querySelectorAll(".btnPlus");
+        let btnMinus = document.querySelectorAll(".btnMinus");
+        let count = [0, 0, 0];
+
+        btnPlus.forEach(function(btn, i){
+            btn.onclick = function(){
+                cnts.forEach(function(cnt, j){
+                    if(i == j){
+                        count[j]++;
+                        cnt.innerText = count[j];
+                    }
+                })
+            }
+        })
+        
+        btnMinus.forEach(function(btn, i){
+            btn.onclick = function(){
+                cnts.forEach(function(cnt, j){
+                    if(count[j] == 0){
+                        return;
+                    }
+                    else if(i == j){
+                        count[j]--;
+                        cnt.innerText = count[j];
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+</html>

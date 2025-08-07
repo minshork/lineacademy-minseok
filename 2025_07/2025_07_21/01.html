@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-21</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        #hi{
+            font-size: 40px;
+            color: skyblue;
+        }
+        #btn{
+            padding: 5px;
+            background-color: lightgreen;
+            border: 0.5px solid darkgray;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p id="hi">안녕하세요</p>
+    <p>아래 버튼을 클릭해보세요</p>
+    <button id="btn" onclick="insa()">눌러보세요</button>
+    <script>
+        // const hi = document.getElementById("hi");
+        // const btn = document.getElementById("btn");
+
+        let hello = true;
+
+        /*
+        btn.onclick = () => {
+            if(hello == true){
+                hi.innerText = "반갑습니다";
+                hello = false;
+            }
+            else{
+                hi.innerText = "안녕하세요";
+                hello = true;
+            }
+        }
+        */
+        
+        function insa(){
+            if(hello == true){
+                document.getElementById("hi").innerText = "반갑습니다";
+                document.getElementById("btn").style.background = "pink";
+                hi.style.color = "blue";
+                btn.innerHTML += "안녕하세요";
+                hello = false;
+            }
+            else{
+                document.getElementById("hi").innerText = "안녕하세요";
+                document.getElementById("btn").style.background = "lightgreen";
+                hi.style.color = "skyblue";
+                hello = true;
+            }
+        }
+    </script>
+</body>
+</html>

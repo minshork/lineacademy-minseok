@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-22</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        #outBox{
+            width: 900px;
+            height: 400px;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="outBox">
+        <button value="1" id="btn1" >1</button>
+        <button value="+" id="add" >+</button>
+        <button value="2" id="btn2" >2</button>
+        <button value="=" id="rel" onclick="add()">=</button>
+        <div id="dis"></div>
+    </div>
+    <script>
+        let outBox = document.getElementById("outBox");
+        let dis = document.getElementById("dis");
+        function add(){
+            let btn1 = document.getElementById("btn1").value;
+            let btn2 = document.getElementById("btn2").value;
+            let add = document.getElementById("add").value;
+            let rel = eval(btn1 + add + btn2);
+            dis.innerText = btn1 + add + btn2 + "=" + rel;
+        }
+    </script>
+</body>
+</html>

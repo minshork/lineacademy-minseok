@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-28</title>
+</head>
+<body>
+    <script>
+        const products = [
+            {name: "연필", price: 300, count:20},
+            {name: "지우개", price: 100, count:10},
+            {name: "공책", price: 500, count:30},
+            {name: "자", price: 50, count: 5}
+        ]
+
+        products.forEach(function(prt){
+            if(prt.count >= 10){
+                document.write(prt.name);
+                document.write(prt.count);
+                document.write("<br>");
+            }
+
+        })
+    </script>
+</body>
+</html>

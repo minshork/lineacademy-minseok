@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-29</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .container{
+            width: 700px;
+            height: 220px;
+            background: lightgrey;
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+        }
+        .box:nth-child(7){
+            flex-grow: 2;
+        }
+        .box:nth-child(8){
+            flex-grow: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="box">child1</div>
+        <div class="box">child2</div>
+        <div class="box">child3</div>
+        <div class="box">child4</div>
+        <div class="box">child5</div>
+        <div class="box">child6</div>
+        <div class="box">child7</div>
+        <div class="box">child8</div>
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>

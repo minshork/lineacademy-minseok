@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        #outBox{
+            width: 550px;
+            background-color: lightgreen;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        #inBox{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border-radius: 50px;
+        }
+        #btn{
+            width: 100px;
+            height: 30px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>박스만들기</h1>
+    <input type="number" placeholder="몇개의 박스를 만들까요?" id="howBox">
+    <button id="btn">클릭하기</button>
+    <div id="outBox">
+
+    </div>
+<script>
+    let outBox = document.getElementById("outBox");
+    let btn = document.getElementById("btn");
+    let howBox = document.getElementById("howBox");
+    
+    btn.onclick = () => {
+        let Box = "";
+        let num = Number(howBox.value);
+
+        for(let i = 1; i <= num; i++){
+            Box += `<div id="inBox"></div>`;
+        }
+        outBox.innerHTML = Box;
+    }
+</script>
+</body>
+</html>

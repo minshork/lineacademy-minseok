@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025_07_08</title>
+    <style>
+        #displayBox{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="인사를 입력하세요" id="inputBox">
+    <button id="btn">클릭</button>
+    <button id="clear">지우기</button>
+    <div id="displayBox"></div>
+    <script>
+        let inputBox = document.getElementById("inputBox");
+        let btn = document.getElementById("btn");
+        let clear = document.getElementById("clear");
+        let displayBox = document.getElementById("displayBox");
+
+        btn.onclick = () => {
+        let input = inputBox.value;
+
+            if(input == "안녕하세요"){
+                displayBox.innerText = "저도 반갑습니다";
+            }
+            else{
+                displayBox.innerText = "인사를 다시 입력해주세요";
+            }
+        }
+        clear.onclick = () => {
+            displayBox.innerHTML = "";
+        }
+    </script>
+</body>
+</html>

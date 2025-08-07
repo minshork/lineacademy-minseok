@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-18</title>
+</head>
+<body>
+    <script>
+        // 5개의 숫자를 입력받고 합계 출력(forEach사용)
+        let sum = 0;
+        let arr = [];
+        for(let i = 0; i < 1; i++){
+            document.write(`arr = [`)
+            for(let j = 0; j < 5; j++){
+                arr[j] = Number(prompt(`${j + 1}번째 숫자를 입력하세요(총 5번)`));
+                if(j + 1 == 5 || j == 5){
+                    document.write(`${arr[j]}]`);
+                }
+                else{
+                    document.write(`${arr[j]}, `);
+                }
+            }
+            document.write("<br>");
+        }
+        arr.forEach(function(item, idx){
+            sum += item;
+        })
+        document.write(`arr배열의 총 합은 ${sum}입니다.`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>2025_07_04</title>
+    <style>
+        h1{
+            color: #333;
+            text-align: center;
+        }
+
+        .mySelf{
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .likeTitle{
+            width: 280px;
+            height: 35px;
+            background-color: skyblue;
+            text-align: center;
+            padding: 5px;
+            line-height: 35px;
+            margin: 10px auto;
+            border-radius: 3px;
+            box-shadow: 2px 2px 3px rgba(3, 3, 3, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>자기소개서</h1>
+    <p class="mySelf">안녕하세요! 저는 <strong>이민석</strong>입니다.</p>
+    <hr />
+    <p class="likeTitle">제가 좋아하는 것들을 소개합니다.</p>
+    <ul>
+        <li>코딩</li>
+        <li>음악감상</li>
+        <li>독서</li>
+    </ul>
+    <p>더 알고 싶다면 <a href="https://naver.com" target="_blank">여기</a>를 클릭하세요</p>
+
+    <script>
+        let age = Number(prompt("나이를 입력해주세요"));
+        document.write("나이는 " + age + "살입니다 ");
+
+        if(age >= 19){
+            document.write("성년입니다<br><br>");
+        }
+        else{
+            document.write("미성년입니다<br><br>");
+        }
+
+        for(let i = 0; i < 10; i++){
+            document.write("열심히 하겠습니다!!!!<br>");
+        }
+    </script>
+</body>
+</html>

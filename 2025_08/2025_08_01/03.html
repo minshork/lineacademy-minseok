@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-01</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .outBox{
+            width: 700px;
+            height: 700px;
+            margin: auto;
+            background-color: lightcyan;
+        }
+        .twoBox{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 40px;
+        }
+        .twoBox > p{
+            font-size: 30px;
+            padding: 30px;
+            color: green;
+            font-weight: bold;
+        }
+        .twoBox > div{
+            height: 500px;
+        }
+        .treBox{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pointBox{
+            background-color: lightgreen;
+            margin: 20px;
+            padding: 30px;
+            font-weight: bold;
+            border: 3px solid rgb(7, 93, 7);
+            border-radius: 10px;
+        }
+        .btnBox{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 300px;
+            background-color: lightgreen;
+            border: 3px solid rgb(7, 93, 7);
+            border-radius: 10px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        .btnBox > button{
+            width: 80px;
+            height: 80px;
+            margin: 0px 20px 0px 15px;
+            padding: 0px;
+            border: 2px solid darkblue;
+            background: lightblue;
+            color: rgb(0, 13, 255);
+            font-weight: bold;
+        }
+        .ll{
+            text-align: center;
+            background-color: lightgreen;
+            border: 3px solid rgb(7, 93, 7);
+            border-radius: 10px;
+            width: 400px;
+            height: 400px;
+            padding-top: 20px;
+            font-weight: bold;
+        }
+        .list{
+            text-align: start;
+            padding: 10px 30px 10px 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outBox">
+        <div class="twoBox"> 
+            <p>포인트 관리 시스템</p>
+            <div class="treBox">
+                <div>
+                <div class="pointBox">현재 포인트: 0점</div>
+                <div class="btnBox">
+                    <button onclick="pointer.add10()">적립(+10점)</button>
+                    <button onclick="pointer.add50()">적립(+50점)</button>
+                    <button onclick="pointer.add100()">적립(+100점)</button>
+                    <button onclick="pointer.use30()">사용(-30점)</button>
+                    <button onclick="pointer.use100()">사용(-100점)</button>
+                    <button onclick="pointer.view()">조회</button>
+                </div>
+                </div>
+                <div class="ll">적립 및 사용 내역
+                    <ul class="list">
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        let point = 0;
+        let cnt = 0;
+        let pointer = (function(){
+            let pointBox = document.querySelector('.pointBox');
+            let list = document.querySelector(".list");
+            return {
+                add10 : function(){
+                    point += 10;
+                    cnt++;
+                    let li = document.createElement("li");
+                    li.innerText = `${cnt}. 10점 적립됨`;
+                    list.appendChild(li);
+                },
+                add50 : function(){
+                    point += 50
+                    cnt++;
+                    let li = document.createElement("li");
+                    li.innerText = `${cnt}. 50점 적립됨`;
+                    list.appendChild(li);
+                },
+                add100 : function(){
+                    point += 100;
+                    cnt++;
+                    let li = document.createElement("li");
+                    li.innerText = `${cnt}. 100점 적립됨`;
+                    list.appendChild(li);
+                },
+                use30 : function(){
+                    if((point - 30) >= 0){
+                        point -= 30;
+                        cnt++;
+                        let li = document.createElement("li");
+                        li.innerText = `${cnt}. 30점 사용됨`;
+                        list.appendChild(li);
+                    }
+                    else{
+                        cnt++;
+                        let li = document.createElement("li");
+                        li.innerText = `${cnt}. 포인트가 부족하여 사용되지 않음`;
+                        list.appendChild(li);
+                    }
+                },
+                use100 : function(){
+                    if((point - 100) >= 0){
+                        point -= 100;
+                        cnt++;
+                        let li = document.createElement("li");
+                        li.innerText = `${cnt}. 100점 사용됨`;
+                        list.appendChild(li);
+                    }
+                    else{
+                        cnt++;
+                        let li = document.createElement("li");
+                        li.innerText = `${cnt}. 포인트가 부족하여 사용되지 않음`;
+                        list.appendChild(li);
+                    }
+                },
+                view : function(){
+                    pointBox.innerHTML = `현재 포인트: ${point}점`;
+
+                }
+            }
+        })();
+    </script>
+</body>
+</html>

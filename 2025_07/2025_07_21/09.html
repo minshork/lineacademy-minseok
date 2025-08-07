@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-21</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        #outBox{
+            width: 900px;
+            height: 400px;
+            background-color: wheat;
+        }
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            display: inline-block;
+            border-radius: 50%;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            display: inline-block;
+            border-radius: 50%;
+        }
+        #box3{
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            display: inline-block;
+            border-radius: 50%;
+        }
+        #box4{
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            display: inline-block;
+            border-radius: 50%;
+        }
+        #box5{
+            width: 100px;
+            height: 100px;
+            background-color: darkgoldenrod;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            display: inline-block;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="outBox">
+
+    </div>
+    <script>
+        let outBox = document.getElementById("outBox");
+        let box = [];
+        let num = 5;
+        for(let i = 0; i < num; i++){
+            box[i] = document.createElement("div");
+            box[i].id = `box${i + 1}`;
+            box[i].innerText = `box${i + 1}`;
+            outBox.appendChild(box[i]);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리스트 테스트</title>
+</head>
+<body>
+    <ui class="ui" id="ui">
+    </ui>
+<script>
+    let ui = document.getElementById("ui");
+    let list = "";
+    for(let i = 1; i <= 5; i++){
+        list += `<li class="list">리스트</li>`;
+    }
+    
+    ui.innerHTML = list;
+</script>
+</body>
+</html>

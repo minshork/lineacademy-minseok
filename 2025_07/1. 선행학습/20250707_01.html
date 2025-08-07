@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        .outBox{
+            width: 800px;
+            height: 400px;
+            background-color: #333;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            background-color: burlywood;
+            text-align: center;
+            line-height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outBox" id="outBox">
+
+    </div>
+<script>
+    let outBox = document.getElementById("outBox");
+    let box = "";
+    for(let i = 1; i <= 10; i++){
+        box += `<div class="box"> box1 </div>`;
+    }
+
+    outBox.innerHTML = box;
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-31</title>
+</head>
+<body>
+    <script>
+        // 쇼핑카트에 아이템을 추가하거나, 제거하고, 현재 상태를 확인
+        // 배열 사용, filter()내장함수 사용
+        // filter() 여러자료 중에서 내가 원하는것만 걸러 내어 주는것
+        // 예시 color = ["빨강", "파랑", "노랑", "보라"]
+        // color.fillter(item => "빨강" !== item)
+        // 빨강색이 아닌것만 보여주기 => 파랑, 노랑, 보라
+        
+        let shopCart = (function(){
+            let cart = [];
+            return {
+                addItem : function(item){
+                    cart.push(item);
+                    document.write(`${item}이(가) 장바구니에 추가되었습니다. <br>`);
+                },
+                removeItem : function(item){
+                    cart = cart.filter(ss => ss !== item);
+                    document.write(`${item}이(가) 장바구니에서 삭제되었습니다. <br>`);
+                },
+                viewItem : function(){
+                    document.write(`현재 장바구니에 있는 목록은 ${cart.join(", ")}입니다. <br>`);    
+                }
+            }
+        })();
+
+        shopCart.addItem("감자");
+        shopCart.addItem("고구마");
+        shopCart.addItem("옥수수");
+        shopCart.removeItem("고구마");
+        shopCart.viewItem();
+
+
+    </script>
+</body>
+</html>

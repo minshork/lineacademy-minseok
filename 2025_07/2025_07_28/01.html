@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-28</title>
+</head>
+<body>
+    <script>
+        const students = [
+            {name: "홍길동", grade: 1},
+            {name: "이순신", grade: 2},
+            {name: "강감찬", grade: 3}
+        ];
+
+        const books = [
+            {title : "JavaScript 기초", page: 300},
+            {title : "HTML 기초", page: 200},
+            {title : "CSS 기초", page: 400},
+        ];
+
+        books.forEach(function(book){
+            document.write("책 제목: " + book.title + " " + "페이지 수:" + book.page + "<br>");
+        });
+    </script>
+</body>
+</html>

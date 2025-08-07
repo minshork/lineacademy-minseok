@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-25 사원검색</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        h3{
+            text-align: center;
+            margin: 20px 0;
+        }
+        #outBox{
+            text-align: center;
+        }
+        input{
+            margin: auto;
+            padding: 5px 2px;
+        }
+        table, tr, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 15px auto;
+            padding: 10px;
+            text-align: center;
+        }
+        button{
+            padding: 3px 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>사원 검색</h3>
+    <div id="outBox">
+        <input id="ip" type="text" placeholder="이름을 입력하세요">
+        <button id="btnSrc" class="btn">검색</button>
+        <button id="clr" class="btn">초기화</button>
+    </div>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>부서</th>
+        </tr>
+        <tr class="dis">
+            <td class="name">김미나</td>
+            <td>영업팀</td>
+        </tr>
+        <tr class="dis">
+            <td class="name">이철호</td>
+            <td>개발팀</td>
+        </tr>
+        <tr class="dis">
+            <td class="name">박주현</td>
+            <td>디자인팀</td>
+        </tr>
+    </table>
+    <script>
+        // 사원 검색
+        btns = document.querySelectorAll(".btn");
+        dis = document.querySelectorAll(".dis");
+        names = document.querySelectorAll(".name");
+
+
+        btns.forEach(function(btn, i){
+            if(i == 0){
+                btn.onclick = function(){
+                    ip = document.getElementById("ip");
+                    names.forEach(function(name, j){
+                        if(name.innerText == ip.value){
+                            dis[j].style.display = "";
+
+                        }
+                        else if(name.innerText != ip.value){
+                            dis[j].style.display = "none";
+                        }
+                    })
+                }
+            }
+            else if(i == 1){
+                btn.onclick = function() {
+                    ip = document.getElementById("ip");
+                    ip.value = "";
+                    names.forEach(function(name, j){
+                        dis[j].style.display = "";
+                    })
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>

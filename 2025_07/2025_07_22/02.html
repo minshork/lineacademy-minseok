@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-22</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        #outBox{
+            width: 0;
+            height: 500px;
+            margin: 40px;
+        }
+        #box{
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outBox">
+
+    </div>
+    <script>
+        let outBox = document.getElementById("outBox");
+        let colors = ["red", "orange", "gold", "green", "blue"];
+        let mrg = ["0px", "100px", "200px", "300px", "400px"];
+        for(let i = 0; i < colors.length; i++){
+            let divs = document.createElement("div");
+            divs.id = "box";
+            divs.className = `box${i+1}`;
+            divs.style.width = "100px";
+            divs.style.height = "100px";
+            divs.style.background = colors[i];
+            divs.style.marginLeft = mrg[i];
+            outBox.appendChild(divs);
+        }
+    </script>
+</body>
+</html>

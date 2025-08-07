@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-21</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="age" placeholder="나이를 입력하세요"/>
+    <button id="btn" onclick="age()">입력</button>
+    <div id="dis"></div>
+    <script>
+        function age(){
+            const age = Number(document.getElementById("age").value);
+            let dis = document.getElementById("dis");
+            if(20 <= age &&  age <= 130){
+                dis.innerText = `성인입니다!`;
+                dis.style.color = "blue";
+            }
+            else if(0 < age && age < 20){
+                dis.innerText = `미성년자입니다.`;
+                dis.style.color = "red";
+            }
+            else{
+                dis.innerText = `올바르지않는 나이입니다.`;
+                dis.style.color = "black";
+            }
+            
+        }
+    </script>
+</body>
+</html>

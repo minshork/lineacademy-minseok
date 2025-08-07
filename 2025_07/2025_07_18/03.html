@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-18</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            display: inline-block;
+            border: 2px solid black;
+            margin: 1px;
+        }
+        .box1{
+            background-color: lightgreen;
+        }
+        .box2{
+            background-color: aqua;
+        }
+        .box3{
+            background-color: tomato;
+        }
+        .box4{
+            background-color: burlywood;
+        }
+        .box5{
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let food = [];
+        for(let i = 0; i < 5; i++){
+            food.push(prompt(`${i + 1}번째 좋아하는 음식을 입력해주세요(총 5번)`));
+        }
+        food.forEach(function(item, idx){
+            document.write(`<div class="box${idx + 1}">${item}</div>`);
+        });
+    </script>
+</body>
+</html>

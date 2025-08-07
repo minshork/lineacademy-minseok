@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-18</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            margin: 1px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            line-height: 100px;
+            text-align: center;
+            display: inline-block;
+            font-weight: bold;
+        }
+        .ball1{
+            background-color: lightgreen;
+        }
+        .ball2{
+            background-color:  aqua;
+        }
+        .ball3{
+            background-color: tomato;
+        }
+        .ball4{
+            background-color: burlywood;
+        }
+        .ball5{
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let num = [];
+        for(let i = 0; i < 5; i++){
+            num.push(Number(prompt(`${i + 1}번째 공에 들어갈 숫자를 입력해주세요(총 5번 입력)`)));
+        }
+        num.forEach(function(ball, count){
+            document.write(`<div class="ball${count + 1}">${ball}</div>`);
+        })
+    </script>
+</body>
+</html>

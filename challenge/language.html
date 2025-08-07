@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-29</title>
+    <style>
+        .outBox{
+            width: 300px;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="outBox">
+        <h3>좋아하는 언어는?</h3>
+        이름<input id="name" type="text">
+        <div><input class="language" type="radio" name="language" value="JavaScript">JavaScript</div>
+        <div><input class="language" type="radio" name="language" value="Python">Python</div>
+        <div><input class="language" type="radio" name="language" value="Java">Java</div>
+        <div><input class="language" type="radio" name="language" value="C++">C++</div>
+        <button id="btn">투표</button>
+        <div>
+            <h3>언어별 투표 수</h3>
+            <ul id="ulist">
+                
+            </ul>
+        </div>
+        
+        <h3>총 투표 수</h3>
+        <div id="votes">임시 결과</div>
+        <h3>투표자 명단</h3>
+        <div id="voteName">임시 결과</div>
+    </div>
+    <script>
+        let language = document.querySelectorAll(".language");
+        let votes = document.getElementById("votes");
+        let voteName = document.getElementById("voteName");
+
+        /*--------------------변수, 객체 선언------------------------*/
+        let names = []
+        let namesDup = "";
+        let JS = 0;
+        let PH = 0;
+        let CPPLUS = 0;
+        let JV = 0;
+        let SUM = 0;
+        let languages = {
+            name: names,
+            js: JS,
+            ph: PH,
+            cpp: CPPLUS,
+            jv: JV,
+            sum: SUM
+        }
+        /*--------------------변수, 객체 선언------------------------*/
+        btn.onclick = function(){
+            nameVal = document.getElementById("name").value;
+            let ulist = document.getElementById("ulist");
+            let lanVal = null;
+            
+            ulist.innerHTML = "";
+            voteName.innerText = "";
+
+            language.forEach(function(lan){
+                if(lan.checked){
+                    lanVal = lan.value;
+                }
+            })
+            if(nameVal && lanVal){
+                if(lanVal == "JavaScript"){
+                    JS++;
+                }
+                else if(lanVal == "Python"){
+                    PH++;
+                }
+                else if(lanVal == "Java"){
+                    JV++
+                }
+                else if(lanVal == "C++"){
+                    CPPLUS++;
+                }
+                SUM = JS + PH + JV + CPPLUS;
+
+                namesDup = nameVal;
+                if(names){
+                    names.forEach(function(item){
+                        if(namesDup === nameVal){
+                            return;
+                        }
+                        else{
+                            names.push(nameVal);
+                            voteName.innerHTML += `${item} `;
+                        }
+                    })
+                }
+                else{
+                    names[0] = nameVal;
+                    voteName.innerText += `${names[0]}`;
+                }
+
+                languages = {
+                    name : names,
+                    js : JS,
+                    ph: PH,
+                    jv : JV,
+                    cpp : CPPLUS,
+                    sum : SUM
+                };
+                votes.innerHTML = `${SUM}표`;
+                console.log(namesDup);
+                console.log(names);
+            };
+
+            if(JS >= 1){
+                let list = document.createElement("li");
+                list.innerHTML = `JavaScript: ${JS}표`;
+                ulist.appendChild(list);
+            }
+            if(PH >= 1){
+                let list = document.createElement("li");
+                list.innerHTML = `Python: ${PH}표`;
+                ulist.appendChild(list);
+            }
+            if(JV >= 1){
+                let list = document.createElement("li");
+                list.innerHTML = `Java: ${JV}표`;
+                ulist.appendChild(list);
+            }
+            if(CPPLUS >= 1){
+                let list = document.createElement("li");
+                list.innerHTML = `C++: ${CPPLUS}표`;
+                ulist.appendChild(list);
+            }
+        }
+    </script>
+</body>
+</html>

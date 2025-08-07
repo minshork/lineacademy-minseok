@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-22</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <input id="input1" type="text" placeholder="문자열을 입력하세요" />
+    <input id="input2" type="text" placeholder="찾을 문자를 입력하세요" />
+    <button id="btn1" onclick="ABCcount()">개수 세기</button>
+    <div id="divs"></div>
+    <script>
+        let divs = document.getElementById("divs");
+        function ABCcount(){
+            let cnt = 0;
+            let a = document.getElementById("input1").value;
+            let b = document.getElementById("input2").value;
+            for(let i = 0; i < a.length; i++){
+                if(a[i] == b){
+                    cnt++;
+                }
+            divs.innerText = `개수 ${cnt}`;
+            }
+        }
+    </script>
+</body>
+</html>

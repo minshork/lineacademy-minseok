@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-25 Quiz</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        h3{
+            text-align: center;
+            margin: 20px auto;
+        }
+        div{
+            width: 400px;
+            margin: 10px auto;
+            text-align: start;
+            border: 1px solid black;
+            padding: 5px;
+        }
+        p{
+            margin: 5px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        button{
+            height: 30px;
+            padding: 0px 3px;
+            margin-right: 7px;
+        }
+        .answerBox{
+            border: 0px;
+        }
+        button:hover{
+            background-color: lightgreen;
+        }
+        .dis{
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h3>퀴즈 채점기</h3>
+    <div>
+        <p>문제 1 : JavaScript에서 반복문의 명령은? </p>
+        <div class="answerBox">
+            <button class="answer">for문</button>
+            <button class="answer">if문</button>
+            <button class="answer">document.write</button>
+        </div>
+        <p class="dis"></p>
+    </div>
+    <div>
+        <p>문제 2 : HTML은 이것의 명령어로 이루어져있다. "이것"은?</p>
+        <div class="answerBox">
+            <button class="answer">속성(Attribute)</button>
+            <button class="answer">요소(Element)</button>
+            <button class="answer">태그(Tag)</button>
+        </div>
+        <p class="dis"></p>
+    </div>
+    <div>
+        <p>문제 3 : 텍스트를 가운데정렬 하고싶다면 text-align명령어에서 어떤걸 선택해야하는가?</p>
+        <div class="answerBox">
+            <button class="answer">Start</button>
+            <button class="answer">Center</button>
+            <button class="answer">End</button>
+        </div>
+        <p class="dis"></p>
+    </div>
+    <div>
+        <p>문제 4 : Margin에는 박스를 가운데로 자동으로 옮겨주는 옵션이 있다. 무엇인가?</p>
+        <div class="answerBox">
+            <button class="answer">Inherit</button>
+            <button class="answer">Unset</button>
+            <button class="answer">Auto</button>
+        </div>
+        <p class="dis"></p>
+    </div>
+    <div>
+        <p>문제 5 : JavaScript에서 배열을 생성하는 방법으로 옳은 것은?</p>
+        <div class="answerBox">
+            <button class="answer">let ary = "";</button>
+            <button class="answer">let ary = [];</button>
+            <button class="answer">let ary = 0;</button>
+        </div>
+        <p class="dis"></p>
+    </div>
+    <script>
+        // Quiz
+        let answerBoxs = document.querySelectorAll(".answerBox");
+        let dis = document.querySelectorAll(".dis");
+        let ans = [1, 3, 2, 3, 2];
+
+        answerBoxs.forEach(function(box, i){
+            let answers = box.querySelectorAll(".answer");
+            answers.forEach(function(answer, j){
+                answer.onclick = function(){
+                    if(ans[i] == j + 1){
+                        dis[i].innerHTML = "정답입니다!";
+                    }
+                    else{
+                        dis[i].innerHTML = "틀렸습니다ㅠ";
+                    }
+                }
+                
+            })
+        })
+    </script>
+</body>
+</html>

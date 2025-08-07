@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-18</title>
+</head>
+<body>
+    <script>
+        let gear = prompt("기어 상태를 입력해주세요(p, r, n, d)");
+        switch(gear){
+            case "p":
+                document.write(`현재 상태는 ${gear} : 주차모드 입니다`);
+                break;
+            case "r":
+                document.write(`현재 상태는 ${gear} : 후진모드 입니다`);
+                break;
+            case "n":
+                document.write(`현재 상태는 ${gear} : 중립모드 입니다`);
+                break;
+            case "d":
+                document.write(`현재 상태는 ${gear} : 주행모드 입니다`);
+                break;
+            default:
+                document.write(`잘못 입력하셨습니다.`);
+                break;
+        }
+    </script>
+</body>
+</html>

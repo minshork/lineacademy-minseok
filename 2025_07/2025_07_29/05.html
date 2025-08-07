@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-29</title>
+    <style>
+        *{
+            margin: 10px;
+            list-style: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>버그 제보</h2>
+    <input type="text" id="name" placeholder="이름" /><br>
+    <textarea id="bgtext" placeholder="벌레에 내용을 작성하세요"></textarea><br>
+    <button id="btn">신고</button>
+    <div class="display"></div>
+
+    <script>
+        let bugs = [];
+        let btn = document.getElementById("btn");
+        let display = document.querySelector(".display");
+
+        btn.onclick = function(){
+            let name = document.getElementById("name").value.trim();
+            let bgtext = document.getElementById("bgtext").value.trim();
+
+            if(name && bgtext){
+                bugs.push({name, bgtext});
+
+                document.getElementById("name").value = "";
+                document.getElementById("bgtext").value = "";
+                display.innerHTML = "";
+                bugs.forEach(function(item){
+                    display.innerHTML += `<strong>이름<strong> : ${item.name}<br><strong>내용<strong> : ${bgtext}<br><strong>`
+                })
+            }
+        }
+    </script>
+</body>
+</html>

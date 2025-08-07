@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-21</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="num" placeholder="숫자를 입력하세요"/>
+    <button id="btn" onclick="lucky()">lucky</button>
+    <div id="dis"></div>
+    <script>
+        function lucky(){
+            const luckyNum = 7;
+            const num = document.getElementById("num");
+            if(num.value == luckyNum){
+                document.getElementById("dis").innerText = `행운의 숫자${num.value}을 맞추셨습니다!!!`
+            }
+            else{
+                document.getElementById("dis").innerText = `숫자${num.value}을(를) 입력하셨습니다.`
+            }
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <title>2025-07-23</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .h1ToDo{
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .box{
+            text-align: center;
+            margin: 10px auto 20px auto;
+        }
+        .outBox{
+            background-color: rgb(185, 232, 185);
+            width: 300px;
+            height: fit-content;
+            padding: 20px 5px;
+            border: 2px solid rgb(106, 198, 234);
+            border-radius: 10px;
+        }
+        #todo{
+            padding: 6px 8px;
+            margin-right: 5px;
+            margin-bottom: 10px;
+        }
+        #add{
+            padding: 5px 8px;
+            background-color: rgb(60, 169, 60);
+            color: white;
+            border: 0px;
+        }
+        .todoList{
+            display: none;
+            background-color: rgb(252, 248, 240);
+            width: 250px;
+            padding: 5px 7px;
+            border: 1px solid rgb(42, 142, 179);
+            margin: 10px auto 0px auto;
+        }
+        .todoText{
+            display: inline-block;
+            width: 130px;
+            text-align: start;
+            margin-right: 13px;
+        }
+        .del{
+            background-color: red;
+            color: white;
+            border: 0px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .edit{
+            background-color: rgb(149, 206, 247);
+            color: white;
+            border: 0px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box h1ToDo"><i class="bi bi-check-square-fill"></i> 나의 할 일</div>
+    <div class="box outBox" id="outBox">
+        <input id="todo" type="text" placeholder="할 일을 입력하세요">
+        <button id="add" onclick="add()">추가</button>
+        <div class="todoList" id="todoList">
+
+        </div>
+    </div>
+    <script>
+        let outBox = document.getElementById("outBox");
+        let i = 1;
+        function add(){
+            let todo = document.getElementById("todo").value;
+            let tdL = document.createElement("div");
+            let tdT = document.createElement("div");
+            let del = document.createElement("button");
+            let edit = document.createElement("button");
+
+            tdL.id = "todoList" + i;
+            tdL.className = "todoList";
+            tdL.style.display = "block";
+
+            tdT.id = "todoText" + i;
+            tdT.className = "todoText";
+            tdT.innerText = todo;
+            
+            del.className = "del";
+            del.id = "del" + i;
+            del.setAttribute("onclick", "del('todoList" + i + "')");
+            del.innerText = "삭제";
+
+            edit.className = "edit";
+            edit.id = "edit" + i;
+            edit.setAttribute("onclick", `edit('todoText${i}', 'edit${i}')`);
+            edit.innerText = "수정";
+
+            outBox.appendChild(tdL);
+            tdL.appendChild(tdT);
+            tdL.appendChild(edit);
+            tdL.appendChild(del);
+            i++;
+        }
+
+        function del(id){
+            let idValue = document.getElementById(id);
+            idValue.remove();
+            i--;
+        }
+
+        function edit(id, id2){
+            let textValue = document.getElementById(id);
+
+            let inputBox = document.createElement("input");
+            let crtText = textValue.innerText;
+            inputBox.type = "text";
+            inputBox.value = crtText;
+            inputBox.id = "editInput";
+            inputBox.style.width = "130px";
+            inputBox.style.marginRight = "13px";
+
+            savebutton = document.getElementById(id2);
+            savebutton.innerText = "저장";
+            savebutton.onclick = function () {
+                save(inputBox.id, id2, textValue.id);
+            };
+            
+
+            textValue.replaceWith(inputBox);
+        }
+
+        function save(id, id2, id3){
+            let textValue = document.getElementById(id);
+            let editButton = document.getElementById(id2);
+            editButton.innerText = "수정";
+            editButton.onclick = function () {
+                edit(id3, id2);
+            }
+
+            let textBox = document.createElement("div");
+            let crtText = textValue.value;
+            textBox.innerText = crtText;
+            textBox.className = "todoText";
+            textBox.id = id3;
+            textBox.style.width = "130px";
+            textBox.style.marginRight = "13px";
+
+            textValue.replaceWith(textBox);
+        }
+    </script>
+</body>
+</html>

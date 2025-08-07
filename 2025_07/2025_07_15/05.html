@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-15</title>
+</head>
+<body>
+    <script>
+        let isTest = prompt("시험을 응시했나요? (yes or no)");
+
+        if(isTest == "yes"){
+            let score = Number(prompt("시험 점수는 몇 점인가요?"));
+            if(score >= 60){
+                alert("시험에 합격하셨습니다!");
+            }
+            else{
+                alert("시험에 불합격하셨습니다.");
+            }
+        }else{
+            alert("시험에 응시해주세요.");
+        }
+    </script>
+</body>
+</html>

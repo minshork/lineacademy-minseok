@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-31</title>
+</head>
+<body>
+    <script>
+        /*
+        함수 안에 리턴값으로 함수를 줄 수 있고
+        리턴값에 있는 함수를 쓰기 위해서는 변수 하나를 만들어
+        그 변수 안에 함수를 할당하고 객체안에 있는 함수를 사용하듯이 호출해야함
+        */
+        let test = function(){
+            let count = 0;
+            return {
+                add : function(){
+                    count++;
+                    document.write(count);
+                },
+                minus : function(){
+                    count--;
+                    document.write(count);
+                } 
+            };
+        }
+
+        let test2 = (function(){
+            let count = 0;
+            return {
+                add : function(){
+                    count++;
+                    document.write(count);
+                },
+                minus : function(){
+                    count--;
+                    document.write(count);
+                } 
+            };
+        })();
+
+        // test = (function(){})
+        // test2 = test2();
+        // 이렇게 코드를 만들면
+        // test2.add() 사용 가능
+        test2.add();
+        document.write("<br>");
+
+        let clc = test();
+        clc.add();
+        clc.add();
+        clc.add();
+        clc.minus();
+        clc.minus();
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 할 일</title>
+    <style>
+        h1{
+            width: 300px;
+            height: 60px;
+            text-align: center;
+            color: green;
+            border: 2px solid rgb(77, 150, 77);
+            border-radius: 20px;
+            margin: auto;
+            line-height: 60px;
+            background-color: rgb(175, 243, 175);
+            box-shadow: 2px 2px 5px rgba(3, 3, 3, 0.5);
+        }
+        ul{
+            width: 250px;
+            height: 90px;
+            border: 3px solid #333;
+            border-radius: 10px;
+            line-height: 1.9;
+            background-color: #bdbbbb;
+        }
+    </style>
+</head>
+<body>
+    <h1>오늘의 할 일</h1>
+    <ul>
+        <li><strong>아침 운동하기</strong></li>
+        <li><strong>JavaScript 공부</strong></li>
+        <li><strong>산책하기</strong></li>
+    </ul>
+    <div>
+        힘내세요!<br />
+        <em>파이팅!</em>
+    </div>
+    <br />
+    <script>
+        for(let i = 0; i < 3; i++){
+            document.write("할 일 번호 " + (i + 1) + " 완료 체크! <br /><br />");
+        }
+    </script>
+</body>
+</html>

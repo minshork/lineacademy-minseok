@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025_07_08</title>
+    <style>
+        #valueBox{
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" placeholder="숫자를 입력하세요" id="inputBox">
+    <button id="btn">합계 버튼</button>
+    <button id="clear">지우기</button>
+    <div id="valueBox"></div>
+    <script>
+        let inputBox = document.getElementById("inputBox");
+        let btn = document.getElementById("btn");
+        let clear = document.getElementById("clear");
+        let valueBox = document.getElementById("valueBox");
+
+
+        btn.onclick = () => {
+            let input = Number(inputBox.value);
+            let sum = 0;
+
+            for(let i = 1; i <= input; i++){
+                if(i % 2 == 0){
+                    sum += i;
+                }
+            }
+
+            valueBox.innerHTML = `당신의 숫자 ${input}까지의 짝수의 합은 ${sum}입니다.`;
+        }
+        clear.onclick = () => {
+            valueBox.innerHTML = "";
+        }
+    </script>
+</body>
+</html>

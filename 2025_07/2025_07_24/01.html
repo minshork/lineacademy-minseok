@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-24</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        h2{
+            text-align: center;
+            margin: 20px auto;
+        }
+        h3{
+            text-align: center;
+            margin: 20px auto;
+        }
+        #btns{
+            width: 600px;
+            height: 200px;
+            background-color: wheat;
+            margin: auto;
+            padding: 30px;
+        }
+        button{
+            width: 100px;
+            height: 100px;
+            background-color: lightyellow;
+            border-radius: 10px;
+            margin-right: 18px;
+            margin-left: 1px;
+        }
+    </style>
+</head>
+<body>
+    <h2>인사말을 선택하세요</h2>
+    <div id="btns">
+
+    </div>
+    <h3 id="dis">여기에 인사말이 나타나요</h3>
+    <script>
+        let btns = document.getElementById("btns");
+        let dis = document.getElementById("dis");
+        let hello = ["좋은 하루!", "안녕하세요", "반갑습니다", "축복하세요", "환영합니다"];
+        let i = 1;
+
+        hello.forEach( function(hi){
+            let btn = document.createElement("button");
+            btn.innerText = hi;
+            btn.id = `btn${i}`;
+            btn.onclick = function(){
+                dis.innerText = hi;
+            }
+
+            i++;
+            btns.appendChild(btn);
+        })
+    </script>
+</body>
+</html>

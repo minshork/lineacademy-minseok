@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-07-25 상품 가격 계산기</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        h3{
+            text-align: center;
+            margin: 20px 0px;
+        }
+        table, tr, th, td{
+            margin: auto;
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+            text-align: center;
+        }
+        input{
+            width: 50px;
+        }
+        button{
+            display: block;
+            margin: 20px auto;
+            width: 100px;
+            padding: 10px 5px;
+            border: 1px solid skyblue;
+            background-color: rgb(216, 244, 255);
+        }
+        button:hover{
+            background-color: aqua;
+        }
+        #dis{
+            text-align: center;
+            border: 1px solid lightgreen;
+            width: 300px;
+            margin: auto;
+            padding: 5px 0px;
+            background-color: rgb(149, 234, 149);
+        }
+    </style>
+</head>
+<body>
+    <h3>상품 가격 계산기</h3>
+    <table>
+        <tr>
+            <th>상품명</th>
+            <th>단가</th>
+            <th>수량</th>
+        </tr>
+        <tr>
+            <td>연필</td>
+            <td class="price">500</td>
+            <td><input class="cnt" type="number"></td>
+        </tr>
+        <tr>
+            <td>지우기</td>
+            <td class="price">800</td>
+            <td><input class="cnt" type="number"></td>
+        </tr>
+        <tr>
+            <td>공책</td>
+            <td class="price">1200</td>
+            <td><input class="cnt" type="number"></td>
+        </tr>
+    </table>
+        <button id="btn" onclick="res()">총 합계 계산</button>
+        <div id="dis"></div>
+    <script>
+        // 상품 가격 계산기
+        let count = document.querySelectorAll(".cnt");
+        let price = document.querySelectorAll(".price");
+        let dis = document.getElementById("dis");
+
+        function res(){
+            let cal = 0;
+            count.forEach(function(cnt, i){
+                price.forEach(function(pri, j){
+                    if(i == j){
+                        for(let i = 0; i < cnt.value; i++){
+                            cal += Number(pri.innerHTML);
+                        }
+                    }
+                })
+            })
+            dis.innerText = `총 가격은 ${cal}원 입니다.`;
+        }
+    </script>
+</body>
+</html>

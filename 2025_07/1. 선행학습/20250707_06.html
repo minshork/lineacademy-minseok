@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체스판 만들기</title>
+    <style>
+        .outBox{
+            background-color: skyblue;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .black{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        .white{
+            width: 100px;
+            height: 100px;
+            background-color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <div class="outBox" id="outBox">
+
+    </div>
+<script>
+    let outBox = document.getElementById("outBox");
+    let box = "";
+
+    for(let i = 0; i < 25; i++){
+        if(i % 2 == 1){
+            box += `<div class="white"></div>`;
+        }
+        else if(i % 2 == 0){
+            box += `<div class="black"></div>`;
+        }
+    }
+
+    outBox.innerHTML = box;
+</script>
+</body>
+</html>

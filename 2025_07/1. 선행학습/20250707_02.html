@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        .w{
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outBox" id="outBox"></div>
+    <script>
+        let outBox = document.getElementById("outBox");
+        let w = "";
+        for(let i = 1; i <= 10; i++){
+            w += `<h1 class="w">위험합니다!!!!!</h1>`
+        }
+
+        outBox.innerHTML = w;
+    </script>
+</body>
+</html>
