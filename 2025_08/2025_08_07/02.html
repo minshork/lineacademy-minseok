@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-07</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        body{
+            width: 100vw;
+            height: 100vw;
+            background-color: rgb(254, 244, 225);
+        }
+        .submenu{
+            width: 100%;
+            height: 0;
+            background-color: white;
+            position: absolute;
+            z-index: 11;
+            border-top: 1px solid lightgrey;
+            overflow: hidden;
+            display: flex;
+            transition: all 0.5s linear;
+        }
+        .wooHAUS{
+            width: 50%;
+            height: 100%;
+            background-color: black;
+            color: white;
+        }
+        .wHmenu{
+            /* border: 1px solid white; */
+            width: 50%;
+            position: relative;
+            left: 25%;
+            top: 12%;
+        }
+        .wHmenu .logo2{
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 200px;
+        }
+        .wHmenu .option2{
+            font-size: 30px;
+            font-weight: normal;
+        }
+        .wHmenu .option2 div{
+            margin-bottom: 20px;
+        }
+        .wHmenu .icon2{
+            /* border: 1px solid white; */
+            width: min-content;
+            position: absolute;
+            top: 145%;
+            right: 135%;
+            font-size: 20px;
+        }
+        .wHmenu .icon2 div{
+            background-color: #333;
+            padding: 3px 8px;
+            margin: 10px 0px;
+            border-radius: 50%;
+        }
+        .WOODIN{
+            width: 24%;
+            height: 100%;
+            border-right: 1px solid lightgray;
+        }
+        .WOODIN .wooMenu{
+            /* border: 1px solid black; */
+            width: 50%;
+            position: relative;
+            top: 37%;
+            left: 30%;
+        }
+        .wooMenu .logo3{
+            font-size: 28px;
+        }
+        .wooMenu .wooOption{
+            margin-top: 15px;
+            padding-top: 15px;
+            font-size: 12px;
+            border-top: 2px solid gray;
+            width: fit-content;
+        }
+        .wooMenu .wooOption div{
+            color: gray;
+            margin-bottom: 15px;
+        }
+        .SUPPORT{
+            width: 26%;
+            height: 100%;
+        }
+        .SUPPORT .wooMenu{
+            /* border: 1px solid black; */
+            width: 25%;
+            position: relative;
+            top: 37%;
+            left: 30%;
+        }
+        .closeBtn{
+            width: 70px;
+            height: 65px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            font-size: 35px;
+        }
+        nav{
+            width: 95%;
+            height: 60px;
+            display: flex;
+            /* border: 1px solid black; */
+            margin: 0px auto;
+        }
+        nav .logo{
+            width: 10%;
+            font-weight: bold;
+            font-size: 23px;
+            display: flex;
+            justify-content: flex-start;
+            /* border: 1px solid black; */
+            align-items: center;
+            margin-left: 15px;
+            margin-right: 50px;
+            cursor: pointer;
+        }
+        nav .option{
+            width: 30%;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        nav .icon{
+            width: 60%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            gap: 25px;
+            font-size: 19px;
+            cursor: pointer;
+        }
+        section{
+            width: 95%;
+            height: 960px;
+            /* border: 1px solid black; */
+            background-image: url(http://www.wood.co.kr//data/main/file1_16450763511qly671qvc.jpg);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 50.4%;
+            transform: translate(-50%, 2%);
+            /* display: none; */
+        }
+        section div{
+            color: white;
+            font-weight: bold;
+            font-size: 60px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .img1, .img2{
+            width: 15%;
+            height: 400px;
+            display: none;
+            /* border: 1px solid black; */
+        }
+        .img1{
+            background-color: wheat;
+            position: absolute;
+            z-index: 12;
+            top: 80px;
+            left: 2.8%;
+            background-image: url(./woodin/img1.jpg);
+            background-position: center;
+            background-size: cover;
+            /* display: none; */
+        }
+        .img2{
+            background-color: rgb(218, 241, 248);
+            position: absolute;
+            z-index: 12;
+            top: 80px;
+            left: 20%;
+            background-image: url(./woodin/img2.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        .review{
+            width: 100%;
+            height: 91%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            /* border: 1px solid black; */
+        }
+        .img1 .review div:nth-child(1){
+            margin-top: 70px;
+            color: white;
+            background-color: brown;
+            width: 40%;
+            font-size: 13px;
+            border-radius: 10px;
+            text-align: center;
+            padding: 2px;
+        }
+        .img1 .review div:nth-child(2){
+            color: brown;
+            font-size: 41px;
+            text-align: center;
+            line-height: 1;
+            margin: 8px 0px;
+        }
+        .img1 .review div:nth-child(3){
+            color: brown;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        .img2 .review div:nth-child(1){
+            margin-top: 70px;
+            color: white;
+            background-color: rgb(0, 162, 255);
+            width: 50%;
+            font-size: 13px;
+            border-radius: 10px;
+            text-align: center;
+            padding: 2px;
+        }
+        .img2 .review div:nth-child(2){
+            color: rgb(0, 162, 255);
+            font-size: 41px;
+            text-align: center;
+            line-height: 1;
+            margin: 8px 0px;
+        }
+        .img2 .review div:nth-child(3){
+            color: darkblue;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        .btnBox{
+            width: 100%;
+            height: 9%;
+            background-color: darkgray;
+        }
+        .btnBox button{
+            position: relative;
+            left: 80%;
+            top: 13%;
+            padding: 4px 12px;
+            font-size: 12px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="submenu">
+        <div class="wooHAUS">
+            <div class="wHmenu">
+                <div class="logo2">우딘HAUS</div>
+                <div class="option2">
+                    <div>도어</div>
+                    <div>FINO DOOR</div>
+                    <div>VISIOGRANDE</div>
+                    <div>TROCAL</div>
+                </div>
+                <div class="icon2">
+                    <div><i class="bi bi-youtube"></i></div>
+                    <div><i class="bi bi-instagram"></i></div>
+                    <div><i class="bi bi-chat-square-dots-fill"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="WOODIN">
+            <div class="wooMenu">
+                <div class="logo3">WOODIN</div>
+                <div class="wooOption">
+                    <div>브랜드</div>
+                    <div>스토리</div>
+                    <div>갤러리</div>
+                    <div>쇼룸</div>
+                </div>
+            </div>
+        </div>
+        <div class="SUPPORT">
+            <div class="wooMenu">
+                <div class="logo3">SUPPORT</div>
+                <div class="wooOption">
+                    <div>카달로그</div>
+                    <div>자주 묻는 질문</div>
+                    <div>A/S 접수</div>
+                    <div>시공메뉴얼</div>
+                    <div>대리점 문의</div>
+                </div>
+            </div>
+        </div>
+        <div class="closeBtn">
+            x
+        </div>
+    </div>
+    <nav>
+        <div class="logo">
+            <img width="70%" src="./woodin/udin_logo.png" alt="">
+        </div>
+        <div class="option">
+            <div>WOODIN</div>
+            <div>PRODUCTS</div>
+            <div>SUPPORT</div>
+        </div>
+        <div class="icon">
+            <div><i class="bi bi-globe"></i></div>
+            <div><i class="bi bi-search"></i></div>
+            <div class="startBtn"><i class="bi bi-list"></i></div>
+        </div>
+    </nav>
+    <section id="sec">
+        <div>
+            CREATING HEALING SPACE IS <br>
+            WOODIN HAUSS TOP PRIORITY
+        </div>
+    </section>
+    <div class="img1 reviewEvent">
+        <div class="review">
+            <div>시공 리뷰 이벤트</div>
+            <div>
+                Review <br>
+                Event
+            </div>
+            <div>우딘HAUS 제품으로 시공한 고객을 찾습니다!</div>
+        </div>
+        <div class="btnBox">
+            <button class="escBtn">닫기</button>
+        </div>
+    </div>
+    <div class="img2 reviewEvent">
+        <div class="review">
+            <div>전시장 방문 리뷰 이벤트</div>
+            <div>
+                Review <br>
+                Event
+            </div>
+            <div>우딘HAUS 전시장 방분 후기를 들려주세요</div>
+        </div>
+        <div class="btnBox">
+            <button class="escBtn">닫기</button>
+        </div>
+    </div>
+    <script>
+        let escBtns = document.querySelectorAll(".escBtn");
+        let rvE = document.querySelectorAll(".reviewEvent");
+        let closeBtn = document.querySelector(".closeBtn");
+        let startBtn = document.querySelector(".startBtn");
+        let submenu = document.querySelector(".submenu");
+        let sec = document.getElementById("sec");
+
+        escBtns[0].addEventListener("click", () => {
+            rvE[0].style.display = "none";
+        })
+        escBtns[1].addEventListener("click", () => {
+            rvE[1].style.display = "none";
+        })
+        window.addEventListener("DOMContentLoaded", () => {
+            rvE.forEach((RVE) => {
+                RVE.style.display = "block"
+            })
+        })
+
+        startBtn.addEventListener("click", () => {
+            sec.style.display = "none";
+            submenu.style.height = "100%";
+        })
+        closeBtn.addEventListener("click", () => {
+            sec.style.display = "block";
+            submenu.style.height = "0%";
+        })
+    </script>
+</body>
+</html>
