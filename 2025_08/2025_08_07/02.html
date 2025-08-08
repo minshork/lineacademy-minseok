@@ -14,19 +14,19 @@
         }
         body{
             width: 100vw;
-            height: 100vw;
             background-color: rgb(254, 244, 225);
         }
         .submenu{
             width: 100%;
             height: 0;
             background-color: white;
-            position: absolute;
-            z-index: 11;
+            position: fixed;
+            z-index: 15;
             border-top: 1px solid lightgrey;
             overflow: hidden;
             display: flex;
             transition: all 0.5s linear;
+            top: 0;
         }
         .wooHAUS{
             width: 50%;
@@ -116,11 +116,14 @@
             font-size: 35px;
         }
         nav{
-            width: 95%;
+            width: 100%;
             height: 60px;
             display: flex;
             /* border: 1px solid black; */
             margin: 0px auto;
+            position: fixed;
+            z-index: 13;
+            background-color: rgb(254, 244, 225);
         }
         nav .logo{
             width: 10%;
@@ -130,7 +133,7 @@
             justify-content: flex-start;
             /* border: 1px solid black; */
             align-items: center;
-            margin-left: 15px;
+            margin-left: 100px;
             margin-right: 50px;
             cursor: pointer;
         }
@@ -151,21 +154,26 @@
             gap: 25px;
             font-size: 19px;
             cursor: pointer;
+            margin-right: 100px;
         }
-        section{
-            width: 95%;
-            height: 960px;
+        #sec1{
+            width: 0%;
+            height: calc(100vh - 100px);
             /* border: 1px solid black; */
             background-image: url(http://www.wood.co.kr//data/main/file1_16450763511qly671qvc.jpg);
             background-position: center;
-            background-size: contain;
+            background-size: cover;
             background-repeat: no-repeat;
-            position: absolute;
-            left: 50.4%;
-            transform: translate(-50%, 2%);
+            opacity: 0;
+            position: relative;
+            margin: auto;
+            top: 70px;
+            transition: all 0.5s linear;
+            overflow: hidden;
             /* display: none; */
         }
-        section div{
+        #sec1 div{
+            width: 60%;
             color: white;
             font-weight: bold;
             font-size: 60px;
@@ -173,6 +181,40 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        #sec2{
+            width: 90%;
+            height: calc(100vh - 100px);
+            display: flex;
+            justify-content: space-between;
+            /* border: 1px solid black; */
+            position: relative;
+            margin: auto;
+            top: 70px;
+            margin-top: 50px;
+            transition: all 1s linear;
+        }
+        #sec2 div:nth-child(1){
+            width: 50%;
+            height: 30%;
+            /* border: 1px solid black; */
+            position: relative;
+            top: 60%;
+            opacity: 0;
+            transform: translate(0, -50%);
+            font-size: 60px;
+            text-align: center;
+            transition: all 0.5s linear;
+        }
+        #sec2 div:nth-child(2){
+            position: relative;
+            width: 50%;
+            height: 100%;
+            opacity: 0;
+            scale: 0;
+            transition: all 1s linear;
+            /* border: 1px solid black; */
         }
         .img1, .img2{
             width: 15%;
@@ -183,20 +225,19 @@
         .img1{
             background-color: wheat;
             position: absolute;
-            z-index: 12;
-            top: 80px;
-            left: 2.8%;
+            z-index: 16;
+            top: 70px;
+            left: 4.5%;
             background-image: url(./woodin/img1.jpg);
             background-position: center;
             background-size: cover;
-            /* display: none; */
         }
         .img2{
             background-color: rgb(218, 241, 248);
             position: absolute;
-            z-index: 12;
-            top: 80px;
-            left: 20%;
+            z-index: 16;
+            top: 70px;
+            left: 24%;
             background-image: url(./woodin/img2.jpg);
             background-position: center;
             background-size: cover;
@@ -332,11 +373,19 @@
             <div class="startBtn"><i class="bi bi-list"></i></div>
         </div>
     </nav>
-    <section id="sec">
+    <section id="sec1">
         <div>
             CREATING HEALING SPACE IS <br>
             WOODIN HAUSS TOP PRIORITY
         </div>
+    </section>
+    <section id="sec2">
+        <div>
+            ECO-FRIEDLY AND <br>
+            HIGH-QUALITY <br>
+            PRODUCTS
+        </div>
+        <div><img width="100%" height="100%" src="http://www.wood.co.kr/data/main/file1_1644378955plisylqeof.jpg" alt=""></div>
     </section>
     <div class="img1 reviewEvent">
         <div class="review">
@@ -370,7 +419,10 @@
         let closeBtn = document.querySelector(".closeBtn");
         let startBtn = document.querySelector(".startBtn");
         let submenu = document.querySelector(".submenu");
-        let sec = document.getElementById("sec");
+        let sec1 = document.getElementById("sec1");
+        let sec2 = document.getElementById("sec2");
+        let sec2Box = document.querySelectorAll("#sec2 div")
+        let navHeight = 130;
 
         escBtns[0].addEventListener("click", () => {
             rvE[0].style.display = "none";
@@ -385,13 +437,44 @@
         })
 
         startBtn.addEventListener("click", () => {
-            sec.style.display = "none";
             submenu.style.height = "100%";
         })
         closeBtn.addEventListener("click", () => {
-            sec.style.display = "block";
             submenu.style.height = "0%";
         })
+        
+        function started() {
+            let sy = window.scrollY;
+            let s1 = sec1.offsetTop;
+            let s2 = sec2.offsetTop;
+
+            if(sy >= (s1 - navHeight) && sy < (s2 - navHeight)){
+                sec1.style.width = "90%";
+                sec1.style.opacity = "1";
+            }
+            else{
+                sec1.style.width = "0";
+                sec1.style.opacity = "0";
+            }
+
+            if(sy >= (s2 - (navHeight + 100))){
+                sec2Box[0].style.top = "50%";
+                sec2Box[0].style.opacity = "1";
+
+                sec2Box[1].style.scale = "1";
+                sec2Box[1].style.opacity = "1";
+            }
+            else{
+                sec2Box[0].style.top = "60%";
+                sec2Box[0].style.opacity = "0";
+
+                sec2Box[1].style.scale = "0";
+                sec2Box[1].style.opacity = "0";
+            }
+        }
+        started();
+
+        window.addEventListener("scroll", started);
     </script>
 </body>
 </html>
