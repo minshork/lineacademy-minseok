@@ -1,0 +1,99 @@
+.submenu{
+    width: 100%;
+    height: 0;
+    background-color: white;
+    position: fixed;
+    z-index: 15;
+    border-top: 1px solid lightgrey;
+    overflow: hidden;
+    display: flex;
+    transition: all 0.5s linear;
+    top: 0;
+}
+.wooHAUS{
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+.wHmenu{
+    /* border: 1px solid white; */
+    width: 50%;
+    position: relative;
+    left: 25%;
+    top: 12%;
+}
+.wHmenu .logo2{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 200px;
+}
+.wHmenu .option2{
+    font-size: 30px;
+    font-weight: normal;
+}
+.wHmenu .option2 div{
+    margin-bottom: 20px;
+}
+.wHmenu .icon2{
+    /* border: 1px solid white; */
+    width: min-content;
+    position: absolute;
+    top: 145%;
+    right: 135%;
+    font-size: 20px;
+}
+.wHmenu .icon2 div{
+    background-color: #333;
+    padding: 3px 8px;
+    margin: 10px 0px;
+    border-radius: 50%;
+}
+.WOODIN{
+    width: 24%;
+    height: 100%;
+    border-right: 1px solid lightgray;
+}
+.WOODIN .wooMenu{
+    /* border: 1px solid black; */
+    width: 50%;
+    position: relative;
+    top: 37%;
+    left: 30%;
+}
+.wooMenu .logo3{
+    font-size: 28px;
+}
+.wooMenu .wooOption{
+    margin-top: 15px;
+    padding-top: 15px;
+    font-size: 12px;
+    border-top: 2px solid gray;
+    width: fit-content;
+}
+.wooMenu .wooOption div{
+    color: gray;
+    margin-bottom: 15px;
+}
+.SUPPORT{
+    width: 26%;
+    height: 100%;
+}
+.SUPPORT .wooMenu{
+    /* border: 1px solid black; */
+    width: 25%;
+    position: relative;
+    top: 37%;
+    left: 30%;
+}
+.closeBtn{
+    width: 70px;
+    height: 65px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    font-size: 35px;
+}
