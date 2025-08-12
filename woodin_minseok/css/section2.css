@@ -1,12 +1,14 @@
 #sec2{
     width: 90%;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 120px);
     display: flex;
     justify-content: space-between;
     /* border: 1px solid black; */
     position: relative;
     margin: auto;
     top: 60px;
+    margin-bottom: 100px;
+    margin-top: 147px;
 }
 #sec2 .sec2Tx{
     width: 50%;
@@ -46,5 +48,24 @@
     margin: auto;
     transform: scale(1.05);
     transition: all 0.2s linear;
+    overflow: hidden;
     /* border: 1px solid black; */
+}
+
+.sec2Img .sec2Subtx{
+    height: 13%;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.6);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    color: white;
+    font-size: 20px;
+    align-items: center;
+}
+
+.sec2Subtx div:nth-child(1){
+    margin: 0 20px;
+    border-right: 1px solid white;
+    padding-right: 20px;
 }

@@ -1,0 +1,12 @@
+#sec5{
+    width: 90%;
+    height: calc(100vh - 100px);
+    border: 1px solid black;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    top: 60px;
+    margin-bottom: 100px;
+    margin-top: 47px;
+}

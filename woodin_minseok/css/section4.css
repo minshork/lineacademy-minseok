@@ -1,0 +1,74 @@
+#sec4{
+    width: 100%;
+    height: 100vh;
+    /* border: 1px solid black; */
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 147px;
+    background-color: black;
+    gap: 40px;
+}
+
+#sec4 .sec4Tx{
+    width: 20%;
+    height: 90%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    /* border: 1px solid white; */
+    gap: 20px;
+}
+    #sec4 .sec4Tx div, span{
+        text-align: end;
+        color: white;
+        transition: all 0.5s linear;
+        opacity: 0;
+    }
+        #sec4 .sec4Tx div:nth-child(1){
+            font-size: 15px;
+        }
+        #sec4 .sec4Tx div:nth-child(2){
+            font-size: 45px;
+            line-height: 1.1;
+            margin-top: 10px;
+        }
+        #sec4 .sec4Tx span{
+            border-top: 2px solid gray;
+            width: 50px;
+            height: 0;
+            margin: 10px 0px;
+        }
+        #sec4 .sec4Tx div:nth-child(4){
+            color: gray;
+        }
+        #sec4 .sec4Tx div:nth-child(4) p:nth-child(1){
+            font-size: 17px;
+        }
+        #sec4 .sec4Tx div:nth-child(4) p:nth-child(2){
+            font-size: 13px;
+        }
+        #sec4 .sec4Tx div:nth-child(5){
+            font-size: 9px;
+            color: darkgray;
+            margin-top: 25px;
+            margin-bottom: 1px;
+        }
+        /* #sec4 .sec4Tx div:nth-child(5):hover{
+            border-bottom: 1px solid white;
+        } */
+#sec4 .sec4Img{
+    width: 70%;
+    height: 90%;
+    margin-top: 60px;
+    background-image: url(http://www.wood.co.kr/data/main/file1_16478436857asmbcylv3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 30px;
+    transition: all 0.5s linear;
+    border-radius: 20px;
+}

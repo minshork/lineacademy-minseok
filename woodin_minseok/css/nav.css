@@ -7,6 +7,7 @@ nav{
     position: fixed;
     z-index: 13;
     background-color: transparent;
+    color: black;
 }
 nav .logo{
     width: 10%;
@@ -37,5 +38,5 @@ nav .icon{
     gap: 25px;
     font-size: 19px;
     cursor: pointer;
-    margin-right: 100px;
+    margin-right: 80px;
 }

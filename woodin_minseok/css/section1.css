@@ -1,17 +1,18 @@
 #sec1{
     width: 90%;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 100px);
     /* border: 1px solid black; */
     position: relative;
     margin: auto;
     display: flex;
     justify-content: center;
     top: 60px;
+    margin-bottom: 100px;
 }
 
-#sec1 .sec1BG{
+#sec1 .sec1Bg{
     width: 0%;
-    height: 90%;
+    height: 100%;
     /* border: 1px solid black; */
     background-image: url(http://www.wood.co.kr//data/main/file1_16450763511qly671qvc.jpg);
     background-position: center;
@@ -25,7 +26,7 @@
     overflow: hidden;
 }
 
-#sec1 .sec1BG div{
+#sec1 .sec1Bg div{
     width: 60%;
     color: white;
     font-weight: bold;

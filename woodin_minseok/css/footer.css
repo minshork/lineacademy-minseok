@@ -1,0 +1,74 @@
+footer{
+    width: 100%;
+    height: 187px;
+    background-color: black;
+    display: flex;
+    color: white;
+    align-items: center;
+    position: relative;
+}
+
+footer .fooLogo{
+    width: 10%;
+    height: 70%;
+    /* border: 1px solid white; */
+    padding: 0px 30px;
+    margin-right: 35px;
+    border-right: 1px solid white;
+}
+.fooLogo div{
+    transform: scale(0.9);
+    /* border: 1px solid white; */
+    text-align: center;
+}
+
+footer .fooTxbox{
+    /* border: 1px solid white; */
+    height: 70%;
+}
+footer .fooTx{
+    font-size: 12px;
+    color: gray;
+}
+
+.fooTx div:nth-child(1){
+    border-right: 1px solid gray;
+    margin-bottom: 3px;
+    padding-right: 7px;
+}
+.fooTx div:nth-child(2){
+    padding-left: 7px;
+}
+.fooTx:nth-child(3){
+    margin-top: 60px;
+}
+
+footer .fooTx{
+    display: flex;
+}
+footer .fooEnd{
+    /* border: 1px solid white; */
+    display: flex;
+    gap: 30px;
+    font-size: 13px;
+    color: gray;
+    position: absolute;
+    right: 5%;
+    top: 20%;
+}
+
+footer .icon2{
+    /* border: 1px solid white; */
+    width: min-content;
+    position: absolute;
+    right: 5%; top: 60%;
+    font-size: 13px;
+    display: flex;
+    gap: 5px;
+}
+footer .icon2 div{
+    background-color: #333;
+    padding: 3px 8px;
+    margin: 10px 0px;
+    border-radius: 50%;
+}
