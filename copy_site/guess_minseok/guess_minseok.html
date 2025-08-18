@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-18</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        body{
+            width: 100vw;
+            /* overflow-x: hidden; */
+        }
+        nav{
+            width: 100%;
+            height: 60px;
+            /* border: 1px solid gray; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+        nav div{
+            font-size: 40px;
+            color: black;
+            font-weight: bold;
+        }
+        section{
+            width: 100%;
+            height: calc(100vh - 60px);
+            /* border: 1px solid black; */
+            position: relative;
+        }
+        section .imgBox{
+            width: 800%;
+            height: 95%;
+            display: flex;
+            transition: all 0.5s linear;
+            transform: translate(-12.5%);
+        }
+        .imgBox img{
+            width: calc(100% / 8);
+            height: 100%;
+            object-fit: cover;
+        }
+        section .btns button{
+            border: none;
+            position: absolute;
+            font-size: 50px;
+            color: gray;
+            background-color: transparent;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+        section .btns button:nth-child(1){
+            top: 50%; left: 5%;
+        }
+        section .btns button:nth-child(2){
+            top: 50%; right: 5%;
+        }
+        section .page{
+            position: absolute;
+            left: 50%; bottom: 10%;
+            transform: translate(-50%, 50%);
+            background-color: darkgrey;
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>Guess</div>
+    </nav>
+    <section>
+        <div class="imgBox" ontransitionend ="fixloop()">
+            <img src="./guessImg/guess6.jpg" alt="img6">
+
+            <img src="./guessImg/guess1.jpg" alt="img1">
+            <img src="./guessImg/guess2.jpg" alt="img2">
+            <img src="./guessImg/guess3.jpg" alt="img3">
+            <img src="./guessImg/guess4.jpg" alt="img4">
+            <img src="./guessImg/guess5.webp" alt="img5">
+            <img src="./guessImg/guess6.jpg" alt="img6">
+
+            <img src="./guessImg/guess1.jpg" alt="img1">
+        </div>
+        <div class="btns">
+            <button onclick="prev()"><i class="bi bi-arrow-left-square-fill"></i></button>
+            <button onclick="next()"><i class="bi bi-arrow-right-square-fill"></i></button>
+        </div>
+        <div class="page">1 / 6</div>
+    </section>
+    <script>
+        let imgBox = document.querySelector(".imgBox");
+        let pageBox = document.querySelector(".page");
+        let total = document.querySelectorAll(".imgBox img").length;
+        let step = 100 / total;
+        let page = 1;
+
+        function mImg(){
+            imgBox.style.transform = `translateX(${-step * page}%)`
+        }
+
+        function plus(){
+            page--;
+            mImg();
+            if(page === 0){
+                return 0;
+            }
+            else{
+                pageBox.innerHTML = `${page} / 6`;
+            }
+        }
+        function minus(){
+            page++;
+            mImg();
+            if(page === 7){
+                return 0;
+            }
+            else{
+                pageBox.innerHTML = `${page} / 6`;
+            }
+        }
+
+        function next(){
+            minus();
+        }
+        function prev(){
+            plus();
+        }
+
+        mImg();
+        function fixloop(){
+            if(page === total -1){
+                imgBox.style.transition = "none";
+                page = 1;
+                mImg();
+                imgBox.offsetWidth;
+                imgBox.style.transition = "all 0.5s linear";
+                pageBox.innerHTML = `${page} / 6`;
+            }else if(page === 0){
+                imgBox.style.transition = "none";
+                page = total - 2;
+                mImg();
+                imgBox.offsetWidth;
+                imgBox.style.transition = "all 0.5s linear";
+                pageBox.innerHTML = `${page} / 6`;
+            }
+        }
+    </script>
+</body>
+</html>

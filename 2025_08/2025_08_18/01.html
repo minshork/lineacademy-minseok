@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-18</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        body{
+            width: 100vw;
+            /* overflow-x: hidden; */
+        }
+        nav{
+            width: 100%;
+            height: 70px;
+            background-color: skyblue;
+        }
+        section{
+            width: 100%;
+            height: calc(100vh - 70px);
+        }
+
+        .inBox{
+            width: 80%;
+            height: 100%;
+            background-color: beige;
+            display: flex;
+            /* justify-content: center;
+            align-items: center; */
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .imgBox{
+            width: 300%;
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s linear;
+        }
+
+        .imgBox img{
+            width: calc(100% / 3);
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <nav>여기는 네비</nav>
+    <section>
+        <div class="inBox">
+            <div class="imgBox" ontransitionend = "fixloop()">
+                <img src="./1.img/beach.jpg" alt="img1">
+                <img src="./1.img/valley01.jpg" alt="img2">
+                <img src="./1.img/valley03.jpg" alt="img2">
+            </div>
+            <div class="btns">
+                <button onclick="prevImg()">◀</button>
+                <button onclick="nextImg()">▶</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        let imgBox = document.querySelector(".imgBox");
+        let index = 0;
+        let totalImg = document.querySelectorAll(".imgBox img").length;
+        let step = 100 / totalImg;
+
+        function nextImg(){
+            index++;
+            if(index >= totalImg){
+                index = 0;
+            }
+            imgBox.style.transform = `translateX(${-step * index}%)`;
+        }
+    </script>
+</body>
+</html>
