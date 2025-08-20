@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-05</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        body{
+            width: 100vw;
+        }
+        header{
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 30px;
+            background-color: lightgreen;
+        }
+        header button{
+            border: 0;
+            padding: 5px;
+            background-color: lightgreen;
+            font-weight: bold;
+        }
+        header button{
+            cursor: pointer;
+        }
+        header img{
+            margin-left: 40px;
+        }
+        header button:nth-of-type(1){
+            margin-left: 10px
+        }
+        #sec{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 100px auto;
+        }
+        .clBox{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 100px;
+        }
+        .clBox img{
+            width: 700px;
+            max-width: 100%;
+        }
+        .clBox div h1{
+            font-size: 40px;
+        }
+        .clBox div p{
+            font-size: 14px;
+            color: rgb(58, 58, 58);
+        }
+        .clBox div p:nth-of-type(1){
+            margin-bottom: 1px;
+            margin-top: 15px;
+        }
+        .clBox div p:nth-of-type(2){
+            margin-bottom: 20px;
+        }
+        .hvBox{
+            display: flex;
+            gap: 10px;
+        }
+        .hvBox div{
+            border-radius: 5px;
+            padding: 10px 25px;
+            font-size: 11px;
+            transition: all 0.3s linear;
+        }
+        .hvBox div:nth-child(1){
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+        }
+        .hvBox div:nth-child(2){
+            border: 1px solid black;
+        }
+        .hvBox div:hover{
+            color: white;
+            background-color: lightgreen;
+            border: 1px solid lightgreen;
+        }
+        .immge{
+            width: 500px;
+            height: 500px;
+        }
+        .onOff{
+            display: none;
+        }
+        #right{
+            border: 0px;
+            font-size: 100px;
+            margin-left: 100px;
+            background-color: white;
+        }
+        #right:hover{
+            cursor: pointer;
+        }
+        .subSec{
+            width: 100%;
+            height: 300px;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+            padding-left: 40px;
+            background-color: rgb(195, 248, 195);
+        }
+        .productBox{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* border: 1px solid black; */
+        }
+        .productBox div:nth-child(1){
+            margin-bottom: 25px;
+        }
+        .submenuBox{
+            display: flex;
+            /* border: 1px solid black; */
+            width: 50%;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .iconBox{
+            width: 45%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            /* border: 1px solid black; */
+        }
+        .ic{
+            font-size: 40px;
+            margin-right: 10px;
+        }
+        .showHide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://naver.worksmobile.com/wp-content/uploads/2025/03/main_logo.svg" alt="">
+        <button class="btn" onclick="show('product')">제품</button>
+        <button class="btn" onclick="show('solution')">솔루션</button>
+        <button class="btn" onclick="show('')">이용 요금</button>
+        <button class="btn" onclick="show('')">도입사례</button>
+    </header>
+    <section class="subSec showHide" id="product">
+        <div class="submenu">
+            <div class="productBox">
+                <div>제품 안내</div>
+                <div class="submenuBox">
+                    <div class="iconBox">
+                        <i class="bi bi-wechat ic"></i>
+                        <div class="pBox">
+                            <p>네이버웍스 코어</p>
+                            <p>효율적인 업무를 위한 올인원 협업 솔루션</p>
+                        </div>
+                    </div>
+                    <div class="iconBox">
+                        <i class="bi bi-hdd-rack ic"></i>
+                        <div>
+                            <p>드라이브</p>
+                            <p>파일 공유와 공동 편집을 지원하는 업무용 스토리지</p>
+                        </div>
+                    </div>
+                    <div class="iconBox">
+                        <i class="bi bi-journals ic"></i>
+                        <div>
+                            <p>클로바 노트</p>
+                            <p>모든 회의를 기록, 요약하는 업무용 AI 회의록</p>
+                        </div>
+                    </div>
+                    <div class="iconBox">
+                        <i class="bi bi-buildings-fill ic"></i>
+                        <div>
+                            <p>경영지원</p>
+                            <p>결재 기반 업무 체계를 구성하는 HR 솔루션</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="subSec showHide" id="solution">
+
+    </section>
+    <section id="sec">
+        <div id="img1" class="clBox dis">
+            <div>
+                <h1>일이 쉬워진다</h1>
+                <h1>네이버웍스</h1>
+                <p>네이버웍스는 네이버의 편리함과 기술, 일하는 방식을 담은 통합 업무 플랫폼입니다.</p>
+                <p>소통과 협업, 경영지원을 하나의 플랫폼에서 활용하여 생산성을 높여보세요.</p>
+                <div class="hvBox">
+                    <div>무료로 시작하기</div>
+                    <div>도입 문의하기</div>
+                </div>
+            </div>
+            <img src="./1.png" alt="" class="immge">
+        </div>
+        <div id="img2" class="clBox dis onOff">
+            <div>
+                <h1>도입부터 기술지원까지</h1>
+                <h1>파트너 찾기</h1>
+                <p>네이버웍스는 도입 컨설팅부터 교육, 시스템 연동 기술 지원 등을 지원하는</p>
+                <p>파트너 프로그램을 운영하고 있습니다. 파트너사와 함께 네이버웍스를 시작해보세요.</p>
+                <div class="hvBox">
+                    <div>프로그램 보기</div>
+                    <div>파트너 찾기</div>
+                </div>
+            </div>
+            <img src="./2.png" alt="" class="immge">
+        </div>
+        <div id="img3" class="clBox dis onOff">
+            <div>
+                <h1>고비즈 웹메일 이용 고객</h1>
+                <h1>3개월 무료 혜택</h1>
+                <p>고비즈 웹메일 이용 고객분들을 위해 네이버웍스가 드리는 혜택</p>
+                <p>네이버웍스로 간편하게 이전하는 방법과 3개월 무료 이용 요금 혜택을 소개합니다.</p>
+                <div class="hvBox">
+                    <div>자세히 보기</div>
+                </div>
+            </div>
+            <img src="./3.png" alt="" class="immge">
+        </div>
+        <div>
+            <video autoplay muted loop id="video1" class="dis onOff">
+                <source src="./1.works.img/main_video.mp4">
+            </video>
+        </div>
+        <button id="right"><i class="bi bi-arrow-right-square"></i></button>
+    </section>
+    <script>
+        let tg = false;
+        function show(id){
+            let btns = document.querySelectorAll(".btn");
+            let dis = document.querySelectorAll(".dis");
+            let right = document.getElementById("right");
+            let imgArr = ["img1", "img2", "img3", "video1"];
+
+            let product = document.getElementById("product");
+            if(tg === false){
+                product.classList.toggle("showHide");
+            }
+
+            /*
+            right.onclick = function(){
+                dis.forEach((display, i) => {
+                    if(display.id === img[i]){
+
+                    }
+                })
+            }
+            */
+            
+
+            /* 
+            dis.forEach(function(item){
+                item.classList.add("onOff");
+                if(id == item.id){
+                    item.classList.remove("onOff");
+                    if(id == "video1"){
+                        let sec = document.getElementById("sec");
+                        sec.style.margin = 0;
+                        sec.style.width = "80%";
+                    }
+                    else{
+                        let sec = document.getElementById("sec");
+                        sec.style.margin = "100px auto"
+                        sec.style.width = "80%";
+                    }
+                }
+            })
+            */
+        }
+    </script>
+</body>
+</html>
