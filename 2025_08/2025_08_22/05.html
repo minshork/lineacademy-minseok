@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-22</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+    <script>
+        let today = new Date();
+        let yo = today.getDay();
+        let day1 = "";
+
+        switch(yo) {
+            case 0:
+                day1 = "일요일";
+                break;
+            case 1:
+                day1 = "월요일";
+                break;
+            case 2:
+                day1 = "화요일";
+                break;
+            case 3:
+                day1 = "수요일";
+                break;
+            case 4:
+                day1 = "목요일";
+                break;
+            case 5:
+                day1 = "금요일";
+                break;
+            case 6:
+                day1 = "토요일";
+                break;
+        }
+        document.write(today + "<br>");
+        document.write(`년도 :  ${today.getFullYear()} <br>`);
+        document.write(`월 :  ${today.getMonth() + 1} <br>`);
+        document.write(`일 :  ${today.getDate()} <br>`);
+        document.write(`요일 :  ${day1} <br>`);
+        document.write(`시간 : ${today.getTime()} <br>`);
+        document.write(`시간 : ${today.getHours()} <br>`);
+        document.write(`분 : ${today.getMinutes()} <br>`);
+        document.write(`초 : ${today.getSeconds()} <br>`);
+        
+    </script>
+</body>
+</html>

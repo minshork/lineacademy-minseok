@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-22</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        body{
+            width: 100vw;
+        }
+        .clock1{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            border: 5px solid rgb(57, 138, 57);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(225, 248, 225);
+            font-weight: bold;
+        }
+        .time1{
+            font-size: 35px;
+        }
+        .date1{
+            font-size: 20px;
+            font-weight: normal;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock1">
+        <div class="time1">am 00 : 00 : 00</div>
+        <div class="date1">0000년 0월 0일 요일</div>
+    </div>
+    <script>
+        let td = new Date();
+        let day1 = td.getDay();
+        let dayStr = "";
+        let amPm = "am";
+        let date1 = document.querySelector(".date1");
+        let time1 = document.querySelector(".time1");
+
+        switch(day1){
+            case 0:
+                dayStr = "일요일";
+                break;
+            case 1:
+                dayStr = "월요일";
+                break;
+            case 2:
+                dayStr = "화요일";
+                break;
+            case 3:
+                dayStr = "수요일";
+                break;
+            case 4:
+                dayStr = "목요일";
+                break;
+            case 5:
+                dayStr = "금요일";
+                break;
+            case 6:
+                dayStr = "토요일";
+                break;
+        }
+
+        setInterval(() => {
+            let td = new Date();
+            let second1 = td.getSeconds();
+            let min1 = td.getMinutes();
+            let hours1 = td.getHours();
+
+            if(min1 < 10){
+                min1 = `0${min1}`;
+            }
+            else{
+                min1 = min1;
+            }
+
+            if(second1 < 10){
+                second1 = `0${second1}`;
+            }
+            else{
+                second1 = second1;
+            }
+
+            if(0 <= hours1 && hours1 < 12){
+                amPm = "AM";
+                hours1 = hours1;
+                if(hours1 < 10){
+                    hours1 = `0${hours1}`;
+                }
+                else{
+                    hours1 = hours1;
+                }
+            }
+            else{
+                amPm = "PM";
+                hours1 = hours1 % 12;
+                if(hours1 < 10){
+                    hours1 = `0${hours1}`;
+                }
+                
+                else{
+                    hours1 = hours1;
+                }
+            }
+
+            time1.innerHTML = `${amPm} ${hours1} : ${min1} : ${second1}`
+        }, 1000);
+
+        date1.innerHTML = `${td.getFullYear()}년 ${td.getMonth() + 1}월 ${td.getDate()}일 ${dayStr}`;
+    </script>
+</body>
+</html>
