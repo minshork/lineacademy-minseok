@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-25</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        *{ padding: 0; margin: 0; }
+        body{ width: 100vw; }
+
+        .outBox{
+            border: 2px solid black;
+            width: 700px;
+            height: 400px;
+            position: relative;
+            margin: 50px auto 0px auto;
+            background-color: whitesmoke;
+        }
+        .ball{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s linear;
+        }
+        #btn{
+            display: flex;
+            margin: 20px auto 0px auto;
+            width: 100px;
+            justify-content: center;
+            padding: 10px 0px;
+            border: 2px solid black;
+            background-color: lightgray;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #btn:hover{
+            background-color: rgb(169, 169, 169);
+        }
+    </style>
+</head>
+<body>
+    <div class="outBox">
+        <div class="ball"></div>
+    </div>
+    <button id="btn" onclick="stop()">일시정지</button>
+    <script>
+        let ball = document.querySelector(".ball");
+        let oneTime = false;
+        let stopAndStart = false;
+
+        function ranColor(){
+            let r = Math.floor(Math.random() * 255);
+            let g = Math.floor(Math.random() * 255);
+            let b = Math.floor(Math.random() * 255);
+
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        function ranXY(){
+            let X = Math.floor((Math.random() * 590) + 10);
+            let Y = Math.floor((Math.random() * 290) + 10);
+            
+            return `translate(${X}px, ${Y}px)`;
+        }
+
+        function ranBall(){
+            if(oneTime === false){
+                ball.style.top = "0";
+                ball.style.left = "0";
+                oneTime = true;
+            }
+
+            ball.style.backgroundColor = ranColor();
+            ball.style.transform = ranXY();
+        }
+
+        function stop(){
+            let btn = document.getElementById("btn");   
+            
+            if(stopAndStart === false){
+                btn.innerText = "다시시작";
+                clearInterval(ranBall_start);
+                ranBall_start = null;
+                stopAndStart = true;
+            }
+            else{
+                btn.innerText = "일시정지"
+                if(!ranBall_start){
+                    ranBall_start = setInterval(ranBall, 1500);
+                }
+                stopAndStart = false;
+            }
+        }
+
+        let ranBall_start = setInterval(ranBall, 1500);
+
+        ball.addEventListener(("mouseenter"), () => {
+            clearInterval(ranBall_start);
+            ranBall_start = null;
+        })
+        ball.addEventListener("mouseleave", () => {
+            if(!ranBall_start && stopAndStart === false){
+                ranBall_start = setInterval(ranBall, 1500);
+            }
+        })
+    </script>
+</body>
+</html>
