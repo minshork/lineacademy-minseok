@@ -1,0 +1,35 @@
+nav{
+    width: 65%;
+    display: flex;
+    height: 80px;
+    /* background-color: wheat; */
+    margin: auto;
+}
+.logoBox{
+    width: 10%;
+    /* background-color: white; */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.menuBox{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+.menuBox div{
+    font-size: 14px;
+    cursor: pointer;
+}
+.iconBox{
+    width: 10%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 18px;
+}
+.iconBox div{ cursor: pointer; }
+.iconBox div:nth-child(1){ font-size: 20px; }
+.iconBox div:nth-child(2){ font-size: 35px; }

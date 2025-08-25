@@ -3,134 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2025-08-25</title>
+    <title>copy_이롬그룹</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/nav.css">
     <style>
         *{ padding: 0; margin: 0; }
         body{ width: 100vw; }
 
-        .outBox{
-            width: 800px;
-            height: 500px;
-            background-color: whitesmoke;
-            border: 2px solid black;
-            position: absolute;
-            left: 50%; top: 50%;
-            transform: translate(-50%, -50%);
+        /* outBox */
+        section{
+            width: 100%;
+            height: 600px;
+            position: relative;
+        }
+        .imgBox{
+            width: 700%;
+            height: 100%;
             display: flex;
-            justify-content: space-evenly;
-            align-items: center;
+            position: absolute;
+            top: 0; left: 0;
+            transform: translateX(-14.28%);
+        }
+        .banner{
+            width: 100%;
+            height: 100%;
+            background-position: center;
+        }
+
+        /* PageControl */
+        .pageControl{
+            width: 200px;
+            height: 60px;
+            position: absolute;
+            bottom: 0;
+            right: 20%;
+            background-color: white;
+            display: flex;
             flex-direction: column;
         }
-        .title{
-            width: 50%;
-            height: 60px;
-            text-align: center;
-            line-height: 60px;
-            background-color: lightgreen;
-            position: absolute;
-            top: 20px;
+
+        .pageBox{
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            font-size: 10px;
+            margin: auto;
+            /* background-color: aqua; */
         }
-        .outBox div:nth-child(2){
-            width: 50%;
-            text-align: center;
-            margin-top: 40px;
-        }
-        .inputBox{
-            position: absolute;
-            top: 110px;
-            z-index: 100;
-        }
-        .answer{
-            width: 300px;
-            height: 100px;
-            border: 1px solid black;
-            text-align: center;
-            line-height: 100px;
-        }
-        input{
-            width: 200px;
-            height: 30px;
-        }
-        #btn1, #btn2{
-            width: 60px;
-            height: 30px;
-            font-weight: bold;
-            border: 2px solid black;
-            cursor: pointer;
-        }
-        #btn1{
-            background-color: limegreen;
-        }
-        #btn2{
-            background-color: lightpink;
-        }
-        #btn1:hover{
-            background-color: rgb(7, 163, 7);
-        }
-        #btn2:hover{
-            background-color: rgb(246, 126, 144);
-        }
+            .pageBox .line{
+                height: 8px;
+                border: 1px solid lightgrey;
+                margin-top: 4px;
+            }
+            .pageBox .lastPage{
+                color: rgb(157, 157, 157);
+            }
+            .pageBox .prevPage, .nextPage{
+                cursor: pointer;
+            }
+            .pageBar{
+                width: 65%;
+                border: 2px solid lightgray;
+                margin: 0px auto 10px auto;
+                position: relative;
+            }
+            .pageBar .cur_pageBar{
+                width: 20%;
+                height: 100%;
+                position: absolute;
+                border: 2px solid black;
+                top: -2px; left: -2px;
+            }
+
+        .img1{ background-image: url(./img/banner1.png); }
+        .img2{ background-image: url(./img/banner2.png); }
+        .img3{ background-image: url(./img/banner3.png); }
+        .img4{ background-image: url(./img/banner4.png); }
+        .img5{ background-image: url(./img/banner5.png); }
     </style>
 </head>
 <body>
-    <div class="outBox">
-        <div class="title">숫자 맞추기 게임!</div>
-        <div>1 ~ 100사이의 숫자를 입력해주세요</div>
-        <div class="inputBox">
-            <input id="input" type="number" placeholder="숫자를 입력하세요">
-            <button id="btn1">입력</button>
-            <button id="btn2">재도전</button>
+    <nav>
+        <div class="logoBox"><img width="100%" src="./img/logo.png" alt="logo"></div>
+        <div class="menuBox">
+            <div>이롬그룹</div>
+            <div>사업분야</div>
+            <div>이롬</div>
+            <div>이롬헬스케어</div>
+            <div>뉴스&홍보</div>
+            <div>이롬人</div>
         </div>
-        <div class="answer"><br>남은 기회: 6</div>
-    </div>
+        <div class="iconBox">
+            <div><i class="bi bi-globe-central-south-asia"></i></div>
+            <div><i class="bi bi-list"></i></div>
+        </div>
+    </nav>
+    <section>
+        <div class="imgBox">
+            <div class="img5 banner"></div>
+
+            <div class="img1 banner"></div>
+            <div class="img2 banner"></div>
+            <div class="img3 banner"></div>
+            <div class="img4 banner"></div>
+            <div class="img5 banner"></div>
+
+            <div class="img1 banner"></div>
+        </div>
+        <div class="pageControl">
+            <div class="pageBox">
+                <div class="prevPage"><img src="./img/banner_prev.png" alt="prev"></div>
+                <div class="curPage">01</div>
+                <div class="line"></div>
+                <div class="lastPage">05</div>
+                <div class="nextPage"><img src="./img/banner_next.png" alt="next"></div>
+            </div>
+            <div class="pageBar">
+                <div class="cur_pageBar"></div>
+            </div>
+        </div>
+    </section>
     <script>
-        let guessNumber = {
-            answer: document.querySelector(".answer"),
-            num: Math.floor((Math.random() * 101) + 1),
-            cnt: 6,
-
-            numCheck(){
-                this.cnt--;
-                let inputNum = Number(document.getElementById("input").value);
-                if(inputNum === this.num){
-                    this.answer.innerText = `정답입니다!!`;
-                }
-                else if(inputNum < 1 || inputNum > 100){
-                    this.cnt++;
-                    this.answer.innerHTML = `1~100사이의 숫자를 입력해주세요!<br>남은 기회: ${this.cnt}`;
-                }
-                else if(inputNum > this.num){
-                    this.answer.innerHTML = `${inputNum}의 숫자보다는 작습니다 Down!<br>남은 기회: ${this.cnt}`;
-                }
-                else if(inputNum < this.num){
-                    this.answer.innerHTML = `${inputNum}의 숫자보다는 큽니다 Up!<br>남은 기회: ${this.cnt}`;
-                }
-                
-            },
-
-            reset(){
-                this.num = Math.floor((Math.random() * 101) + 1);
-                this.cnt = 6;
-                this.answer.innerHTML = `<br> 남은 기회: ${this.cnt}`;
-            },
-
-            end(){
-                this.answer.innerHTML = "정답기회를 다 소진하였습니다 ㅠㅠ";
-            }
-        }
-
-        document.getElementById("btn1").addEventListener("click", () => {
-            if(guessNumber.cnt > 0){
-                guessNumber.numCheck();
-            }
-            else{
-                guessNumber.end();
-            }
-        })
-        document.getElementById("btn2").addEventListener("click", () => {
-            guessNumber.reset();
-        })
+        
     </script>
 </body>
 </html>
