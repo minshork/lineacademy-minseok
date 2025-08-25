@@ -1,2 +1,1 @@
-# lineacademy-minseok# GuessNumber
-# GuessNumber
+# lineacademy-minseok
