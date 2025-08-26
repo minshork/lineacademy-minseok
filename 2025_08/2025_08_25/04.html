@@ -82,19 +82,26 @@
             <button id="btn1">입력</button>
             <button id="btn2">재도전</button>
         </div>
-        <div class="answer"><br>남은 기회: 6</div>
+        <div class="answer"><br>남은 기회: 10</div>
     </div>
     <script>
         let guessNumber = {
             answer: document.querySelector(".answer"),
-            num: Math.floor((Math.random() * 101) + 1),
-            cnt: 6,
+            num: Math.floor((Math.random() * 100) + 1),
+            cnt: 10,
+            isGameOver: false,
 
             numCheck(){
-                this.cnt--;
+                if(this.isGameOver) return;
+
                 let inputNum = Number(document.getElementById("input").value);
+                if (!inputNum) return;
+
+                this.cnt--;
+
                 if(inputNum === this.num){
                     this.answer.innerText = `정답입니다!!`;
+                    this.isGameOver = true;
                 }
                 else if(inputNum < 1 || inputNum > 100){
                     this.cnt++;
@@ -107,21 +114,27 @@
                     this.answer.innerHTML = `${inputNum}의 숫자보다는 큽니다 Up!<br>남은 기회: ${this.cnt}`;
                 }
                 
+                if(this.cnt <= 0 && !this.isGameOver){
+                    this.end();
+                }
             },
 
             reset(){
-                this.num = Math.floor((Math.random() * 101) + 1);
-                this.cnt = 6;
+                this.num = Math.floor((Math.random() * 100) + 1);
+                this.cnt = 10;
+                this.isGameOver = false;
                 this.answer.innerHTML = `<br> 남은 기회: ${this.cnt}`;
+                document.getElementById("input").value = "";
             },
 
             end(){
+                this.isGameOver = true;
                 this.answer.innerHTML = "정답기회를 다 소진하였습니다 ㅠㅠ";
             }
         }
 
         document.getElementById("btn1").addEventListener("click", () => {
-            if(guessNumber.cnt > 0){
+            if(guessNumber.cnt > 0 && !guessNumber.isGameOver){
                 guessNumber.numCheck();
             }
             else{

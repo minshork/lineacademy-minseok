@@ -17,19 +17,56 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 30px;
 }
-.menuBox div{
-    font-size: 14px;
-    cursor: pointer;
-}
-.iconBox{
+    .mbSub{
+        width: 10%;
+        font-size: 14px;
+        cursor: pointer;
+        position: relative;
+        /* border: 1px solid black; */
+        text-align: center;
+    }
+    .menuBox .mbSub ul{
+        width: calc(100% + 30px);
+        position: absolute;
+        max-height: 0;
+        z-index: 11;
+        text-align: center;
+        top: 150%; left: 50%;
+        /* border: 1px solid transparent; */
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+        background-color: whitesmoke;
+        font-size: 12px;
+
+        transition: all 0.3s linear;
+        overflow: hidden;
+    }
+    .mbSub ul li:nth-child(1){
+        padding-top: 10px;
+    }
+    .mbSub ul li:last-child{
+        padding-bottom: 10px;
+    }
+    .mbSub ul li{
+        padding: 0px 10px;
+    }
+    .mbSub:hover > ul{
+        max-height: 500px;
+        border: 1px solid black;
+    }
+
+nav .iconBox{
     width: 10%;
     display: flex;
     justify-content: end;
     align-items: center;
     gap: 18px;
 }
-.iconBox div{ cursor: pointer; }
-.iconBox div:nth-child(1){ font-size: 20px; }
-.iconBox div:nth-child(2){ font-size: 35px; }
+nav .iconBox div{ cursor: pointer; }
+nav .iconBox div:nth-child(1){ font-size: 20px; }
+nav .iconBox div:nth-child(2){ font-size: 35px; }

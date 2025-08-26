@@ -12,7 +12,19 @@
 </head>
 <body>
     <script>
-        
+    // 문제 5번
+    const students = [
+        { name: "Alice Lee", score: 85 },
+        { name: "Bob Kim", score: 72 },
+        { name: "Charlie Choi", score: 91 },
+        { name: "David Park", score: 60 },
+        { name: "Evelyn Jung", score: 77 },
+        { name: "Frank Na", score: 93 },
+    ];
+    
+
+    let over80 = students.filter(stu => stu.score >= 80);
+    console.log(over80);
     </script>
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-26</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        *{ padding: 0; margin: 0; }
+        body{ width: 100vw; }
+    </style>
+</head>
+<body>
+    <h1>문자열 메서드 기초</h1>
+    <div>문자열을 입력하고 버튼을 눌러보세요!</div>
+    <input id="inValue" type="text" placeholder="아무 문자열을 입력해주세요.">
+    <button onclick="hiMethod.len()">length</button>
+    <button onclick="hiMethod.tri()">trim()</button>
+    <button onclick="hiMethod.toggleCase()">대소문자 변환</button>
+    <button onclick="hiMethod.javaCheck()">includes("Java")</button>
+    <button onclick="hiMethod.worldIndex()">indexOf("World")</button>
+    <button onclick="hiMethod.textSlice()">slice(6, 16)</button>
+    <button onclick="hiMethod.replaceJS()">replace("JavaScript","JS")</button>
+    <button onclick="hiMethod.spaceSplit()">split(" ")</button>
+    <div id="resultBox"></div>
+    <script>
+        let hiMethod = {
+            result: document.getElementById("resultBox"),
+
+            len(){
+                inValue = document.getElementById("inValue").value;
+
+                this.result.innerHTML = `length: ${inValue.length}`
+            },
+
+            tri(){
+                inValue = document.getElementById("inValue").value.trim();
+
+                this.result.innerHTML = `trim(): ${inValue}`;
+            },
+
+            toggleCase(){
+                inValue = document.getElementById("inValue").value;
+
+            },
+
+            javaCheck(){
+                inValue = document.getElementById("inValue").value;
+
+                this.result.innerText = `include(Java): ${inValue.includes("Java")}`;
+            },
+
+            worldIndex(){
+                inValue = document.getElementById("inValue").value;
+
+                this.result.innerText = ``
+            },
+
+            textSlice(){
+                inValue = document.getElementById("inValue").value;
+
+            },
+
+            replaceJS(){
+                inValue = document.getElementById("inValue").value;
+
+            },
+
+            spaceSplit(){
+                inValue = document.getElementById("inValue").value;
+
+            }
+        }
+    </script>
+</body>
+</html>
