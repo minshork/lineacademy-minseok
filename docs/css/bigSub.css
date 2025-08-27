@@ -1,0 +1,17 @@
+.bigSub{
+    width: 100%;
+    height: 100%;
+    background-color: #159970;
+    position: fixed;
+    z-index: 99;
+    /* display: none; */
+}
+.bigSub nav .navBox{
+    display: flex;
+}
+.bigEsc{
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}

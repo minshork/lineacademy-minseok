@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-27</title>
+</head>
+<body>
+    <script>
+        // map
+        
+        // let arr = [1, 2, 3, 4, 5];
+        // let arr2 = arr.map(item => item * 2);
+        // console.log(arr2);
+
+        // let user = [
+        //     {name: 'hong', age: 20},
+        //     {name: 'LEE', age: 21},
+        //     {name: 'kim', age: 22}
+        // ];
+        // let minusAge = user.map(item => item.age - 1);
+        // console.log(minusAge);
+
+        // -----------------------------------------------------------------------------------
+
+        // Date
+        
+        // let today = new Date("2010-01-01T10:30:30")
+        // padStart(원하는 자릿수, 앞에 붙일 문자 or 숫자)
+        // padStart(2, '0'); // 강제로 2자리수로 고정하는데 만약 1자리수면 앞에 '0'이 붙음
+
+        // -----------------------------------------------------------------------------------
+
+        // 정규식
+        
+        // let txt = "hello world";
+        // let txt2 = "happy day";
+
+        // console.log(/^hello/.test(txt)); // true((hello로 시작))
+        // console.log(/^hello/.test(txt2)); // false((hello로 시작))
+
+        // console.log(/day$/.test(txt2)); // true((day로 끝남))
+
+        // console.log(/h.t/.test("h t")); // true((h로 시작해서 아무 문자열 뒤에 t로 끝남 총 3글자))
+        // console.log(/h.t/.test("ht")); // false((h로 시작해서 아무 문자열 뒤에 t로 끝남 총 3글자))
+
+        // console.log(/h+t/.test("hhhhhhht")); // true((h문자열이 한번이상 반복됨))
+        // console.log(/h+t/.test("ht")); // true((h문자열이 한번이상 반복됨))
+
+        // console.log(/h?/.test("tt")); // true((h가 0또는 1번))
+
+        // console.log(/h*t/.test("ht")); // true((0번부터 그 이상까지 반복여부 표현))
+        // console.log(/h*t/.test("hhhht")); // true((0번부터 그 이상까지 반복여부 표현))
+
+        // console.log(/dog | cat/.test("i like dog")); // true((dog or cat이라는 문자열이 있는가?))
+        // console.log(/dog | cat/.test("i like god")); // true((dog or cat이라는 문자열이 있는가?))
+
+        // let txt3 = "abc123";
+
+        // console.log(/(abc)+/.test(txt3)); // true((abc가 1번이상 반복))
+        // console.log(/(ab)+/.test(txt3)); // true((ab가 1번이상 반복))
+        // console.log(/(abcd)+/.test(txt3)); // false((abcd가 1번이상 반복))
+
+        // let txt4 = "cat bat mat fat";
+        // let rel = txt4.match(/[bf]at/g); // ('b' or 'f'이고 뒤에 문자열이 at인 문자열을 가져옴) -> bat, fat
+        // let rel2 = txt4.match(/[^bf]at/g); // ('b' or 'f'가 아니고 뒤에 문자열이 at인 문자열을 가져옴) -> cat, mat
+        // console.log(rel);
+        // console.log(rel2);
+
+        // /[A-Za-z0-9]/ A~Z까지, a-z까지, 0~9까지 영어+숫자 입력
+
+        // let txt5 = "happy      day";
+        // console.log(txt5.match(/\s+/g)); // (공백만 표시(공백의 크기))
+        // console.log(txt5.match(/\S+/g)); // (공백을 제거한 나머지) -> "happy", "day"
+
+        // let txt6 = "age is 20 and code is a12";
+        // console.log(txt6.match(/\d+/g)); // 숫자만 표시 -> 20, 12
+        // console.log(txt6.match(/\D+/g)); // 숫자를 제거한 나머지 -> "age is ", " and code is a";
+
+        // let txt7 = "at cat category";
+        // console.log(txt7.match(/\bat/g)); // at라는 문자 사이의 공백이 있는것만 표시 -> "at" 
+        // // 통상적으로 맨 앞에있는 "at"라는 문자열을 찾을 때 사용함 (/at\b/ 제일 끝에있는 "at"를 찾을 때)
+
+        // console.log(txt7.match(/\Bat/g)); // at라는 문자 사이의 공백이 없는것만 표시 -> "at", "at"
+
+        // let txt8 = "abc_123 !@#";
+        // console.log(txt8.match(/\w+/g)); // "abc_123"이라는 문자열이 나오고 영어 + 숫자 + "_"를 포함한 단어가 출력됨
+        // console.log(txt8.match(/\W+/g)); // " !@#"띄어쓰기를 포함한 단어가 아닌 문자열이 출력됨
+
+        // let txt9 = "helloa";
+        // console.log((/hello(?=\d)/).test(txt9)); // false -> "hello"뒤에 숫자가 있는가?
+        // (?=패턴) -> 이런식으로 사용됨
+
+        // let txt10 = "hello123";
+        // console.log((/hello(?=\d)/).test(txt10)); // true -> "hello"뒤에 숫자가 있는가?
+
+    </script>
+</body>
+</html>
