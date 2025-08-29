@@ -40,7 +40,8 @@ nav{
         flex-direction: column;
         gap: 15px;
         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-        background-color: whitesmoke;
+        background-color: rgb(240, 239, 237);
+        border-radius: 10px;
         font-size: 12px;
 
         transition: all 0.3s linear;
@@ -57,7 +58,6 @@ nav{
     }
     .mbSub:hover > ul{
         max-height: 500px;
-        border: 1px solid black;
     }
 
 nav .iconBox{

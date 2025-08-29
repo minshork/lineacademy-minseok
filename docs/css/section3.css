@@ -3,38 +3,103 @@
     height: 840px;
     background-color: #004f4a;
     color: white;
-    margin-bottom: 100px;
     display: flex;
+    position: relative;
 }
+    /* 왼쪽 글짜 */
     #sec3 > div:nth-child(1){
         width: 40%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: end;
         
-        border: 1px solid black;
-    }
-    #sec3 > div:nth-child(2){
-        width: 60%;
+        /* border: 1px solid black; */
     }
 
     #sec3 > div:nth-child(1) > div:nth-child(1){
-        width: 50%;
-        color: gray;
-        font-size: 40px;
+        width: 45%;
+        color: lightgrey;
+        font-size: 30px;
         font-weight: bold;
+        position: relative;
+        z-index: 1  ;
+        
+        /* border: 1px solid black; */
     }
     #sec3 > div:nth-child(1) > div:nth-child(2){
-        width: 50%;
+        width: 45%;
         color: whitesmoke;
-        font-size: 55px;
+        font-size: 45px;
         font-weight: bold;
         margin-top: 40px;
         margin-bottom: 170px;
         text-align: start;
     }
     #sec3 > div:nth-child(1) > div:nth-child(3){
-        width: 50%;
+        margin-top: 100px;
+        width: 45%;
+        font-size: 10px;
+        cursor: pointer;
+    }
+    #sec3 > div:nth-child(1) > div:nth-child(3) > span{
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 11px;
+        width: 25px;
+        height: 25px;
+        color: black;
+        background-color: white;
+        line-height: 25px;
+        text-align: center;
+        border-radius: 50%;
     }
 
+    /* 오른쪽 글자 */
+    #sec3 > div:nth-child(2){
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding-left: 10%;
+
+        /* border: 1px solid black; */
+    }
+    #sec3 > div:nth-child(2) > div{
+        width: 70%;
+        padding: 30px 17px;
+        
+        /* border: 1px solid black; */
+    }
+        #sec3 > div:nth-child(2) > div > div:first-child{
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+        #sec3 > div:nth-child(2) > div > div:last-child{
+            font-size: 13px;
+            font-weight: bold;
+            color: rgb(189, 189, 189);
+        }
+        #sec3 > div:nth-child(2) > div:nth-child(1){
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+        }
+        #sec3 > div:nth-child(2) > div:nth-child(2){
+            border-bottom: 1px solid white;
+        }
+        #sec3 > div:nth-child(2) > div:nth-child(3){
+            border-bottom: 1px solid white;
+        }
+
+    /* 초록 공 */
+    #sec3 .cir{
+        background-color: rgb(129, 180, 53);
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        position: absolute;
+        top: 20.5%; left: 18.2%;
+        z-index: 0;
+    }

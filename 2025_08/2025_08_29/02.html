@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-29</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>자동 광고 배너</h1>
+    <button onclick="srt()">광고 시작</button>
+    <button onclick="cls();">광고 중지</button>
+    <script>
+        let five_sec;
+        function srt(){
+            let cnt = 0;
+            alert("5초마다 광고창이 생성됩니다");
+            five_sec = setInterval(() => {
+                window.open("https://www.google.com", "_blank", "width=300, height=300, top=200, left=200");
+                cnt++;
+                if(cnt >= 5) clearInterval(five_sec);
+            }, 5000)
+        }
+        function cls(){
+            alert("광고창이 종료되었습니다.");
+            clearInterval(five_sec);
+        }
+    </script>
+</body>
+</html>

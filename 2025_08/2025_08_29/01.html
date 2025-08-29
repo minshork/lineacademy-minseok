@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-08-29</title>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+        function ex01(){
+            let child = window.open("https://www.naver.com", "_blank", "toolbar = yes, scrollbar = yes, resizeable = yes, top=200, left=200, width=500, ");
+            if(child) child.focus();
+        }
+        // ex01();
+
+        function ex02(){
+            setTimeout(() => { window.location.href="https://www.naver.com"; } , 3000);
+        }
+        // ex02();
+
+        function ex03(){
+            history.back();
+        }
+        // ex03();
+
+        function ex04(){
+            setTimeout(() => { window.close(); }, 2000);
+        }
+        // ex04();
+
+        function ex05(){
+            alert("error!!");
+        }
+        // ex05();
+
+        function ex06(){
+            let age = prompt("당신의 나이는?", "20");
+            alert(`당신의 나이는 : ${age}`);
+        }
+        // ex06();
+
+        function ex07(){
+            // confirm === prompt처럼 값을 넣어줄 수 있는데 확인/취소 버튼 2개만 있음(true or false);
+            let res = confirm("정말 삭제하시겠습니까?");
+            if(res) alert("삭제하였습니다.");
+            else alert("취소하셨습니다.");
+        }
+        // ex07();
+
+        function ex08(){
+            // 로컬 스토리지에 저장(쿠키x)
+            window.localStorage.setItem("user", "hong");
+            document.write(`저장된 이름은 : ${window.localStorage.getItem("user")}`)
+        }
+        // ex08();
+
+        function ex09(){
+            localStorage.clear();
+        }
+        // ex09();
+
+        function ex10(){
+            // print === 인쇄 미리보기 창 띄우기(프린트기 여부x)
+            document.write("안녕하세요");
+            window.print();
+        }
+        // ex10();
+
+        function ex11(){
+            let count = 0;
+            let timer = setInterval(() => {
+                document.write(`안녕하세요${++count}<br>`);
+                if(count >= 5) clearInterval(timer);
+            }, 1000);
+        }
+        // ex11();
+
+        function ex12(){
+            setTimeout(() => { alert("나는 2초후에 나타남") }, 2000);
+        }
+        // ex12();
+
+        function ex13(){
+            // 뷰포트: 스크린에 보이는 네모박스
+            document.write(`스크롤 y값은 : ${window.scrollY}, 화면 높이: ${window.innerHeight}`);
+        }
+        // ex13();
+
+        function ex14(){
+            if(window.navigator.onLine) document.write("연결이 완료되었습니다");
+            else document.write("오프라인 상태입니다");
+        }
+        // ex14();
+    </script>
+</body>
+</html>

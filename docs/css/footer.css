@@ -1,0 +1,60 @@
+footer{
+    width: 100%;
+    height: 180px;
+    background-color: black;
+    color: white;
+}
+
+footer > div{
+    width: 62%;
+    height: 100%;
+    margin: auto;
+}
+    /* 첫번째 줄 */
+    footer > div > div:nth-child(1){
+        display: flex;
+        width: 100%;
+        height: 40%;
+        align-items: center;
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        margin-bottom: 25px;
+    }
+    footer > div > div:nth-child(1) > div:nth-child(1){
+        font-size: 12px;
+        font-weight: bold;
+        margin-right: 30px;
+        cursor: pointer;
+    }
+    footer > div > div:nth-child(1) > div:nth-child(2){
+        font-size: 12px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    footer > div > div:nth-child(1) > div:nth-child(3){
+        position: absolute;
+        top: 50%; right: 30px;
+        transform: translateY(-50%);
+        font-size: 12px;
+        width: 150px;
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        border-bottom: 1px solid white;
+        padding: 5px 5px;
+        cursor: pointer;
+    }
+
+    /* 두번째 줄 */
+    footer > div > div:nth-child(2){
+        color: darkgray;
+        font-size: 10.5px;
+    }
+        footer > div > div:nth-child(2) > div:nth-child(1){
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        footer > div > div:nth-child(2) > div:nth-child(1) > span{
+            height: 8px;
+            border-right: 1px solid darkgray;
+            margin: 0px 25px;
+        }
