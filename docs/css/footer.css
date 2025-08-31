@@ -41,6 +41,15 @@ footer > div{
         border-bottom: 1px solid white;
         padding: 5px 5px;
         cursor: pointer;
+        display: flex;
+    }
+    footer > div > div:nth-child(1) > div:nth-child(3) > div{
+        position: absolute;
+        top: 50%; right: 10px;
+        transform: translateY(-50%);
+        font-size: 12px;
+
+        transition: all 0.5s linear;
     }
 
     /* 두번째 줄 */

@@ -10,7 +10,7 @@
         height: 75%;
         position: relative;
 
-        border: 1px solid black;
+        /* border: 1px solid black; */
     }
 
     /* 맨위 글자 */
@@ -41,6 +41,81 @@
 
         /* border: 1px solid black; */
     }
-        #sec4 .imgBox2 div{
+        #sec4 .imgBox2 .sec4img{
+            position: relative;
             width: 25%;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: whitesmoke;
+            cursor: pointer;
+            transition: all 0.5s linear;
         }
+        #sec4 .imgBox2 .sec4img div:nth-child(1){
+            width: 150px;
+            position: absolute;
+            top: 25%; left: -10%;
+            transform: rotate(270deg);
+            font-size: 17px;
+            font-weight: 500;
+            text-align: end;
+            /* border: 1px solid black; */
+        }
+        #sec4 .imgBox2 .sec4img div:nth-child(2){
+            position: absolute;
+            bottom: 10%; left: 10%;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        #sec4 .imgBox2 .sec4img div:nth-child(3){
+            position: absolute;
+            bottom: 0; right: 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            background-color: white;
+            padding: 15px 22px;
+            border-radius: 3px;
+            opacity: 0;
+            transform: translateY(20%);
+
+            transition: all 0.5s linear;
+        }
+
+.sec4img1{ background-image: url(../img/section04_img01.png); }
+.sec4img2{ background-image: url(../img/section04_img02.png); }
+.sec4img3{ background-image: url(../img/section04_img03.png); }
+.sec4img4{ background-image: url(../img/section04_img04.png); }
+
+
+.sec4img1:hover{
+    background-image: url(../img/section04_img01_over.png);
+    transform: translateY(-10%);
+}
+    #sec4 .imgBox2 .sec4img1:hover > div:nth-child(3){
+        opacity: 1;
+        transform: translateY(0);
+    }
+.sec4img2:hover{
+    background-image: url(../img/section04_img02_over.png);
+    transform: translateY(-10%);
+}
+    #sec4 .imgBox2 .sec4img2:hover > div:nth-child(3){
+        opacity: 1;
+        transform: translateY(0);
+    }
+.sec4img3:hover{
+    background-image: url(../img/section04_img03_over.png);
+    transform: translateY(-10%);
+}
+    #sec4 .imgBox2 .sec4img3:hover > div:nth-child(3){
+        opacity: 1;
+        transform: translateY(0);
+    }
+.sec4img4:hover{
+    background-image: url(../img/section04_img04_over.png);
+    transform: translateY(-10%);
+}
+    #sec4 .imgBox2 .sec4img4:hover > div:nth-child(3){
+        opacity: 1;
+        transform: translateY(0);
+    }

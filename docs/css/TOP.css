@@ -1,0 +1,18 @@
+/* TOP */
+.TOP{
+    position: fixed;
+    bottom: 0; right: 0;
+    color: white;
+    background-color: darkslategray;
+    padding: 20px 28px;
+    text-align: center;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    z-index: 98;
+
+    transition: all 0.2s linear;
+}
+    .TOP:hover{
+        border-radius: 50%;
+    }
