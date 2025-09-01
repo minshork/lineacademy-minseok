@@ -6,7 +6,13 @@
     justify-content: center;
     align-items: center;
     position: relative;
+
 }
+    #sec2 #e1{
+        scale: 0;
+        opacity: 0;
+        transition: 0.5s ease-out;
+    }
     #sec2 .tit{
         margin-top: 100px;
         margin-bottom: 30px;
@@ -14,6 +20,9 @@
     }
     #sec2 .dec1{
         font-size: 14px;
+        text-align: center;
+
+        /* border: 1px solid black; */
     }
     #sec2 .dec1 div{
         margin-top: 5px;
@@ -25,7 +34,7 @@
         border-radius: 50%;
         position: absolute;
         z-index: -1;
-        top: 8.1%; left: 32.5%;
+        top: 44%; left: -2%;
     }
 
 /* 5개의 아이콘 작업 */
@@ -36,15 +45,20 @@
     display: flex;
     justify-content: space-evenly;
 }
+#sec2 .iconBox .sec2Line{
+    height: 200px;
+    border-right: 2px solid lightgray;
+}
 #sec2 .iconBox .sec2Box{
     width: 100%;
     height: 200px;
-    border-right: 1px solid lightgray;
+    /* border-right: 1px solid lightgray; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
+    opacity: 0;
 }
 #sec2 .iconBox .sec2Box div:nth-child(1){
     position: relative;
@@ -104,6 +118,32 @@
         opacity: 1;
     }
 
+    .sec2_bus{
+        transition: all 0.5s linear;
+        transform: translateX(-15%);
+        opacity: 1;
+    }
+    .sec2_glo{
+        transition: all 0.5s linear;
+        transform: translateY(15%);
+        opacity: 1;
+    }
+    .sec2_bio{
+        transition: all 0.5s linear;
+        transform: translateY(-15%);
+        opacity: 1;
+    }
+    .sec2_hu{
+        transition: all 0.5s linear;
+        transform: translateY(15%);
+        opacity: 1;
+    }
+    .sec2_edu{
+        transition: all 0.5s linear;
+        transform: translateX(15%);
+        opacity: 1;
+    }
+
 /* 2개의 prd 작업 */
 .sec2PrdBox{
     width: 80%;
@@ -120,6 +160,7 @@
     height: 100%;
     border-right: 2px dotted rgba(211, 211, 211, 1);
     margin-right: 80px;
+    margin-left: 80px;
 }
 .sec2Prd{
     width: 50%;
@@ -188,6 +229,24 @@
     .sec2Prd .prdImgBox{
         display: flex;
         align-items: center;
-
+        opacity: 0;
+        scale: 0;
+        transition: all 0.7s linear;
         /* border: 1px solid black; */
     }
+    
+    .sec2Prd .prdTextBox:nth-child(1){
+        transform: translateX(-30%);
+        opacity: 0;
+        transition: all 0.7s linear;
+    }
+    .sec2Prd .prdTextBox:nth-child(2){
+        transform: translateX(30%);
+        opacity: 0;
+        transition: all 0.7s linear;
+    }
+
+
+
+
+

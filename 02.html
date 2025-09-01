@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-01</title>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+        function main(txt, callback){
+            console.log(`[processText] 입력값: ${txt}`);
+            console.log(callback(txt)); 
+            console.log(`[processText] 콜백 실행 완료.`);
+        }
+
+        function hello(t){
+            let insa = `인사: 안녕 ${t}`;
+
+            return insa;
+        }
+
+        function big(t){
+            bigT = `대문자: ${t.toUpperCase()}`;
+
+            return bigT;
+        }
+
+        function len(t){
+            let num = `길이: ${t.length}`; 
+
+            return num;
+        }
+
+        main("world", hello);
+        main("javascript", big);
+        main("bye", len);
+    </script>
+</body>
+</html>

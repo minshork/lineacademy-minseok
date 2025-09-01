@@ -19,6 +19,11 @@
         font-size: 23px;
         font-weight: bold;
         padding: 10px;
+
+        transform-origin: top;
+        transform: rotateX(-90deg);
+        opacity: 0;
+        transition: all 1s ease;
     }
     #sec4 > div > div:nth-child(1) > div:nth-child(1){
         margin-bottom: 5px;
@@ -29,6 +34,11 @@
         font-size: 40px;
         font-weight: bold;
         padding: 10px;
+
+        transform-origin: top;
+        transform: rotateX(-90deg);
+        opacity: 1;
+        transition: all 1s ease;
     }
 
     /* 마지막 4개 사진 */
@@ -48,8 +58,15 @@
             background-repeat: no-repeat;
             color: whitesmoke;
             cursor: pointer;
-            transition: all 0.5s linear;
+
+            transform: rotateY(180deg) translateY(0);
+            opacity: 0;
+            transition: all 1s ease;
         }
+        /* #sec4 .imgBox2 .sec4img.show{
+            transform: rotateY(0);
+            opacity: 1;
+        } */
         #sec4 .imgBox2 .sec4img div:nth-child(1){
             width: 150px;
             position: absolute;
@@ -89,7 +106,7 @@
 
 .sec4img1:hover{
     background-image: url(../img/section04_img01_over.png);
-    transform: translateY(-10%);
+    transform: rotate(0) translateY(-10%);
 }
     #sec4 .imgBox2 .sec4img1:hover > div:nth-child(3){
         opacity: 1;
@@ -97,7 +114,6 @@
     }
 .sec4img2:hover{
     background-image: url(../img/section04_img02_over.png);
-    transform: translateY(-10%);
 }
     #sec4 .imgBox2 .sec4img2:hover > div:nth-child(3){
         opacity: 1;
@@ -105,7 +121,6 @@
     }
 .sec4img3:hover{
     background-image: url(../img/section04_img03_over.png);
-    transform: translateY(-10%);
 }
     #sec4 .imgBox2 .sec4img3:hover > div:nth-child(3){
         opacity: 1;
@@ -113,9 +128,13 @@
     }
 .sec4img4:hover{
     background-image: url(../img/section04_img04_over.png);
-    transform: translateY(-10%);
 }
     #sec4 .imgBox2 .sec4img4:hover > div:nth-child(3){
         opacity: 1;
         transform: translateY(0);
     }
+
+.sec4img.show:hover{
+    transition: all 0.5s linear;
+    bottom: 10%;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-01</title>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+        // function main(nums){
+        //     let even = "";
+        //     for(let i = 0; i < 3; i++){
+        //         if(nums[i] % 2 == 0){
+        //             even = "짝수";
+        //         }
+        //         else{
+        //             even = "홀수";
+        //         }
+
+        //         if(i < 2){
+        //             console.log(`[checkEven] 입력값: ${nums[i]}`);
+        //             console.log(`콜백후보 ${i + 1}: ${even}입니다.`);
+        //         }
+        //         else if(i >= 2){
+        //             console.log(`[checkEven] 입력값: ${nums[i]}`);
+        //             console.log(`콜백 즉석 호출(후보${i + 1}): ${even}입니다. (확인 완료)`);
+        //         }
+        //     }
+        // }
+
+        // main([4, 7, 9])
+
+        function main(nums, callback){
+            for(let i = 0; i < 3; i++){
+                let num = nums[i];
+                let even = num % 2 === 0 ? "짝수" : "홀수";
+                callback(i, num, even);
+            }
+        }
+
+        function printeven(i, num, even){
+            if(i < 2){
+                console.log(`[checkEven] 입력값: ${num}`);
+                console.log(`콜백후보 ${i + 1}: ${even}입니다.`);
+            }
+            else if(i >= 2){
+                console.log(`[checkEven] 입력값: ${num}`);
+                console.log(`콜백 즉석 호출(후보${i + 1}): ${even}입니다. (확인 완료)`);
+            }
+        }
+
+        main([4, 7, 9], printeven);
+    </script>
+</body>
+</html>

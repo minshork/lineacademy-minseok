@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-01</title>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+        function main(num, one, two, three){
+            console.log(`[num: ${num}] 콜백을 실행합니다.`);
+            console.log(`두 배: ${one(num)}`); 
+            console.log(`[num: ${num}] 콜백 실행 완료.`);
+
+            console.log(`[num: ${num}] 콜백을 실행합니다.`);
+            console.log(`제곱: ${two(num)}`); 
+            console.log(`[num: ${num}] 콜백 실행 완료.`);
+
+            console.log(`[num: ${num}] 콜백을 실행합니다.`);
+            console.log(`세 배: ${three(num)}`); 
+            console.log(`[num: ${num}] 콜백 실행 완료.`);
+        }
+
+        function mul2(n){
+            n *= 2;
+
+            return n;
+        }
+
+        function squ(n){
+            n = n * n;
+
+            return n;
+        }
+
+        function mul3(n){
+            n *= 3;
+
+            return n;
+        }
+
+        main(10, mul2, squ, mul3);
+    </script>
+</body>
+</html>

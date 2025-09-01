@@ -48,8 +48,10 @@ imgSlide.imgBox.addEventListener("transitionend", () => {
 });
 
 let imgTimer = setInterval(() => {
-    imgSlide.page++;
-    imgSlide.movingImg();
+    if (imgSlide.page < imgSlide.maxPage + 1) {
+        imgSlide.page++;
+        imgSlide.movingImg();
+    }
 }, 4000);
 
 
