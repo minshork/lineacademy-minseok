@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-02</title>
+    <style>
+        #display{
+            width: 300px;
+            height: 150px;
+            background-color: skyblue;
+            border: 2px solid black;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 150px;
+            font-weight: bold;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="fadeOut" value="fadeOut">
+    <input type="button" id="fadeIn" value="fadeIn">
+    <input type="button" id="Hide" value="Hide">
+    <input type="button" id="Show" value="Show">
+    <input type="button" id="slideDown" value="slideDown">
+    <input type="button" id="slideUp" value="slideUp">
+    <input type="button" id="mix" value="mix">
+    <div id="display">Target Box</div>
+
+    <script>
+        let target = document.getElementById("display");
+        target.style.transition = "all 0.5s linear";
+
+        document.querySelectorAll("input[type='button']").forEach(btn => {
+            btn.addEventListener("click", e => {
+                switch(e.target.id){
+                    case "fadeOut":
+                        target.style.transition = "all 0.5s linear";
+                        target.style.opacity = "0";
+                        setTimeout(() => {
+                            target.style.transition = "none";
+                            target.style.opacity = "1";
+                        }, 1000);
+                        break;
+                    case "fadeIn":
+                        target.style.transition = "none";
+                        target.style.opacity = "0";
+                        setTimeout(() => {
+                            target.style.transition = "all 0.5s linear";
+                            target.style.opacity = "1";
+                        }, 500);
+                        break;
+                    case "Hide":
+                        target.style.display = "none";
+                        setTimeout(() => {
+                            target.style.display = "block";
+                        }, 1000);
+                        break;
+                    case "Show":
+                        target.style.display = "none";
+                        setTimeout(() => {
+                            target.style.display = "block";
+                        }, 100);
+                        break;
+                    case "slideDown":
+                        target.style.transition = "none";
+                        target.style.border = "2px solid transparent";
+                        target.style.backgroundColor = "transparent";
+                        target.style.height = "0";
+                        setTimeout(() => {
+                            target.style.transition = "height 0.5s linear";
+                            target.style.border = "2px solid black";
+                            target.style.backgroundColor = "skyblue";
+                            target.style.height = "150px";
+                        }, 100)
+                        break;
+                    case "slideUp":
+                        target.style.transition = "all 0.5s linear";
+                        target.style.height = "0";
+                        setTimeout(() => {
+                            target.style.transition = "none";
+                            target.style.border = "2px solid transparent";
+                            target.style.backgroundColor = "transparent";
+                        }, 500)
+                        setTimeout(() => {
+                            target.style.border = "2px solid black";
+                            target.style.backgroundColor = "skyblue";
+                            target.style.height = "150px";
+                        }, 1000)
+                        break;
+                    case "mix":
+                        
+                        break;
+                }
+            })
+        })
+    </script>
+</body>
+</html>

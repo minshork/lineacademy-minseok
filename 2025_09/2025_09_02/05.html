@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-02</title>
+</head>
+<body>
+    <script>
+        // 문제2번
+        function main(){
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    Math.random() < 0.7 ? resolve("OK") : reject(new Error("FAIL"));
+                }, 2000)
+            })
+        }
+
+        async function cal(){
+            try{
+                let good = await main();
+                console.log("성공 :", good);
+            }
+            catch(e){
+                console.log("실패 :", e.message);
+            }
+            finally{
+                console.log("정리");
+            }
+        }
+
+        cal();
+    </script>
+</body>
+</html>

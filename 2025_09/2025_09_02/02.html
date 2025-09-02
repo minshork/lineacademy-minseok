@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-02</title>
+</head>
+<body>
+    <script>
+        function delay(ms){
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("ok");
+                }, ms);
+            })
+        }
+        function fv(){
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve(7);
+                }, 1000);
+            });
+        }
+
+        async function run(){
+            console.log("시작");
+            await dealy(2000);
+            let a = await fv(); // 값이 올때까지 대기
+            console.log("받은값: ", a);
+            console.log("끝");
+        }
+
+        run();
+    </script>
+</body>
+</html>

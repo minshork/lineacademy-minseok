@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-02</title>
+</head>
+<body>
+    <script>
+        // 문제1번
+        function one(){
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    let msg = " 점심 준비";
+                    resolve(msg);
+                    console.log("then 1:", msg);
+                }, 2000);
+            });
+        }
+        one()
+            .then(spoon => {
+                let plusSp = (spoon + " + 숟가락");
+                console.log("then 2: " + plusSp);
+                return plusSp;
+            })
+            .then(chop => {
+            let plusCh = (chop + " + 젓가락");
+            console.log("then 3: " + plusCh);
+            })
+            .finally(() => console.log("항상 실행(finally)"));
+    </script>   
+</body>
+</html>
