@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-03</title>
+</head>
+<body>
+    <script>
+        class Card{
+            constructor(name, job){
+                this.name = name;
+                this.job = job;
+            }
+
+            text(){
+                let nameJob = `${this.name}(${this.job})`;
+                return nameJob;
+            }
+        }
+
+        let show = new Card("이민석", "학생");
+        document.write(show.text());
+    </script>
+</body>
+</html>

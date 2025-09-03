@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-03</title>
+    <style>
+        .cir{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border-top: 10px solid lightgray;
+            border-bottom: 10px solid lightgray;
+            border-left: 10px solid lightgray;
+            border-right: 10px solid lightgray;
+
+            animation: cirMove 1s linear infinite;
+        }
+
+        @keyframes cirMove{
+            0%{
+                border-top: 10px solid lightgray;
+                border-bottom: 10px solid lightgray;
+                border-left: 10px solid lightgray;
+                border-right: 10px solid lightgray;
+            }
+            25%{
+                border-top: 10px solid lightgreen;
+                border-bottom: 10px solid lightgray;
+                border-left: 10px solid lightgray;
+                border-right: 10px solid lightgray;
+            }
+            50%{
+                border-top: 10px solid lightgray;
+                border-bottom: 10px solid lightgray;
+                border-left: 10px solid lightgray;
+                border-right: 10px solid lightgreen;
+            }
+            75%{
+                border-top: 10px solid lightgray;
+                border-bottom: 10px solid lightgreen;
+                border-left: 10px solid lightgray;
+                border-right: 10px solid lightgray;
+            }
+            100%{
+                border-top: 10px solid lightgray;
+                border-bottom: 10px solid lightgray;
+                border-left: 10px solid lightgreen;
+                border-right: 10px solid lightgray;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cir"></div>
+</body>
+</html>

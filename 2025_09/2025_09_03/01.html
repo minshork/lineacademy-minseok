@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-03</title>
+</head>
+<body>
+    <script>
+        class Person{
+            // 생성자
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+
+            // 메서드
+            sayHello(){
+                console.log("안녕하세요 저는 " + this.name + "입니다.");
+                console.log("나이는 " + this.age + "살 입니다.");
+            }
+        }
+
+        let p = new Person("홍길동", 20); // 이렇게 호출하는 것을 instance라고 함
+        p.sayHello();
+        let a = new Person("이순신", 30); // 이것도 instance
+        a.sayHello();
+    </script>
+</body>
+</html>

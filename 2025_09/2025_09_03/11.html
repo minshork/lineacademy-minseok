@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-03</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: relative;
+
+            animation: boxMove 4s linear forwards;
+        }
+
+        @keyframes boxMove {
+            0%{ background-color: pink; left: 0; top: 0; opacity: 0; }
+            25%{ left: 200px; top: 0; opacity: 1; }
+            50%{ left: 400px; top: 0; background-color: skyblue; }
+            75%{ left: 400px; top: 100px; background-color: skyblue; }
+            100%{ left: 400px; top: 0; opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-03</title>
+</head>
+<body>
+    <script>
+        class Item{
+            constructor(title, price){
+                this.title = title;
+                this.price = price;
+            }
+
+            info(){
+                console.log(`상품이름: ${this.title} / 가격: ${this.price.toLocaleString()}`);
+            }
+        }
+
+        let a = new Item("젓가락", 5000);
+        let b = new Item("숟가락", 15000);
+        a.info();
+        b.info();
+    </script>
+</body>
+</html>

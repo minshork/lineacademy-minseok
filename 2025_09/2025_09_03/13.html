@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-03</title>
+    <style>
+        body{
+            display: flex;
+            gap: 20px;
+        }
+        .cir{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: lightgreen;
+
+            animation: cirOpacity 1s linear infinite;
+        }
+        .one{ animation-delay: 0s; }
+        .two{ animation-delay: 0.33s; }
+        .three{ animation-delay: 0.66s; }
+
+        @keyframes cirOpacity{
+            0%{ opacity: 0; }
+            100%{ opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="one cir"></div>
+    <div class="two cir"></div>
+    <div class="three cir"></div>
+</body>
+</html>

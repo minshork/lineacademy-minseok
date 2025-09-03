@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-03</title>
+</head>
+<body>
+    <script>
+        class Card{
+            constructor(name, price){
+                this.name = name;
+                this.price = price;
+            }
+
+            get price(){
+                return this._price;
+            }
+
+            get priceTax(){
+                return this._price * 1.1;
+            }
+
+            set price(p){
+                if(p < 0){
+                    throw new Error("상품가격은 음수가 될 수 없습니다.");
+                }
+                this._price = p;
+            }
+
+            printf() {
+                document.write(`상품이름: ${this.name} <br>`);
+                document.write(`가격: ₩${this.price.toLocaleString()} <br>`);
+                document.write(`부가세 포함 가격: ₩${this.priceTax.toLocaleString()} <br>`);
+            }
+        }
+
+        let c = new Card("핸드폰", 100000);
+        c.printf();
+    </script>
+</body>
+</html>
