@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-04</title>
+    <style>
+        *{list-style: none; margin: 0;}
+        body{
+            display: flex;
+            gap: 20px;
+            width: 100%;
+        }
+        body > div{
+            width: 24%;
+            background-color: lightgreen;
+            text-align: center;
+            border: 3px solid #333;
+            border-radius: 10px;
+        }
+        body > div > div:nth-child(1){
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        body > div > div:nth-child(2){
+            font-size: 16px;
+        }
+
+        /* pc */
+        @media(min-width:1201px){ /* 최소 1201이상 */
+            body > div{
+                border: 10px solid #333;
+            }
+            body > div > div:nth-child(1){
+                font-size: 22px;
+                padding: 30px;
+            }
+            body > div > div:nth-child(2){
+                padding: 30px;
+                font-size: 18px;
+            }
+        }
+
+        /* 태블릿 */
+        @media(min-width:481px) and (max-width:1200px){  /* 최소 481이상 최대 1200이하 */
+            body > div{
+                border: 5px solid #333;
+            }
+            body > div > div:nth-child(1){
+                padding: 15px;
+            }
+            body > div > div:nth-child(2){
+                padding: 15px;
+            }
+        }
+
+        /* 모바일 */
+        @media(max-width:480px){  /* 최대 480이하 */
+            body{
+                flex-direction: column;
+            }
+            body > div{
+                width: 90%;
+                border: 3px solid #333;
+            }
+            body > div > div:nth-child(1){
+                padding: 5px;
+            }
+            body > div > div:nth-child(2){
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>반응형 알아보기</div>
+        <div>반응형 동작1</div>
+    </div>
+    <div>
+        <div>반응형 알아보기</div>
+        <div>반응형 동작2</div>
+    </div>
+    <div>
+        <div>반응형 알아보기</div>
+        <div>반응형 동작3</div>
+    </div>
+    <div>
+        <div>반응형 알아보기</div>
+        <div>반응형 동작4</div>
+    </div>
+</body>
+</html>

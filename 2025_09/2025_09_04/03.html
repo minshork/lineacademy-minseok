@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-04</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        .ob{
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .ob > div{
+            width: 100px;
+            height: 100px;
+            border: 3px solid #333;
+            border-radius: 10px;
+            background-position: center;
+            background-size: cover;
+            cursor: pointer;
+        }
+        .ob > div:nth-child(1){ background-image: url(../img/sun01.jpg); }
+        .ob > div:nth-child(2){ background-image: url(../img/sun02.jpg); }
+        .ob > div:nth-child(3){ background-image: url(../img/sun03.jpg); }
+        .ob > div:nth-child(4){ background-image: url(../img/sun04.jpg); }
+        .ob > div:nth-child(5){ background-image: url(../img/sun05.jpg); }
+
+        #display{
+            width: 500px;
+            height: 300px;
+            border: 5px solid #333;
+            margin: 15px auto;
+            border-radius: 10px;
+            background-position: center;
+            background-size: cover;
+        }
+        button{
+            display: block;
+            margin: auto;
+            padding: 15px 20px;
+            font-weight: bold;
+            border: 3px solid gray;
+            border-radius: 5px;
+            background-color: whitesmoke;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Stack POP</h2>
+    <div class="ob">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div id="display"></div>
+    <button id="prev" onclick="prev()">이전 그림 보이기</button>
+    <script>
+        class StkPop{
+            constructor(){
+                this.pic = [];
+            }
+
+            get pop(){
+                return this.pic.pop();
+            }
+
+            add(imgPath){
+                this.pic.push(imgPath);
+            }
+        }
+
+        let stk = new StkPop();
+        let pics = document.querySelectorAll(".ob > div");
+        let dis = document.getElementById("display");
+        let pr = document.getElementById("prev");
+
+        pics.forEach((pic, i) => {
+            pic.addEventListener("click", () => {
+                pr.disabled = false;
+                let imgPath = `url("../img/sun0${i + 1}.jpg")`;
+                dis.style.backgroundImage = imgPath;
+
+                stk.add(imgPath);
+            });
+        })
+
+        function prev(){
+            stk.pop;
+            if(stk.pic.length > 0){
+                dis.style.backgroundImage = stk.pic[stk.pic.length - 1];
+            }
+            else{
+                dis.style.backgroundImage = "";
+                pr.disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>

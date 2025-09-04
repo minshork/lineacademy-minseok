@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-04</title>
+    <style>
+        ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        li{
+            list-style: none;
+        }
+        li:nth-child(1){ background-color: red; }
+        li:nth-child(2){ background-color: pink; }
+        li:nth-child(3){ background-color: lightgreen; }
+
+        /* pc */
+        @media(min-width:1201px){ /* 최소 1201이상 */
+            ul{
+                width: 1000px;
+                margin: 0 auto;
+            }
+            li{
+                width: 30%;
+                height: 300px;
+                text-align: center;
+            }
+        }
+
+        /* 태블릿 */
+        @media(min-width:481px) and (max-width:1200px){ /* 최소 481이상 최대 1200이하 */
+            ul{
+                width: 90%;
+                margin: 0 auto;
+            }
+            li{
+                width: 50%;
+                height: 300px;
+            }
+        }
+
+        /* 모바일 */
+        @media(max-width:480px){ /* 최대 480이하 */
+            ul{
+                display: block;
+                width: 100%;
+                max-width: 0 auto;
+            }
+            li{
+                width: 100%;
+                height: 300px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>box1</li>
+        <li>box2</li>
+        <li>box3</li>
+    </ul>
+</body>
+</html>

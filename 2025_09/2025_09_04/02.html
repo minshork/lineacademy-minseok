@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-04</title>
+    <style>
+        .box{
+            background-color: skyblue;
+            padding: 10px;
+            border: 5px solid darkblue;
+            width: 300px;
+        }
+        .item{
+            color: darkblue;
+            font-size: 25px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>스택(LIFO)</h2>
+    <input type="text" id="inputValue" placeholder="입력">
+    <button id="pushBtn">push</button>
+    <button id="popBtn">pop</button>
+    <div class="box" id="stackBox">
+
+    </div>
+    <script>
+    class StackB {
+        constructor(){
+            this.item = [];
+        }
+
+        set push(v){
+            this.item.push( v )  ;
+        }
+
+        pop() {
+            this.item.pop();
+        }
+
+        get all(){
+            return this.item;
+        }
+    }
+
+    let stack = new StackB();
+    let input = document.getElementById("inputValue");
+    let box = document.getElementById("stackBox");
+
+    function render(){
+        box.innerHTML = ""
+        for( let i=0; i<=stack.all.length-1; i++){
+            let div = document.createElement("div")
+            div.className = "item";
+            div.textContent = stack.all[i];
+            box.appendChild(div);
+        }
+    }
+
+    document.getElementById("pushBtn").onclick = () => {
+        if(input.value){
+            stack.push = input.value;
+            input.value = "";
+            render();
+        }
+    }
+
+    document.getElementById("popBtn").onclick = () =>{
+        stack.pop();
+        render();
+    }
+    </script>  
+</body>
+</html>

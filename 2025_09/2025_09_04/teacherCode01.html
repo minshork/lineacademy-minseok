@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-04</title>
+    <style>
+        .simgs{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:20px;
+        }
+        .simg {
+            width: 80px; height: 60px; cursor: pointer;   
+        }
+        .simg img{
+            width: 100%;
+            height: 100%;
+        }
+        .display{
+            width: 500px;
+            height: 450px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .display img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+    </style>
+</head>
+<body>
+    <h2>썸네일 스택이용</h2>
+    <div class="simgs" id="simgs">
+        <div class="simg">
+            <img src="https://picsum.photos/id/1015/1200/800" alt="img1">
+        </div>
+        <div class="simg">
+            <img src="https://picsum.photos/id/1025/1200/800" alt="img1">
+        </div>
+        <div class="simg">
+            <img src="https://picsum.photos/id/1035/1200/800" alt="img1">
+        </div>
+                <div class="simg">
+            <img src="https://picsum.photos/id/1045/1200/800" alt="img1">
+        </div>
+        <div class="simg">
+            <img src="https://picsum.photos/id/1055/1200/800" alt="img1">
+        </div>        
+    </div>
+
+    <div class="display">
+        <img id="mainimg" alt="선택된 이미지">
+    </div>
+
+    <button id="preBtn">이전그림가기</button>
+
+    <script>
+
+        class StackImg {
+            constructor(){
+                this.item = [];
+            }
+
+            set push(v){
+                this.item.push(v)
+            }
+
+            pop(){
+                return this.item.pop()
+            }
+
+            get len(){
+                return this.item.length
+            }
+        }
+
+        let stackimg = new StackImg();
+        
+        let relidx = null;
+
+        let simg = document.querySelectorAll(".simg")
+        let mainimg = document.getElementById("mainimg")
+        let preBtn = document.getElementById("preBtn")
+
+
+        function render(){
+            if(relidx !== null){
+                let ssrc = simg[relidx].querySelector("img").src
+                mainimg.src = ssrc
+                mainimg.alt = "이미지" + relidx + 1
+            }
+
+            preBtn.disabled = stackimg.len == 0
+        }
+        
+        simg.forEach( (item, idx) => {
+            item.addEventListener("click", () => {
+                stackimg.push = idx
+                relidx = idx;
+                render()
+            })
+        })
+
+        preBtn.addEventListener("click", () =>{
+            let k =  stackimg.pop()
+            if (k !==undefined ){
+                relidx = k
+                render()
+            }
+        })
+        render()
+    </script>
+</body>
+</html>
