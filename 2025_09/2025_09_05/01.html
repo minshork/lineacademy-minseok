@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-05</title>
+    <style>
+        .outBox{
+            width: 500px;
+            height: 400px;
+            border: 2px solid #333;
+        }
+        .leftBtn{
+            float: left;
+            width: 50px;
+            font-size: 50px;
+            font-weight: bold;
+            line-height: 400px;
+            cursor: pointer;
+        }
+        .rightBtn{
+            float: right;
+            width: 50px;
+            font-size: 50px;
+            font-weight: bold;
+            line-height: 400px;
+            cursor: pointer;
+        }
+        .showImg{
+            float: left;
+            width: 400px;
+            height: 400px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="outBox">
+        <div id="leftBtn" class="leftBtn">&lt;</div>
+        <img id="showImg" class="showImg"/>
+        <div id="rightBtn" class="rightBtn">&gt;</div>
+    </div>
+    <script>
+        class QueueImg{
+            constructor(){
+                this.arr = [];
+            }
+
+            pushItem(v){
+                this.arr.push(v); // 뒤에서 값을 추가
+            }
+
+            unshiftItem(v){
+                this.arr.unshift(v); // 앞에서 값을 추가
+            }
+
+            popItem(){
+                return this.arr.pop(); // 맨뒤에 값을 제거
+            }
+
+            shiftItem(){
+                return this.arr.shift(); // 맨앞에 값을 제거
+            }
+
+            get arrlength(){
+                return this.arr.length;
+            }
+        }
+
+        let imgQue = new QueueImg();
+        let showImg = document.getElementById("showImg");
+        let leftBtn = document.getElementById("leftBtn");
+        let rightBtn = document.getElementById("rightBtn");
+
+        let img1 = "";
+        let img2 = "";
+        
+        imgQue.pushItem("../img/sun01.jpg");
+        imgQue.pushItem("../img/sun02.jpg");
+        imgQue.pushItem("../img/sun03.jpg");
+        showImg.style.transition = "all 0.5s linear"
+
+        // showImg.setAttribute("src", "../img/sun01.jpg");
+
+        function popF(){
+            img1 = imgQue.popItem();
+            showImg.style.opacity = "0"
+            setTimeout(() => {
+                showImg.style.opacity = "1";
+                showImg.setAttribute("src", img1);
+                console.log(img1);
+            }, 500);
+            imgQue.unshiftItem(img1);
+        }
+
+        function shiftF(){
+            img2 = imgQue.shiftItem();
+            showImg.style.opacity = "0";
+            setTimeout(() => {
+                showImg.style.opacity = "1";
+                showImg.setAttribute("src", img2);
+            }, 500);
+            imgQue.pushItem(img2);
+        }
+
+        rightBtn.addEventListener("click", popF);
+        leftBtn.addEventListener("click", shiftF);
+
+    </script>
+</body>
+</html>

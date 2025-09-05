@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outBox{
+            width: 600px;           
+        }
+
+        .leftBtn{
+            float: left;
+            width: 50px;
+            font-size: 50px;
+            font-weight: bold;
+            line-height: 400px;
+            cursor: pointer;
+        }
+        .rightBtn{
+            display: inline-block;
+            width: 50px;
+            font-size: 50px;
+            font-weight: bold;
+            line-height: 400px;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        .showImg{
+            float: left;
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="outBox">
+        <div id="leftBtn" class="leftBtn">&lt;</div>
+        <img id="showImg" class="showImg" />
+        <div id="rightBtn" class="rightBtn">&gt;</div>
+    </div>
+
+    <script>
+        class QueueImg {
+            constructor(){
+                this.arr = [];
+            }
+
+            pushItem(v){
+                this.arr.push(v) // 뒤에서 값을 추가
+            }
+
+            unshiftItem(v){
+                this.arr.unshift(v)  // 앞에서 값을 추가
+            }
+
+            popItem(){
+                return this.arr.pop()
+            }
+
+            shiftItem(){
+                return this.arr.shift()
+            }
+
+            get arrlength(){
+                return this.arr.length
+            }
+        }
+
+        let imgQue = new QueueImg()
+        let showImg = document.getElementById("showImg")
+        let leftBtn = document.getElementById("leftBtn")
+        let rightBtn = document.getElementById("rightBtn")
+
+        let img1 =""
+        let img2 =""
+
+        imgQue.pushItem("https://www.bntnews.co.kr/data/bnt/image/202204/8293f3cce9eb4bed81dfcfde75a1d555.jpg")        
+        imgQue.pushItem("https://img.seoul.co.kr/img/upload/2020/10/12/SSI_20201012184630_O2.jpg")        
+        imgQue.pushItem("https://thumb.mtstarnews.com/06/2021/04/2021042113443163378_1.jpg/dims/optimize")  
+
+        showImg.setAttribute("src","https://www.bntnews.co.kr/data/bnt/image/202204/8293f3cce9eb4bed81dfcfde75a1d555.jpg")
+
+        function popF(){
+            img1 = imgQue.popItem()
+            imgQue.unshiftItem(img1)
+            showImg.setAttribute("src", imgQue.arr[0]);
+        }
+
+        function shiftF(){
+            img2 = imgQue.shiftItem()
+            imgQue.pushItem(img2)
+            showImg.setAttribute("src", imgQue.arr[0]);
+        }
+
+        rightBtn.addEventListener("click", ()=>{
+            popF();
+        })
+
+        leftBtn.addEventListener("click", ()=>{
+            shiftF()
+        })
+    </script>
+</body>
+</html>

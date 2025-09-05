@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-05</title>
+    <style>
+        .outBox{
+            display: flex;
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            border: 10px solid darkblue;
+            padding: 75px;
+        }
+        #leftBtn{
+            border: 2px solid #333;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        #rightBtn{
+            border: 2px solid #333;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .imgBox{
+            display: flex;
+            margin: 0px 20px;
+            gap: 10px;
+        }
+            .imgBox img{
+                border: 3px solid black;
+            }
+    </style>
+</head>
+<body>
+    <div class="outBox">
+        <button id="leftBtn">◀</button>
+        <div class="imgBox">
+            <img src="../img/qu01.jpg" alt="one">
+            <img src="../img/qu02.jpg" alt="two">
+            <img src="../img/qu03.jpg" alt="three">
+        </div>
+        <button id="rightBtn">▶</button>
+    </div>
+    <script>
+        class Queuing{
+            constructor(){
+                this.arr = [];
+            }
+
+            pushItem(v){
+                this.arr.push(v);
+            }
+
+            unshiftItem(v){
+                this.arr.unshift(v);
+            }
+
+            popItem(){
+                return this.arr.pop();
+            }
+
+            shiftItem(){
+                return this.arr.shift();
+            }
+        }
+
+        let que = new Queuing();
+        let rB = document.getElementById("rightBtn");
+        let lB = document.getElementById("leftBtn");
+
+        function imgGet(){
+            let imgs = document.querySelectorAll(".imgBox > img");
+            que.arr = [];
+            return imgs.forEach(img => {
+                que.pushItem(img.src);
+            })
+        }
+        imgGet();
+
+        function next(){
+            let imgs = document.querySelectorAll(".imgBox > img");
+            let temp1 = que.popItem();
+            que.unshiftItem(temp1);
+            imgs.forEach((img, i) => {
+                img.setAttribute("src", que.arr[i]);
+            })
+        }
+
+        function prev(){
+            let imgs = document.querySelectorAll(".imgBox > img");
+            let temp2 = que.shiftItem();
+            que.pushItem(temp2);
+            imgs.forEach((img, i) => {
+                img.setAttribute("src", que.arr[i]);
+            })
+        }
+
+        rB.addEventListener("click", next);
+        lB.addEventListener("click", prev);
+    </script>
+</body>
+</html>

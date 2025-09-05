@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-09-05</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        *{ padding: 0; margin: 0; }
+        body{ width: 100vw;}
+
+        #sec{
+        width: 100%;
+        /* border: 1px solid black; */
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .circle{
+        display: none;
+    }
+
+    .gridBox{
+        width: 100%;
+        height: 500px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4열로 통일 */
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "a1 cen a2"
+            "a3 a4 a5 a6";
+        gap: 10px;
+    }
+    .gridBox .cenBox {
+        grid-column: 2 / span 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .gridBox .secImg img {
+        display: none;
+    }
+    
+
+    .cenBox div{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cenBox div:nth-child(1){
+        font-size: 14px;
+    }
+    .cenBox div:nth-child(2){
+        font-size: 45px;
+        text-align: center;
+        padding-bottom: 10px;
+        padding-top: 20px;
+        line-height: 1.0;
+    }
+    .cenBox div:nth-child(3){
+        font-size: 13px;
+        color: darkgrey;
+    }
+    .secImg  {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: white;
+    }
+
+    /* 백그라운드 이미지 */
+    #sec .gridBox .secImg:nth-child(1){
+        background-image: url(http://www.wood.co.kr/data/main_cate/file1_16382354115bk5xbdgve.jpg);
+    }
+    #sec .gridBox .secImg:nth-child(3){
+        background-image: url(http://www.wood.co.kr/data/main_cate/file1_1638235382udoib422vy.jpg);
+    }
+    #sec .gridBox .secImg:nth-child(4){
+        background-image: url(http://www.wood.co.kr/data/main_cate/file1_1638235353kgi2ots5xp.jpg);
+    }
+    #sec .gridBox .secImg:nth-child(5){
+        background-image: url(http://www.wood.co.kr/data/main_cate/file1_16498999289y66rgqszp.jpg);
+    }
+    #sec .gridBox .secImg:nth-child(6){
+        background-image: url(http://www.wood.co.kr/data/main_cate/file1_16382352716f5u99nfim.jpg);
+    }
+    #sec .gridBox .secImg:nth-child(7){
+        background-image: url(http://www.wood.co.kr/data/main_cate/file1_16382352326y64ko4i94.jpg);
+    }
+
+
+    @media(min-width:901px) {
+
+    }
+    @media(max-width:899px) {
+        .gridBox {
+            grid-template-columns: repeat(2, 1fr); /* 2열 */
+            grid-template-rows: repeat(4, 1fr); /* cen은 auto 높이 */
+            grid-template-areas:
+            "cen cen"
+            "a1 a2"
+            "a3 a4"
+            "a5 a6";
+            gap: 10px;
+            height: auto;
+        }
+
+        .gridBox > div:nth-child(1){ grid-area: a1; }
+        .gridBox > div:nth-child(2){ grid-area: cen; }
+        .gridBox > div:nth-child(3){ grid-area: a2; }
+        .gridBox > div:nth-child(4){ grid-area: a3; }
+        .gridBox > div:nth-child(5){ grid-area: a4; }
+        .gridBox > div:nth-child(6){ grid-area: a5; }
+        .gridBox > div:nth-child(7){ grid-area: a6; }
+    }
+    </style>
+</head>
+<body>
+    <section id="sec">
+        <div class="circle"></div>
+        <div class="gridBox">
+            <div class="secImg"><img src="http://www.wood.co.kr/data/main_cate/file2_16423829087d0umvkgvv.png" alt="">도어</div>
+            <div class="cenBox">
+                <div>CATEGORY</div>
+                <div>
+                    DESIGN FOR HEALTH <br>
+                    AND WELL-BEING
+                </div>
+                <div>우딘은 건강한 공간을 만든다는 일념으로 끊임없이 친환경 제품을 연구합니다</div>
+            </div>
+            <div class="secImg"><img src="http://www.wood.co.kr/data/main_cate/file2_1638235382fgdt5930lj.png" alt="">중문</div>
+            <div class="secImg"><img src="http://www.wood.co.kr/data/main_cate/file2_1638235353rtgpsq58jh.png" alt="">시트</div>
+            <div class="secImg"><img src="http://www.wood.co.kr/data/main_cate/file2_16382353154hi9wephhy.png" alt="">보드</div>
+            <div class="secImg"><img src="http://www.wood.co.kr/data/main_cate/file2_163823527109027qq4xg.png" alt="">창호</div>
+            <div class="secImg"><img src="http://www.wood.co.kr/data/main_cate/file2_1638235232g9sgmke468.png" alt="">목재</div>
+        </div>
+    </section>
+</body>
+</html>
